@@ -1,0 +1,26 @@
+mixin lang-bar(headerMods)
+  .header__langs.langs
+    if (headerMods === "kz")
+      ul.langs__list
+        li
+          span.langs__link.is-active!= "KZ"
+        li
+          a.langs__link(href="../index.html", aria-label="Орыс тіліндегі нұсқасына")= "RU"
+        li
+          a.langs__link(href="../en/index.html", aria-label="Ағылшын тіліндегі нұсқасына")= "EN"
+    else if (headerMods === "en")
+      ul.langs__list
+        li
+          a.langs__link(href="../kz/index.html", aria-label=" To Kazakh page")= "KZ"
+        li
+          a.langs__link(href="../index.html", aria-label="To Russian page")= "RU"
+        li
+          span.langs__link.is-active!= "EN"
+    else
+      ul.langs__list
+        li
+          a.langs__link(href="kz/index.html", aria-label="На казахскую версию сайта")= "KZ"
+        li
+          span.langs__link.is-active!= "RU"
+        li
+          a.langs__link(href="en/index.html", aria-label="На английскую версию сайта")= "EN"

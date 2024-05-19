@@ -1,0 +1,88 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang=lang)
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="ProjectName — описание")
+    if (lang === "kz")
+      link(rel="alternate", hreflang="en", href=`https://asiapetroservice.kz/en/${page}.html`)
+      link(rel="alternate", hreflang="ru", href=`https://asiapetroservice.kz/${page}.html`)
+    else if (lang === "en")
+      link(rel="alternate", hreflang="kk", href=`https://asiapetroservice.kz/kz/${page}.html`)
+      link(rel="alternate", hreflang="ru", href=`https://asiapetroservice.kz/${page}.html`)
+    else
+      link(rel="alternate", hreflang="kk", href=`https://asiapetroservice.kz/kz/${page}.html`)
+      link(rel="alternate", hreflang="en", href=`https://asiapetroservice.kz/en/${page}.html`)
+    //- favicon
+    if (lang === "kz" || lang === "en")
+      link(rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png")
+      link(rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png")
+      link(rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png")
+      link(rel="manifest" href="../favicon/site.webmanifest" crossorigin="use-credentials")
+      link(rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#3a3838")
+      link(rel="shortcut icon" href="../favicon/favicon.ico")
+    else
+      link(rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png")
+      link(rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png")
+      link(rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png")
+      link(rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials")
+      link(rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#3a3838")
+      link(rel="shortcut icon" href="favicon/favicon.ico")
+    <meta name="msapplication-TileColor" content="#3a3838">
+    <meta name="theme-color" content="#ffffff">
+    //- fonts preload
+    if (lang === "kz" || lang === "en")
+      link(rel="preload", href="../fonts/montserrat-regular.woff2", as="font", crossorigin="anonymous")
+      link(rel="preload", href="../fonts/montserrat-extrabold.woff2", as="font", crossorigin="anonymous")
+      link(rel="preload", href="../fonts/montserrat-semibold.woff2", as="font", crossorigin="anonymous")
+    else
+    link(rel="preload", href="./fonts/montserrat-regular.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="./fonts/montserrat-extrabold.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="./fonts/montserrat-semibold.woff2", as="font", crossorigin="anonymous")
+    //- При необходимости вы можете добавить разметку Open graf. - const Open graf = true
+    if (openGraf)
+      //- Обязательно измените содержание контента на тот что необходим!
+      //- Введите заголовок
+      meta(property="og:title", content="AsiaPetroservice")
+      //- Введите заголовок путь к картинке
+      meta(property="og:image", content="https://24fortest.ru/img/content/sharing.png")
+      //- Введите необходимый тип
+      meta(property="og:type", content="article")
+      //- Введите адрес сайта
+      meta(property="og:url", content="https://24fortest.ru/")
+      //- Введите описание
+      meta(property="og:description", content="Обработка скважин и трубопроводов, буровые растворы")
+
+    if (lang === "kz" || lang === "en")
+      link(rel="stylesheet", href="../css/style.min.css")
+
+    else
+      link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    .wrapper(class=wrapperMods)
+
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(lang)
+
+    block modals
+
+    if (lang === "kz" || lang === "en")
+      script(src="../js/vendor.min.js")
+      script(src="../js/main.min.js")
+
+    else
+      script(src="js/vendor.min.js")
+      script(src="js/main.min.js")

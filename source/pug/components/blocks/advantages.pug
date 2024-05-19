@@ -1,0 +1,121 @@
+mixin advantages(lang)
+  -
+    const slides = [
+      {
+        "ru": {
+          title: "Заголовок преимущества",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "calendar-clock",
+        },
+        "en": {
+          title: "Title#1",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "calendar-clock",
+        },
+        "kz": {
+          title: "Тақырып#1",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "calendar-clock",
+        }
+      },
+      {
+        "ru": {
+          title: "Заголовок преимущества#2",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "flask",
+        },
+        "en": {
+          title: "Title#2",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "flask",
+        },
+        "kz": {
+          title: "Тақырып#2",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "flask",
+        }
+      },
+      {
+        "ru": {
+          title: "Заголовок преимущества#3",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "forklift",
+        },
+        "en": {
+          title: "Title#3",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "forklift",
+        },
+        "kz": {
+          title: "Тақырып#3",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "forklift",
+        }
+      },
+      {
+        "ru": {
+          title: "Заголовок преимущества#4",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "globe",
+        },
+        "en": {
+          title: "Title#4",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "globe",
+        },
+        "kz": {
+          title: "Тақырып#4",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "globe",
+        }
+      },
+      {
+        "ru": {
+          title: "Заголовок преимущества#5",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "handshake-angle",
+        },
+        "en": {
+          title: "Title#5",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "handshake-angle",
+        },
+        "kz": {
+          title: "Тақырып#5",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "handshake-angle",
+        }
+      },
+      {
+        "ru": {
+          title: "Заголовок преимущества#6",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "users-alt",
+        },
+        "en": {
+          title: "Title#6",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "users-alt",
+        },
+        "kz": {
+          title: "Тақырып#6",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          icon: "users-alt",
+        }
+      },
+    ]
+  section.advantages
+    h2.visually-hidden Преимущества компании
+    .advantages__swiper.swiper
+      .advantages__swiper-wrapper.swiper-wrapper
+        each slide in slides
+          each value, key in slide
+            if lang === key
+              .swiper-slide.advantages-slide
+                .advantages-slide__icon
+                  +icon(value.icon, 24, 24, lang)
+                h3.advantages-slide__title.title.title--small!=value.title
+                p!=value.text
+      .advantages__swiper-button.advantages__swiper-button--prev.swiper-button-prev
+      .advantages__swiper-button.advantages__swiper-button--next.swiper-button-next
+

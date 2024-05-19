@@ -1,0 +1,51 @@
+mixin header(headerMods, currentUrl, lang)
+  -
+    const headerLinks = [
+      {
+        href: "services.html",
+        text: "Услуги",
+        en: "Services",
+        kz: "Қызметтер",
+      },
+      {
+        href: "catalog.html",
+        text: "Продукция",
+        en: "Products",
+        kz: "Өнімдер",
+
+      },
+      {
+        href: "about.html",
+        text: "О нас",
+        en: "About us",
+        kz: "Біз туралы",
+      },
+     {
+        href: "contacts.html",
+        text: "Контакты",
+        en: "Contacts",
+        kz: "Байланыстар",
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container
+      .header__wrapper
+        +header-logo(headerMods)
+        nav.main-nav.header__main-nav
+          button.main-nav__toggle.btn-reset(type="button", aria-label="Menu toggle", aria-pressed="false")
+            +icon("icon-burger", 20, 20)
+          .main-nav__wrapper
+            ul.main-nav__list
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.main-nav__item
+                  if (headerMods === "en")
+                    a.main-nav__link(href=link.href)= link.en
+                  else if (headerMods === "kz")
+                    a.main-nav__link(href=link.href)= link.kz
+                  else
+                    a.main-nav__link(href=link.href)= link.text
+        .header__left
+          +lang-bar(headerMods)
+          a.header__phone(href="tel:+77292333211" aria-label="Позвонить нам")= "+7 (729) 2333211"

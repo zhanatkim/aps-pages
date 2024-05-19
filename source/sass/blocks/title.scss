@@ -1,0 +1,62 @@
+.title {
+  padding: 0;
+  margin: 0;
+
+  font-family: $ff-default;
+
+  &--large {
+    color: $color-default-black;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  &--contacts {
+    color: $color-default-black;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  &--dark {
+    color: $color-default-white;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+  }
+
+  &--medium {
+    font-family: $ff-default;
+    color: $color-default-black;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include vp-1023 {
+      font-size: 36px;
+    }
+
+    @include vp-767 {
+      font-size: calc(1em + 1.57vw);
+      line-height: normal;
+    }
+  }
+
+  &--small {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: normal;
+
+    @include vp-1023 {
+      font-size: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+mixin footer(lang)
+  -
+    const footerLinks = [
+      {
+        href: "services.html",
+        text: {
+          "ru": "Услуги",
+          "en": "Services",
+          "kz": "Қызметтер",
+        },
+      },
+      {
+        href: "catalog.html",
+        text: {
+          "ru": "Продукция",
+          "en": "Products",
+          "kz": "Өнімдер",
+        },
+      },
+      {
+        href: "about.html",
+        text: {
+          "ru": "О нас",
+          "en": "About us",
+          "kz": "Біз туралы",
+        }
+      },
+     {
+        href: "contacts.html",
+        text: {
+          "ru": "Контакты",
+          "en": "Contacts",
+          "kz": "Байланыстар",
+        },
+      },
+    ]
+  footer.footer(class=lang)
+    .container
+      .footer__wrapper
+        +footer-logo(lang)
+        ul.footer__list
+          each link in footerLinks
+            each value, key in link.text
+              if lang === key
+                li.footer__item
+                  a.footer__link(href=link.href)!=value
+        +copyright(lang)

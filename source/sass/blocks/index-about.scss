@@ -1,0 +1,44 @@
+.index-about {
+  margin-top: 45%;
+  margin-bottom: 42px;
+}
+
+.index-about__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+  position: relative;
+
+  &::after {
+    content:  "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 3px;
+    height: 100%;
+    background-color: rgba($color-bg-dark, 0.5);
+
+  }
+}
+
+.index-about__title {
+  align-self: flex-start;
+}
+
+.index-about__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  p {
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+.index-about__btn {
+  align-self: flex-end;
+  margin-top: 70px;
+}

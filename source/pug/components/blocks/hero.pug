@@ -1,0 +1,72 @@
+mixin hero(lang)
+  -
+    const slides = [
+      {
+        "ru": {
+          title: "Промоутируемый товар",
+          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          btn: "Подробнее",
+        },
+        "en": {
+          title: "Title#1",
+          text: "Text#1",
+          btn: "More details",
+        },
+        "kz": {
+          title: "Тақырып#1",
+          text: "Mәтін#1",
+          btn: "толығырақ",
+        }
+      },
+      {
+        "ru": {
+          title: "Промоутируемый товар#2",
+          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          btn: "Подробнее",
+        },
+        "en": {
+          title: "Title#2",
+          text: "Text#2",
+          btn: "More details",
+        },
+        "kz": {
+          title: "Тақырып#2",
+          text: "Mәтін#2",
+          btn: "толығырақ",
+        }
+      },
+      {
+        "ru": {
+          title: "Промоутируемый товар#3",
+          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          btn: "Подробнее",
+        },
+        "en": {
+          title: "Title#3",
+          text: "Text#3",
+          btn: "More details",
+        },
+        "kz": {
+          title: "Тақырып#3",
+          text: "Mәтін#3",
+          btn: "толығырақ",
+        }
+      },
+    ]
+  .hero
+    .hero__swiper.swiper
+      .parallax-bg.hero__parallax(data-swiper-parallax="-23%")
+        .hero__image
+          +picture("slides", "hero", "jpg", 1642, 923, "petroleum refinery", lang)
+        .hero__layout
+      .swiper-wrapper.hero__wrapper
+        each slide in slides
+          each value, key in slide
+            if lang === key
+              .swiper-slide.hero__slide.hero-slide
+                .hero-slide__wrapper
+                  .container
+                    h2.hero-slide__title.title.title--large!=value.title
+                    p.hero-slide__text!=value.text
+                    +btn({href: "catalog.html", text: `${value.btn}`})(class="btn--solid hero-slide__btn")
+      .hero__pagination.swiper-pagination

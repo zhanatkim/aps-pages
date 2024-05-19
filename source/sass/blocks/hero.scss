@@ -1,0 +1,96 @@
+.hero {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // z-index: -1;
+  overflow: hidden;
+  // aspect-ratio: 1440 / 656;
+}
+
+.hero__wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.hero__parallax {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  z-index: -10;
+}
+
+.hero__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // z-index: -2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}
+
+.hero__layout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $brown-to-bottom;
+  // z-index: -1;
+  opacity: 0.34;
+}
+
+.hero__pagination.swiper-pagination-bullets {
+  bottom: 250px;
+  width: fit-content;
+  left: auto;
+  right: 300px;
+}
+
+.swiper-pagination span {
+  width: 15px;
+  height: 15px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-default-black;
+  background-color: transparent;
+  opacity: 1;
+  transition: border-color $trans-default, background-color $trans-default, opacity $trans-default;
+
+  &.swiper-pagination-bullet-active {
+    background-color: $color-default-black;
+
+    @include hover-focus {
+      border-color: $color-accent-main;
+      background-color: $color-accent-main;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  @include vp-767 {
+    width: 8px;
+    height: 8px;
+  }
+
+  @include hover-focus {
+    border-color: $color-accent-main;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

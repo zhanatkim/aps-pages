@@ -1,0 +1,27 @@
+extends ../../components/base/layout
+
+block variables
+  - const lang = "kz"
+  - const page = "index"
+  - const title = "AsiaPetroservice" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "kz"
+  - const hasFooter = true
+  - const footerMods = "kz"
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/bloc
+    +hero(lang)
+    +index-about(lang)
+    +news(lang)
+    +advantages(lang)
+    +index-contacts(lang)
+    +index-form(lang)
+
+
+
+block modals

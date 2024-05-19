@@ -1,0 +1,4 @@
+mixin img(path, image, format, width, height, altText, lang)
+  - const sub = lang === "kz" || lang === "en" ? "../" : ""
+    img(src= sub + "img/" + path + "/" + image + "." + format, srcset= sub + "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)
+

@@ -1,0 +1,29 @@
+.index-form {
+  padding: 80px 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 516fr 644fr;
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    padding: 70px;
+    background-color: $color-bg-dark;
+    color: $color-default-white;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 26px;
+    color: $color-text-form;
+  }
+}

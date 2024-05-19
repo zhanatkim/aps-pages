@@ -1,0 +1,96 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц"
+
+block main
+  style
+    include ../../sass/inline/sitemap.css
+
+  -
+    const pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная — index.html",
+        src: "index.html"
+      },
+      {
+        name: "Main — index.html",
+        src: "en/index.html"
+      },
+      {
+        name: "Басты бет — index.html",
+        src: "kz/index.html"
+      },
+      {
+        name: "Услуги — index.html",
+        src: "services.html"
+      },
+      {
+        name: "Services — index.html",
+        src: "en/services.html"
+      },
+      {
+        name: "Қызметтер — index.html",
+        src: "kz/services.html"
+      },
+      {
+        name: "Продукция — catalog.html",
+        src: "catalog.html"
+      },
+      {
+        name: "Products — catalog.html",
+        src: "en/catalog.html"
+      },
+      {
+        name: "Өнімдер — catalog.html",
+        src: "kz/catalog.html"
+      },
+      {
+        name: "О нас — about.html",
+        src: "about.html"
+      },
+      {
+        name: "About us — about.html",
+        src: "en/about.html"
+      },
+      {
+        name: "Біз туралы — about.html",
+        src: "kz/about.html"
+      },
+      {
+        name: "Контакты — contacts.html",
+        src: "contacts.html"
+      },
+      {
+        name: "Contacts — contacts.html",
+        src: "en/contacts.html"
+      },
+      {
+        name: "Байланыстар — contacts.html",
+        src: "kz/contacts.html"
+      },
+    ]
+
+  main
+    .sitemap
+      .container
+        img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+        h1 Список страниц
+        ol
+          each page in pages
+            li
+              if page.id
+                label(for=page.id)
+                  span!= page.name
+                input.visually-hidden(type="checkbox", checked=true, id=page.id)
+                div
+                  ul
+                    each item in page.innerList
+                      li
+                        a(href= item.src)= item.name
+              else
+                a(href= page.src)= page.name

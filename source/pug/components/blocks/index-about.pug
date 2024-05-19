@@ -1,0 +1,29 @@
+mixin index-about(lang)
+  -
+    const data = {
+      "ru": {
+        title: "Вводная информация о компании. Текстовый блок с ссылкой на страницу “О нас”",
+        text: "Услуги по буровым растворам во время бурения, жидкостям глушения, растворам используемым при КРС/ПРС, заканчивании скважин,  услуги по кислотным и реагентным обработкам скважин, ликвидация межколонных проявлений. Предоставление лабораторных услуг компаниям нефтегазового сектора. Производство реагентов для бурения скважин. Подбор и  производство нефтепромысловой химии: Поглотители сероводорода, деэмульгаторы, ингибиторы...",
+        btn: "ПОДРОБНЕЕ о нас",
+      },
+      "en": {
+        title: "Title#1",
+        text: "Text#1",
+        btn: "MORE ABOUT US",
+      },
+      "kz": {
+        title: "Тақырып#1",
+        text: "Mәтін#1",
+        btn:  "БІЗ ТУРАЛЫ ТОЛЫҒЫРАҚ",
+      }
+    }
+
+  section.index-about
+    .container
+      .index-about__wrapper
+        each value, key in data
+          if lang === key
+            h2.index-about__title.title.title--medium!=value.title
+            .index-about__left
+              p!=value.text
+              +btn({href: "catalog.html", text: value.btn})(class="btn--line index-about__btn")

@@ -1,0 +1,52 @@
+mixin index-contacts(lang)
+  -
+    const data = {
+      "ru": {
+        title: "Контакты",
+        th1: "АДРЕС",
+        th2: "Телефон",
+        th3: "E-mail",
+        address: "Республика Казахстан, г. Актау",
+        phone: "Позвонить нам",
+        email: "Написать нам",
+      },
+      "en": {
+        title: "Contacts",
+        th1: "Address",
+        th2: "Phone",
+        th3: "E-mail",
+        address: "Aktau, Kazakhstan",
+        phone: "Call us",
+        email: "email us",
+      },
+      "kz": {
+        title: "Байланыстар",
+        th1: "МЕКЕН жайы",
+        th2: "Телефон",
+        th3: "E-mail",
+        address: "Ақтау қаласы, Қазақстан Республикасы",
+        phone: "Бізге қоңырау шалыңыз",
+        email: "Электрондық пошта арқылы бізге хабарласыңыз",
+      },
+    }
+  section.index-contacts
+    .container
+      .index-contacts__top
+        each value, key in data
+          if lang === key
+            h2.index-contacts__title.title.title--contacts!=value.title
+            table.index-contacts__table
+              tr
+                th!=value.th1
+                th!=value.th2
+                th!=value.th3
+              tr
+                td!=value.address
+                td
+                  a.index-contacts__link(href="tel:+77292333211" aria-label=value.phone)!="+7 (729) 2333211"
+                td
+                  a.index-link(href="mailto:info@mail.com"  aria-label=value.email)!="info@mail.com"
+      .index-contacts__map
+        iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11548.694284334688!2d51.253193!3d43.644557!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41b4326479fd9ae7%3A0x3048c8c985d984b!2z0KLQntCeIEFzaWEgUGV0cm8gU2VydmljZQ!5e0!3m2!1sen!2skz!4v1710484290921!5m2!1sen!2skz" width="1160" height="406" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+
+

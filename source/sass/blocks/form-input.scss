@@ -1,0 +1,22 @@
+.form-input {
+  margin-bottom: 20px;
+
+  input,
+  textarea   {
+    color: $color-text-form;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba($color-text-form, 0.3);
+
+    background-color: transparent;
+  }
+
+}
+
+.form-input__label {
+  color: $color-text-form;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 12px;
+}

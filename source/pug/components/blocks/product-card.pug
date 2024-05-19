@@ -1,0 +1,9 @@
+mixin product-card(card)
+  article.product-card
+    .product-card__wrapper
+      .product-card__top
+        h3.product-card__title!=card.title
+        p.product-card__group!=card.group
+        p.product-card__text!=card.text
+      .product-card__bottom
+        +btn()

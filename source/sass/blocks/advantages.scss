@@ -1,0 +1,39 @@
+.advantages {
+  width: 100%;
+
+  @include vp-767 {
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  &__swiper {
+    padding-top: 117px;
+    padding-bottom: 144px;
+  }
+
+  &__swiper-button {
+    width: 36px;
+    height: 35px;
+    background-color: $color-accent-main;
+    color: $color-default-white;
+
+    top: auto;
+    bottom: 60px;
+
+    &::after {
+      font-size: 18px;
+    }
+
+    &--next {
+      left: calc(50% + 22px);
+    }
+
+    &--prev {
+      left: calc(50% - 22px);
+    }
+
+  }
+
+}
+
+

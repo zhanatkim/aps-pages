@@ -1,0 +1,42 @@
+.langs {
+  display: flex;
+}
+
+.langs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+
+}
+
+.langs__link {
+  padding: 5px 3px;
+  border-radius: 2px;
+  font-size: 14px;
+  background-color: $color-bg-default;
+  opacity: 1;
+  transition: background-color $trans-default, color $trans-default, opacity $trans-default;
+
+  &.is-active {
+    color: $color-default-white;
+    background-color: $color-bg-dark;
+  }
+
+  &:not(span) {
+    @include hover-focus {
+      background-color: $color-accent-main;
+      color: $color-default-white;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
