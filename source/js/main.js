@@ -6,6 +6,7 @@ import {mobileVhFix} from './utils/mobile-vh-fix.js';
 
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
+import {menuToggle} from './modules/menu-toggle.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    menuToggle();
     // initModals();
     // uploadFile();
     // uploadImageDrop();

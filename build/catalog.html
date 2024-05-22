@@ -28,33 +28,59 @@
               <picture>
                 <source media="(max-width: 1023px)" srcset="./img/svg/logo-mobile.svg" width="37" height="50"><img src="./img/svg/logo-desktop.svg" width="200" height="118" alt="Логотип компании" aria-hidden="true">
               </picture></a>
-            <nav class="main-nav header__main-nav">
-              <button class="main-nav__toggle btn-reset" type="button" aria-label="Menu toggle" aria-pressed="false">
-                <svg width="20" height="20" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#icon-burger"></use>
-                </svg>
-              </button>
-              <div class="main-nav__wrapper">
-                <ul class="main-nav__list">
-                  <li class="main-nav__item"><a class="main-nav__link" href="services.html">Услуги</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Продукция</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="about.html">О нас</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a>
-                  </li>
-                </ul>
+            <button class="header__toggle" type="button" aria-label="Menu toggle" aria-pressed="false"><span class="header__toggle-item"></span></button>
+            <div class="header__right drop-menu">
+              <div class="drop-menu__wrapper">
+                <nav class="main-nav" data-tabs="parent">
+                  <ul class="main-nav__list" data-tabs="controls">
+                    <li class="main-nav__item"><a class="main-nav__link" href="services.html">Услуги
+                        <svg width="13" height="10" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#polygon"></use>
+                        </svg></a>
+                      <div class="main-nav__submenu" data-tabs="content">
+                        <div class="container">
+                          <ul class="main-nav__sublist" data-tabs="element">
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="repair-insulation-work.html">Ремонтно-изоляционные работы</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="acid-treatments.html">Кислотные и химические обработки скважин</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="enhanced-oil-recovery.html">Повышение нефтеотдачи пластов</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="reagents-supply.html">Поставка реагентов для бурения и нефтедобычи</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="fluid-services.html">Услуги по буровым растворам
+                                <svg width="13" height="10" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#polygon"></use>
+                                </svg></a>
+                              <div class="main-nav__subsubmenu">
+                                <ul class="main-nav__subsublist">
+                                  <li><a class="main-nav__sublink" href="aphronics.html">APHRONICS™</a></li>
+                                  <li><a class="main-nav__sublink" href="polycat.html">POLYCAT™</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Продукция</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="about.html">О нас</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header__lang">
+                  <div class="header__langs langs">
+                    <ul class="langs__list">
+                      <li><a class="langs__link" href="kz/index.html" aria-label="На казахскую версию сайта">KZ</a></li>
+                      <li><span class="langs__link is-active">RU</span></li>
+                      <li><a class="langs__link" href="en/index.html" aria-label="На английскую версию сайта">EN</a></li>
+                    </ul>
+                  </div><a class="header__phone" href="tel:+77292216023" aria-label="Позвонить нам">+7 7292-216 023</a>
+                </div>
               </div>
-            </nav>
-            <div class="header__left">
-              <div class="header__langs langs">
-                <ul class="langs__list">
-                  <li><a class="langs__link" href="kz/index.html" aria-label="На казахскую версию сайта">KZ</a></li>
-                  <li><span class="langs__link is-active">RU</span></li>
-                  <li><a class="langs__link" href="en/index.html" aria-label="На английскую версию сайта">EN</a></li>
-                </ul>
-              </div><a class="header__phone" href="tel:+77292333211" aria-label="Позвонить нам">+7 (729) 2333211</a>
             </div>
           </div>
         </div>

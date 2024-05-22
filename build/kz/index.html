@@ -31,33 +31,59 @@
               <picture>
                 <source media="(max-width: 1023px)" srcset="../../img/svg/logo-mobile.svg" width="37" height="50"><img src="../../img/svg/logo-desktop.svg" width="200" height="118" alt="Компания логотипі" aria-hidden="true">
               </picture></a>
-            <nav class="main-nav header__main-nav">
-              <button class="main-nav__toggle btn-reset" type="button" aria-label="Menu toggle" aria-pressed="false">
-                <svg width="20" height="20" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#icon-burger"></use>
-                </svg>
-              </button>
-              <div class="main-nav__wrapper">
-                <ul class="main-nav__list">
-                  <li class="main-nav__item"><a class="main-nav__link" href="services.html">Қызметтер</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Өнімдер</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="about.html">Біз туралы</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Байланыстар</a>
-                  </li>
-                </ul>
+            <button class="header__toggle" type="button" aria-label="Menu toggle" aria-pressed="false"><span class="header__toggle-item"></span></button>
+            <div class="header__right drop-menu">
+              <div class="drop-menu__wrapper">
+                <nav class="main-nav" data-tabs="parent">
+                  <ul class="main-nav__list" data-tabs="controls">
+                    <li class="main-nav__item"><a class="main-nav__link" href="services.html">Қызметтер
+                        <svg width="13" height="10" aria-hidden="true">
+                          <use xlink:href="../img/sprite.svg#polygon"></use>
+                        </svg></a>
+                      <div class="main-nav__submenu" data-tabs="content">
+                        <div class="container">
+                          <ul class="main-nav__sublist" data-tabs="element">
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="repair-insulation-work.html">Жөндеу және оқшаулау жұмыстары</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="acid-treatments.html">Қышқылды және химиялық ұңғымаларды өңдеу</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="enhanced-oil-recovery.html">Мұнайды қалпына келтіруді жақсарту</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="reagents-supply.html">Бұрғылау және мұнай өндіру үшін реагенттерді жеткізу</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="fluid-services.html">Бұрғылау сұйықтығының қызметтері
+                                <svg width="13" height="10" aria-hidden="true">
+                                  <use xlink:href="../img/sprite.svg#polygon"></use>
+                                </svg></a>
+                              <div class="main-nav__subsubmenu">
+                                <ul class="main-nav__subsublist">
+                                  <li><a class="main-nav__sublink" href="aphronics.html">APHRONICS™</a></li>
+                                  <li><a class="main-nav__sublink" href="polycat.html">POLYCAT™</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Өнімдер</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="about.html">Біз туралы</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Байланыстар</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header__lang">
+                  <div class="header__langs langs">
+                    <ul class="langs__list">
+                      <li><span class="langs__link is-active">KZ</span></li>
+                      <li><a class="langs__link" href="../index.html" aria-label="Орыс тіліндегі нұсқасына">RU</a></li>
+                      <li><a class="langs__link" href="../en/index.html" aria-label="Ағылшын тіліндегі нұсқасына">EN</a></li>
+                    </ul>
+                  </div><a class="header__phone" href="tel:+77292216023" aria-label="Позвонить нам">+7 7292-216 023</a>
+                </div>
               </div>
-            </nav>
-            <div class="header__left">
-              <div class="header__langs langs">
-                <ul class="langs__list">
-                  <li><span class="langs__link is-active">KZ</span></li>
-                  <li><a class="langs__link" href="../index.html" aria-label="Орыс тіліндегі нұсқасына">RU</a></li>
-                  <li><a class="langs__link" href="../en/index.html" aria-label="Ағылшын тіліндегі нұсқасына">EN</a></li>
-                </ul>
-              </div><a class="header__phone" href="tel:+77292333211" aria-label="Позвонить нам">+7 (729) 2333211</a>
             </div>
           </div>
         </div>
@@ -65,40 +91,77 @@
       <main>
         <div class="hero">
           <div class="hero__swiper swiper">
-            <div class="parallax-bg hero__parallax" data-swiper-parallax="-23%">
-              <div class="hero__image">
-                <picture>
-                  <source type="image/webp" srcset="../img/slides/hero.webp, img/slides/hero@2x.webp 2x"><img src="../img/slides/hero.jpg" srcset="../img/slides/hero@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
-                </picture>
-              </div>
-              <div class="hero__layout"></div>
-            </div>
             <div class="swiper-wrapper hero__wrapper">
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Тақырып#1</h2>
                     <p class="hero-slide__text">Mәтін#1</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">толығырақ</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycat.html">толығырақ
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero1.webp, img/slides/hero1@2x.webp 2x"><img src="../img/slides/hero1.jpg" srcset="../img/slides/hero1@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Тақырып#2</h2>
                     <p class="hero-slide__text">Mәтін#2</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">толығырақ</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycatrepair-insulation-work.html">толығырақ
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero2.webp, img/slides/hero2@2x.webp 2x"><img src="../img/slides/hero2.jpg" srcset="../img/slides/hero2@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Тақырып#3</h2>
                     <p class="hero-slide__text">Mәтін#3</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">толығырақ</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="acid-treatments.html">толығырақ
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero3.webp, img/slides/hero3@2x.webp 2x"><img src="../img/slides/hero3.jpg" srcset="../img/slides/hero3@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide hero__slide hero-slide">
+                <div class="hero-slide__wrapper">
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Тақырып#3</h2>
+                    <p class="hero-slide__text">Mәтін#3</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="reagents-supply.html">толығырақ
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero4.webp, img/slides/hero4@2x.webp 2x"><img src="../img/slides/hero4.jpg" srcset="../img/slides/hero4@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
             </div>
@@ -111,7 +174,8 @@
               <h2 class="index-about__title title title--medium">Тақырып#1</h2>
               <div class="index-about__left">
                 <p>Mәтін#1</p>
-                <a class="btn btn--line index-about__btn" href="catalog.html">БІЗ ТУРАЛЫ ТОЛЫҒЫРАҚ</a>
+                <a class="btn btn--line index-about__btn" href="catalog.html">БІЗ ТУРАЛЫ ТОЛЫҒЫРАҚ
+                </a>
               </div>
             </div>
           </div>
@@ -126,7 +190,8 @@
                 </picture><span class="news__mark">жаңа</span>
               </div>
               <div class="news__right">
-                <a class="btn news__btn btn btn--news" href="#">Тақырып#1</a>
+                <a class="btn news__btn btn btn--news" href="#">Тақырып#1
+                </a>
                 <p>Mәтін#1</p>
               </div>
             </div>
@@ -244,7 +309,8 @@
                       <textarea name="Сообщение"></textarea>
                     </label>
                   </div>
-                  <button class="btn form__submit" type="submit">жіберу</button>
+                  <button class="btn form__submit" type="submit">жіберу
+                  </button>
                 </form>
               </div>
               <div class="index-form__image">

@@ -13,6 +13,10 @@
   align-items: center;
   gap: 8px;
 
+  @include vp-1023 {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
 
 }
 
@@ -38,5 +42,9 @@
     &:active {
       opacity: 0.5;
     }
+  }
+
+  @include vp-1023 {
+    font-size: 12px;
   }
 }

@@ -28,33 +28,59 @@
               <picture>
                 <source media="(max-width: 1023px)" srcset="./img/svg/logo-mobile.svg" width="37" height="50"><img src="./img/svg/logo-desktop.svg" width="200" height="118" alt="Логотип компании" aria-hidden="true">
               </picture></a>
-            <nav class="main-nav header__main-nav">
-              <button class="main-nav__toggle btn-reset" type="button" aria-label="Menu toggle" aria-pressed="false">
-                <svg width="20" height="20" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#icon-burger"></use>
-                </svg>
-              </button>
-              <div class="main-nav__wrapper">
-                <ul class="main-nav__list">
-                  <li class="main-nav__item"><a class="main-nav__link" href="services.html">Услуги</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Продукция</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="about.html">О нас</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a>
-                  </li>
-                </ul>
+            <button class="header__toggle" type="button" aria-label="Menu toggle" aria-pressed="false"><span class="header__toggle-item"></span></button>
+            <div class="header__right drop-menu">
+              <div class="drop-menu__wrapper">
+                <nav class="main-nav" data-tabs="parent">
+                  <ul class="main-nav__list" data-tabs="controls">
+                    <li class="main-nav__item"><a class="main-nav__link" href="services.html">Услуги
+                        <svg width="13" height="10" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#polygon"></use>
+                        </svg></a>
+                      <div class="main-nav__submenu" data-tabs="content">
+                        <div class="container">
+                          <ul class="main-nav__sublist" data-tabs="element">
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="repair-insulation-work.html">Ремонтно-изоляционные работы</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="acid-treatments.html">Кислотные и химические обработки скважин</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="enhanced-oil-recovery.html">Повышение нефтеотдачи пластов</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="reagents-supply.html">Поставка реагентов для бурения и нефтедобычи</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="fluid-services.html">Услуги по буровым растворам
+                                <svg width="13" height="10" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#polygon"></use>
+                                </svg></a>
+                              <div class="main-nav__subsubmenu">
+                                <ul class="main-nav__subsublist">
+                                  <li><a class="main-nav__sublink" href="aphronics.html">APHRONICS™</a></li>
+                                  <li><a class="main-nav__sublink" href="polycat.html">POLYCAT™</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Продукция</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="about.html">О нас</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header__lang">
+                  <div class="header__langs langs">
+                    <ul class="langs__list">
+                      <li><a class="langs__link" href="kz/index.html" aria-label="На казахскую версию сайта">KZ</a></li>
+                      <li><span class="langs__link is-active">RU</span></li>
+                      <li><a class="langs__link" href="en/index.html" aria-label="На английскую версию сайта">EN</a></li>
+                    </ul>
+                  </div><a class="header__phone" href="tel:+77292216023" aria-label="Позвонить нам">+7 7292-216 023</a>
+                </div>
               </div>
-            </nav>
-            <div class="header__left">
-              <div class="header__langs langs">
-                <ul class="langs__list">
-                  <li><a class="langs__link" href="kz/index.html" aria-label="На казахскую версию сайта">KZ</a></li>
-                  <li><span class="langs__link is-active">RU</span></li>
-                  <li><a class="langs__link" href="en/index.html" aria-label="На английскую версию сайта">EN</a></li>
-                </ul>
-              </div><a class="header__phone" href="tel:+77292333211" aria-label="Позвонить нам">+7 (729) 2333211</a>
             </div>
           </div>
         </div>
@@ -62,196 +88,83 @@
       <main>
         <div class="hero">
           <div class="hero__swiper swiper">
-            <div class="parallax-bg hero__parallax" data-swiper-parallax="-23%">
-              <div class="hero__image">
-                <picture>
-                  <source type="image/webp" srcset="img/slides/hero.webp, img/slides/hero@2x.webp 2x"><img src="img/slides/hero.jpg" srcset="img/slides/hero@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
-                </picture>
-              </div>
-              <div class="hero__layout"></div>
-            </div>
             <div class="swiper-wrapper hero__wrapper">
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
-                    <h2 class="hero-slide__title title title--large">Промоутируемый товар</h2>
-                    <p class="hero-slide__text">Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">Подробнее</a>
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Поликатионные растворы POLYCAT&trade;</h2>
+                    <p class="hero-slide__text">Поликатионные растворы - новое поколение буровых растворов.</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycat.html">Подробнее
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/slides/hero1.webp, img/slides/hero1@2x.webp 2x"><img src="img/slides/hero1.jpg" srcset="img/slides/hero1@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
-                    <h2 class="hero-slide__title title title--large">Промоутируемый товар#2</h2>
-                    <p class="hero-slide__text">Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">Подробнее</a>
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Ремонтно - изоляционные работы</h2>
+                    <p class="hero-slide__text">Устранение негерметичности обсадных колонн, устранение межколонных проявлений и перетоков.</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycatrepair-insulation-work.html">Подробнее
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/slides/hero2.webp, img/slides/hero2@2x.webp 2x"><img src="img/slides/hero2.jpg" srcset="img/slides/hero2@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
-                    <h2 class="hero-slide__title title title--large">Промоутируемый товар#3</h2>
-                    <p class="hero-slide__text">Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">Подробнее</a>
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Кислотные и&nbsp;химические обработки скважин</h2>
+                    <p class="hero-slide__text">Oчистка забоя от минеральных отложений и кольматантов, восстановление обратной проницаемости пластов.</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="acid-treatments.html">Подробнее
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/slides/hero3.webp, img/slides/hero3@2x.webp 2x"><img src="img/slides/hero3.jpg" srcset="img/slides/hero3@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide hero__slide hero-slide">
+                <div class="hero-slide__wrapper">
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Реагенты для бурения и&nbsp;нефтедобычи</h2>
+                    <p class="hero-slide__text">собственное производство, подбор и поставка реагентов для бурения, крепления, заканчивания, КРС, ПРС, жидкостей глушения, добычной химии.</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="reagents-supply.html">Подробнее
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="img/slides/hero4.webp, img/slides/hero4@2x.webp 2x"><img src="img/slides/hero4.jpg" srcset="img/slides/hero4@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
             </div>
             <div class="hero__pagination swiper-pagination"></div>
           </div>
         </div>
-        <section class="index-about">
-          <div class="container">
-            <div class="index-about__wrapper">
-              <h2 class="index-about__title title title--medium">Вводная информация о компании. Текстовый блок с ссылкой на страницу “О нас”</h2>
-              <div class="index-about__left">
-                <p>Услуги по буровым растворам во время бурения, жидкостям глушения, растворам используемым при КРС/ПРС, заканчивании скважин,  услуги по кислотным и реагентным обработкам скважин, ликвидация межколонных проявлений. Предоставление лабораторных услуг компаниям нефтегазового сектора. Производство реагентов для бурения скважин. Подбор и  производство нефтепромысловой химии: Поглотители сероводорода, деэмульгаторы, ингибиторы...</p>
-                <a class="btn btn--line index-about__btn" href="catalog.html">ПОДРОБНЕЕ о нас</a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="news">
-          <div class="container">
-            <div class="news__wrapper">
-              <div class="h2 visually-hidden">Новости</div>
-              <div class="news__left">
-                <picture>
-                  <source type="image/webp" srcset="img/slides/news.webp, img/slides/news@2x.webp 2x"><img src="img/slides/news.jpg" srcset="img/slides/news@2x.jpg 2x" width="556" height="312" alt="petroleum refinery">
-                </picture><span class="news__mark">Новое</span>
-              </div>
-              <div class="news__right">
-                <a class="btn news__btn btn btn--news" href="#">Заголовок новости</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="advantages">
-          <h2 class="visually-hidden">Преимущества компании</h2>
-          <div class="advantages__swiper swiper">
-            <div class="advantages__swiper-wrapper swiper-wrapper">
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#calendar-clock"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#flask"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества#2</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#forklift"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества#3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#globe"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества#4</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#handshake-angle"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества#5</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-              <div class="swiper-slide advantages-slide">
-                <div class="advantages-slide__icon">
-                  <svg width="24" height="24" aria-hidden="true">
-                    <use xlink:href="img/sprite.svg#users-alt"></use>
-                  </svg>
-                </div>
-                <h3 class="advantages-slide__title title title--small">Заголовок преимущества#6</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
-              </div>
-            </div>
-            <div class="advantages__swiper-button advantages__swiper-button--prev swiper-button-prev"></div>
-            <div class="advantages__swiper-button advantages__swiper-button--next swiper-button-next"></div>
-          </div>
-        </section>
-        <section class="index-contacts">
-          <div class="container">
-            <div class="index-contacts__top">
-              <h2 class="index-contacts__title title title--contacts">Контакты</h2>
-              <table class="index-contacts__table">
-                <tr>
-                  <th>АДРЕС</th>
-                  <th>Телефон</th>
-                  <th>E-mail</th>
-                </tr>
-                <tr>
-                  <td>Республика Казахстан, г. Актау</td>
-                  <td><a class="index-contacts__link" href="tel:+77292333211" aria-label="Позвонить нам">+7 (729) 2333211</a></td>
-                  <td><a class="index-link" href="mailto:info@mail.com" aria-label="Написать нам">info@mail.com</a></td>
-                </tr>
-              </table>
-            </div>
-            <div class="index-contacts__map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11548.694284334688!2d51.253193!3d43.644557!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41b4326479fd9ae7%3A0x3048c8c985d984b!2z0KLQntCeIEFzaWEgUGV0cm8gU2VydmljZQ!5e0!3m2!1sen!2skz!4v1710484290921!5m2!1sen!2skz" width="1160" height="406" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </section>
-        <section class="index-form">
-          <div class="container">
-            <div class="index-form__wrapper">
-              <div class="index-form__form form">
-                <h2 class="index-form__title title title--dark">Напишите нам</h2>
-                <p class="index-form__text">Наши менеджеры  ответят на ваши вопросы , произведут расчет стоимости услуг и подготовят индивидуальное коммерческое предложение.</p>
-                <form action="#" method="post">
-                  <div class="form-input form-input--name">
-                    <label><span class="form-input__label">Имя</span>
-                      <input type="text" name="Имя">
-                    </label>
-                  </div>
-                  <div class="form-input form-input--email">
-                    <label><span class="form-input__label">e-mail</span>
-                      <input type="text" name="e-mail">
-                    </label>
-                  </div>
-                  <div class="form-input form-input--phone">
-                    <label><span class="form-input__label">Телефон</span>
-                      <input type="text" name="Телефон">
-                    </label>
-                  </div>
-                  <div class="form-textarea">
-                    <label><span class="form-textarea__label">Ваше сообщение</span>
-                      <textarea name="Сообщение"></textarea>
-                    </label>
-                  </div>
-                  <button class="btn form__submit" type="submit">отправить</button>
-                </form>
-              </div>
-              <div class="index-form__image">
-                <picture>
-                  <source type="image/webp" srcset="img/content/form.webp, img/content/form@2x.webp 2x"><img src="img/content/form.jpg" srcset="img/content/form@2x.jpg 2x" width="644" height="848" alt="petroleum refinery">
-                </picture>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <footer class="footer ru">
         <div class="container">

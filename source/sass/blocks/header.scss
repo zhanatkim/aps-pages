@@ -7,32 +7,150 @@
 
   background-color: transparent;
 
+  transition: background-color $trans-default;
+
   &__logo {
     color: $color-default-white;
+  }
+
+  @include vp-767 {
+    padding: 10px 0;
   }
 }
 
 .header__logo {
   cursor: pointer;
+  // user-select: none;
+
+  @include vp-1023 {
+    img {
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  @include vp-767 {
+    img {
+      width: 37px;
+      height: auto;
+    }
+  }
 }
 
 .header__wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 20px;
+  gap: 10%;
+
+  @include vp-1023 {
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
 }
 
+.header__right {
+  width: 100%;
+}
 
-.header__left {
+.header__lang {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include vp-767 {
+    flex-direction: column-reverse;
+    padding: 23px 0;
+    gap: 10px;
+  }
 }
 
 .header__phone {
+  @include link-interactive;
+
   font-weight: 600;
   font-size: 26px;
 
-  @include link-interactive;
+  @include vp-1279 {
+    font-size: 20px;
+  }
+
+  @include vp-1023 {
+    font-size: 16px;
+  }
+}
+
+// БУРГЕР
+
+.header__toggle {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 24px;
+  height: 20px;
+  position: relative;
+
+  @include hover-focus {
+    outline: none;
+  }
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.header__toggle-item {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  transition: transform $trans-default;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    background-color: #000000;
+    transition: transform $trans-default;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    top: 8px;
+  }
+}
+
+.header__toggle.is-active {
+  .header__toggle-item {
+    background-color: transparent;
+
+    &::after {
+      transform: rotate(135deg);
+      top: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
 }

@@ -1,59 +1,49 @@
 .hero {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
+  // position: absolute;
+  // width: 100%;
+  // height: auto;
+  // top: 0;
+  // left: 0;
+
+  display: flex;
+
   // z-index: -1;
   overflow: hidden;
-  // aspect-ratio: 1440 / 656;
+  aspect-ratio: 768 / 436;
 }
 
-.hero__wrapper {
+.hero__swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
 }
 
-.hero__parallax {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130%;
-  height: 100%;
-  z-index: -10;
-}
-
-.hero__image {
-  position: absolute;
-  left: 0;
-  top: 0;
+.hero__wrapper {
   width: 100%;
   height: 100%;
-  // z-index: -2;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-  }
 }
 
-.hero__layout {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: $brown-to-bottom;
-  // z-index: -1;
-  opacity: 0.34;
-}
+// .hero__parallax {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 130%;
+//   height: 100%;
+//   z-index: -10;
+// }
 
 .hero__pagination.swiper-pagination-bullets {
-  bottom: 250px;
+  bottom: 13%;
   width: fit-content;
   left: auto;
-  right: 300px;
+  right: 8%;
+
+  @include vp-767 {
+    bottom: 5%;
+    right: 20px;
+  }
 }
 
 .swiper-pagination span {
@@ -61,13 +51,17 @@
   height: 15px;
   border-width: 2px;
   border-style: solid;
-  border-color: $color-default-black;
+  border-color: $color-default-white;
   background-color: transparent;
   opacity: 1;
   transition: border-color $trans-default, background-color $trans-default, opacity $trans-default;
 
   &.swiper-pagination-bullet-active {
-    background-color: $color-default-black;
+    background-color: $color-default-white;
+
+    @include vp-767 {
+      background-color: $color-default-black;
+    }
 
     @include hover-focus {
       border-color: $color-accent-main;
@@ -80,7 +74,14 @@
     }
   }
 
+  @include vp-1023 {
+    width: 10px;
+    height: 10px;
+    border-width: 1px;
+  }
+
   @include vp-767 {
+    border-color: $color-default-black;
     width: 8px;
     height: 8px;
   }

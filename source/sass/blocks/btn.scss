@@ -1,21 +1,65 @@
 .btn {
   display: inline-flex;
-  padding: 10px 20px;
+  align-items: center;
+  padding: 10px 30px;
   font-weight: 700;
   font-size: 20px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 
-  &--solid {
+  &--arrow {
+    gap: 12px;
     background-color: $color-accent-main;
+
+    border-radius: 5px;
+
     color: $color-default-white;
     transition: background-color $trans-default, color $trans-default, opacity $trans-default;
 
+    svg {
+      transition: transform $trans-default;
+
+      @include vp-1023 {
+        width: 7px;
+        height: auto;
+      }
+
+      @include vp-767 {
+        width: 6px;
+        height: auto;
+      }
+    }
+
+    @include vp-1279 {
+      font-size: 16px;
+    }
+
+    @include vp-1023 {
+      padding: 6px 20px;
+      font-size: 14px;
+    }
+    @include vp-767 {
+      padding: 4px 14px;
+      font-size: 10px;
+    }
     @include hover-focus {
-      background-color: $color-bg-dark;
+      box-shadow: 0 0 6px $color-bg-light;
+
+      svg {
+        transform: translate(8px);
+      }
+
+      &:active {
+        svg {
+          transform: translate(-10px);
+        }
+      }
     }
 
     &:active {
-      opacity: 0.5;
+      svg {
+        transform: translate(-10px);
+      }
     }
 
     &:disabled {
@@ -71,7 +115,5 @@
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
-
-
   }
 }

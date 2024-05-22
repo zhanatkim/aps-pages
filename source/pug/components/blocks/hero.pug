@@ -2,9 +2,10 @@ mixin hero(lang)
   -
     const slides = [
       {
+        href: "polycat.html",
         "ru": {
-          title: "Промоутируемый товар",
-          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          title: "Поликатионные растворы POLYCAT&trade;",
+          text: "Поликатионные растворы - новое поколение буровых растворов.",
           btn: "Подробнее",
         },
         "en": {
@@ -19,9 +20,10 @@ mixin hero(lang)
         }
       },
       {
+        href: "polycatrepair-insulation-work.html",
         "ru": {
-          title: "Промоутируемый товар#2",
-          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          title: "Ремонтно - изоляционные работы",
+          text: "Устранение негерметичности обсадных колонн, устранение межколонных проявлений и перетоков.",
           btn: "Подробнее",
         },
         "en": {
@@ -36,9 +38,28 @@ mixin hero(lang)
         }
       },
       {
+        href: "acid-treatments.html",
         "ru": {
-          title: "Промоутируемый товар#3",
-          text: "Промоутируемый товар или услуга(включает ссылку на карточку товара/услуги)",
+          title: "Кислотные и&nbsp;химические обработки скважин",
+          text: "Oчистка забоя от минеральных отложений и кольматантов, восстановление обратной проницаемости пластов.",
+          btn: "Подробнее",
+        },
+        "en": {
+          title: "Title#3",
+          text: "Text#3",
+          btn: "More details",
+        },
+        "kz": {
+          title: "Тақырып#3",
+          text: "Mәтін#3",
+          btn: "толығырақ",
+        }
+      },
+      {
+        href: "reagents-supply.html",
+        "ru": {
+          title: "Реагенты для бурения и&nbsp;нефтедобычи",
+          text: "собственное производство, подбор и поставка реагентов для бурения, крепления, заканчивания, КРС, ПРС, жидкостей глушения, добычной химии.",
           btn: "Подробнее",
         },
         "en": {
@@ -55,18 +76,35 @@ mixin hero(lang)
     ]
   .hero
     .hero__swiper.swiper
-      .parallax-bg.hero__parallax(data-swiper-parallax="-23%")
-        .hero__image
-          +picture("slides", "hero", "jpg", 1642, 923, "petroleum refinery", lang)
-        .hero__layout
       .swiper-wrapper.hero__wrapper
-        each slide in slides
+        each slide, index in slides
           each value, key in slide
             if lang === key
               .swiper-slide.hero__slide.hero-slide
                 .hero-slide__wrapper
-                  .container
+                  .hero-slide__inner
                     h2.hero-slide__title.title.title--large!=value.title
                     p.hero-slide__text!=value.text
-                    +btn({href: "catalog.html", text: `${value.btn}`})(class="btn--solid hero-slide__btn")
+                    +btn({href: slide.href, text: `${value.btn}`})(class="btn--arrow hero-slide__btn")
+                      +icon("arrow", 9, 16, lang)
+                .hero-slide__image
+                  +picture("slides", `hero${index + 1}`, "jpg", 1642, 923, "petroleum refinery", lang)
       .hero__pagination.swiper-pagination
+
+  //- .hero
+  //-   .hero__swiper.swiper
+  //-     .parallax-bg.hero__parallax(data-swiper-parallax="-23%")
+  //-       .hero__image
+  //-         +picture("slides", "hero", "jpg", 1642, 923, "petroleum refinery", lang)
+  //-       .hero__layout
+  //-     .swiper-wrapper.hero__wrapper
+  //-       each slide in slides
+  //-         each value, key in slide
+  //-           if lang === key
+  //-             .swiper-slide.hero__slide.hero-slide
+  //-               .hero-slide__wrapper
+  //-                 .container
+  //-                   h2.hero-slide__title.title.title--large!=value.title
+  //-                   p.hero-slide__text!=value.text
+  //-                   +btn({href: "catalog.html", text: `${value.btn}`})(class="btn--solid hero-slide__btn")
+  //-     .hero__pagination.swiper-pagination

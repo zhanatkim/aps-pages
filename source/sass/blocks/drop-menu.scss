@@ -1,0 +1,72 @@
+.drop-menu {
+  width: 100%;
+  @include vp-767 {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    transition: background-color $trans-modal, opacity $trans-modal;
+
+    &.is-active {
+      background-color: $color-bg-layout;
+      opacity: 1;
+      visibility: visible;
+      overflow: visible;
+
+      .drop-menu__wrapper {
+        max-height: 100%;
+        // opacity: 1;
+        // visibility: visible;
+        // overflow: visible;
+
+        background-color: $color-bg-beige;
+        border-radius: 0 0 30px 30px;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 15%;
+          height: 6px;
+          background-color: #949494;
+          border-radius: 2.5px;
+
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 50%);
+        }
+      }
+    }
+  }
+}
+
+.drop-menu__wrapper {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 1%;
+
+  @include vp-1023 {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 0;
+    // opacity: 0;
+    // visibility: hidden;
+    // overflow: hidden;
+
+    transition: max-height $trans-modal;
+  }
+}

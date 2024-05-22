@@ -31,33 +31,59 @@
               <picture>
                 <source media="(max-width: 1023px)" srcset="../../img/svg/logo-mobile.svg" width="37" height="50"><img src="../../img/svg/logo-desktop.svg" width="200" height="118" alt="Logotype" aria-hidden="true">
               </picture></a>
-            <nav class="main-nav header__main-nav">
-              <button class="main-nav__toggle btn-reset" type="button" aria-label="Menu toggle" aria-pressed="false">
-                <svg width="20" height="20" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#icon-burger"></use>
-                </svg>
-              </button>
-              <div class="main-nav__wrapper">
-                <ul class="main-nav__list">
-                  <li class="main-nav__item"><a class="main-nav__link" href="services.html">Services</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Products</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="about.html">About us</a>
-                  </li>
-                  <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Contacts</a>
-                  </li>
-                </ul>
+            <button class="header__toggle" type="button" aria-label="Menu toggle" aria-pressed="false"><span class="header__toggle-item"></span></button>
+            <div class="header__right drop-menu">
+              <div class="drop-menu__wrapper">
+                <nav class="main-nav" data-tabs="parent">
+                  <ul class="main-nav__list" data-tabs="controls">
+                    <li class="main-nav__item"><a class="main-nav__link" href="services.html">Services
+                        <svg width="13" height="10" aria-hidden="true">
+                          <use xlink:href="../img/sprite.svg#polygon"></use>
+                        </svg></a>
+                      <div class="main-nav__submenu" data-tabs="content">
+                        <div class="container">
+                          <ul class="main-nav__sublist" data-tabs="element">
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="repair-insulation-work.html">Repair and insulation work</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="acid-treatments.html">Acid and chemical treatments</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="enhanced-oil-recovery.html">Enhanced oil recovery</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="reagents-supply.html">Supply of reagents for drilling and oil production</a>
+                            </li>
+                            <li class="main-nav__subitem"><a class="main-nav__sublink" href="fluid-services.html">Drilling fluid services
+                                <svg width="13" height="10" aria-hidden="true">
+                                  <use xlink:href="../img/sprite.svg#polygon"></use>
+                                </svg></a>
+                              <div class="main-nav__subsubmenu">
+                                <ul class="main-nav__subsublist">
+                                  <li><a class="main-nav__sublink" href="aphronics.html">APHRONICS™</a></li>
+                                  <li><a class="main-nav__sublink" href="polycat.html">POLYCAT™</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Products</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="about.html">About us</a>
+                    </li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Contacts</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header__lang">
+                  <div class="header__langs langs">
+                    <ul class="langs__list">
+                      <li><a class="langs__link" href="../kz/index.html" aria-label=" To Kazakh page">KZ</a></li>
+                      <li><a class="langs__link" href="../index.html" aria-label="To Russian page">RU</a></li>
+                      <li><span class="langs__link is-active">EN</span></li>
+                    </ul>
+                  </div><a class="header__phone" href="tel:+77292216023" aria-label="Позвонить нам">+7 7292-216 023</a>
+                </div>
               </div>
-            </nav>
-            <div class="header__left">
-              <div class="header__langs langs">
-                <ul class="langs__list">
-                  <li><a class="langs__link" href="../kz/index.html" aria-label=" To Kazakh page">KZ</a></li>
-                  <li><a class="langs__link" href="../index.html" aria-label="To Russian page">RU</a></li>
-                  <li><span class="langs__link is-active">EN</span></li>
-                </ul>
-              </div><a class="header__phone" href="tel:+77292333211" aria-label="Позвонить нам">+7 (729) 2333211</a>
             </div>
           </div>
         </div>
@@ -65,40 +91,77 @@
       <main>
         <div class="hero">
           <div class="hero__swiper swiper">
-            <div class="parallax-bg hero__parallax" data-swiper-parallax="-23%">
-              <div class="hero__image">
-                <picture>
-                  <source type="image/webp" srcset="../img/slides/hero.webp, img/slides/hero@2x.webp 2x"><img src="../img/slides/hero.jpg" srcset="../img/slides/hero@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
-                </picture>
-              </div>
-              <div class="hero__layout"></div>
-            </div>
             <div class="swiper-wrapper hero__wrapper">
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Title#1</h2>
                     <p class="hero-slide__text">Text#1</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">More details</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycat.html">More details
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero1.webp, img/slides/hero1@2x.webp 2x"><img src="../img/slides/hero1.jpg" srcset="../img/slides/hero1@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Title#2</h2>
                     <p class="hero-slide__text">Text#2</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">More details</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="polycatrepair-insulation-work.html">More details
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero2.webp, img/slides/hero2@2x.webp 2x"><img src="../img/slides/hero2.jpg" srcset="../img/slides/hero2@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide hero__slide hero-slide">
                 <div class="hero-slide__wrapper">
-                  <div class="container">
+                  <div class="hero-slide__inner">
                     <h2 class="hero-slide__title title title--large">Title#3</h2>
                     <p class="hero-slide__text">Text#3</p>
-                    <a class="btn btn--solid hero-slide__btn" href="catalog.html">More details</a>
+                    <a class="btn btn--arrow hero-slide__btn" href="acid-treatments.html">More details
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
                   </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero3.webp, img/slides/hero3@2x.webp 2x"><img src="../img/slides/hero3.jpg" srcset="../img/slides/hero3@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide hero__slide hero-slide">
+                <div class="hero-slide__wrapper">
+                  <div class="hero-slide__inner">
+                    <h2 class="hero-slide__title title title--large">Title#3</h2>
+                    <p class="hero-slide__text">Text#3</p>
+                    <a class="btn btn--arrow hero-slide__btn" href="reagents-supply.html">More details
+                      <svg width="9" height="16" aria-hidden="true">
+                        <use xlink:href="../img/sprite.svg#arrow"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="hero-slide__image">
+                  <picture>
+                    <source type="image/webp" srcset="../img/slides/hero4.webp, img/slides/hero4@2x.webp 2x"><img src="../img/slides/hero4.jpg" srcset="../img/slides/hero4@2x.jpg 2x" width="1642" height="923" alt="petroleum refinery">
+                  </picture>
                 </div>
               </div>
             </div>
@@ -111,7 +174,8 @@
               <h2 class="index-about__title title title--medium">Title#1</h2>
               <div class="index-about__left">
                 <p>Text#1</p>
-                <a class="btn btn--line index-about__btn" href="catalog.html">MORE ABOUT US</a>
+                <a class="btn btn--line index-about__btn" href="catalog.html">MORE ABOUT US
+                </a>
               </div>
             </div>
           </div>
@@ -126,7 +190,8 @@
                 </picture><span class="news__mark">new</span>
               </div>
               <div class="news__right">
-                <a class="btn news__btn btn btn--news" href="#">Title#1</a>
+                <a class="btn news__btn btn btn--news" href="#">Title#1
+                </a>
                 <p>Text#1</p>
               </div>
             </div>
@@ -244,7 +309,8 @@
                       <textarea name="Сообщение"></textarea>
                     </label>
                   </div>
-                  <button class="btn form__submit" type="submit">send</button>
+                  <button class="btn form__submit" type="submit">send
+                  </button>
                 </form>
               </div>
               <div class="index-form__image">

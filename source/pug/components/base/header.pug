@@ -3,28 +3,89 @@ mixin header(headerMods, currentUrl, lang)
     const headerLinks = [
       {
         href: "services.html",
-        text: "Услуги",
-        en: "Services",
-        kz: "Қызметтер",
+        text: {
+          "ru": "Услуги",
+          "en": "Services",
+          "kz": "Қызметтер",
+        },
+        icon: true,
+        subItems: [
+          {
+            href: "repair-insulation-work.html",
+            text: {
+              "ru": "Ремонтно-изоляционные работы",
+              "en": "Repair and insulation work",
+              "kz": "Жөндеу және оқшаулау жұмыстары",
+            },
+          },
+          {
+            href: "acid-treatments.html",
+            text: {
+              "ru": "Кислотные и химические обработки скважин",
+              "en": "Acid and chemical treatments",
+              "kz": "Қышқылды және химиялық ұңғымаларды өңдеу",
+            },
+          },
+          {
+            href: "enhanced-oil-recovery.html",
+            text: {
+              "ru": "Повышение нефтеотдачи пластов",
+              "en": "Enhanced oil recovery",
+              "kz": "Мұнайды қалпына келтіруді жақсарту",
+            },
+          },
+          {
+            href: "reagents-supply.html",
+            text: {
+              "ru": "Поставка реагентов для бурения и нефтедобычи",
+              "en": "Supply of reagents for drilling and oil production",
+              "kz": "Бұрғылау және мұнай өндіру үшін реагенттерді жеткізу",
+            },
+          },
+          {
+            href: "fluid-services.html",
+            text: {
+              "ru": "Услуги по буровым растворам",
+              "en": "Drilling fluid services",
+              "kz": "Бұрғылау сұйықтығының қызметтері",
+            },
+            icon: true,
+            tags: [
+              {
+                href: "aphronics.html",
+                text: "APHRONICS™",
+              },
+              {
+                href: "polycat.html",
+                text: "POLYCAT™",
+              },
+            ]
+          },
+        ]
       },
       {
         href: "catalog.html",
-        text: "Продукция",
-        en: "Products",
-        kz: "Өнімдер",
-
+        text: {
+          "ru": "Продукция",
+          "en": "Products",
+          "kz": "Өнімдер",
+        },
       },
       {
         href: "about.html",
-        text: "О нас",
-        en: "About us",
-        kz: "Біз туралы",
+        text: {
+          "ru": "О нас",
+          "en": "About us",
+          "kz": "Біз туралы",
+        },
       },
      {
         href: "contacts.html",
-        text: "Контакты",
-        en: "Contacts",
-        kz: "Байланыстар",
+        text: {
+          "ru": "Контакты",
+          "en": "Contacts",
+          "kz": "Байланыстар",
+        },
       },
     ]
 
@@ -32,20 +93,41 @@ mixin header(headerMods, currentUrl, lang)
     .container
       .header__wrapper
         +header-logo(headerMods)
-        nav.main-nav.header__main-nav
-          button.main-nav__toggle.btn-reset(type="button", aria-label="Menu toggle", aria-pressed="false")
-            +icon("icon-burger", 20, 20)
-          .main-nav__wrapper
-            ul.main-nav__list
-              each link in headerLinks
-                - const activeState = currentUrl === link.href
-                li.main-nav__item
-                  if (headerMods === "en")
-                    a.main-nav__link(href=link.href)= link.en
-                  else if (headerMods === "kz")
-                    a.main-nav__link(href=link.href)= link.kz
-                  else
-                    a.main-nav__link(href=link.href)= link.text
-        .header__left
-          +lang-bar(headerMods)
-          a.header__phone(href="tel:+77292333211" aria-label="Позвонить нам")= "+7 (729) 2333211"
+        button.header__toggle(type="button", aria-label="Menu toggle", aria-pressed="false")
+          span.header__toggle-item
+          //- +icon("icon-burger", 20, 20)
+        .header__right.drop-menu
+          .drop-menu__wrapper
+            nav.main-nav(data-tabs="parent")
+              ul.main-nav__list(data-tabs="controls")
+                each link in headerLinks
+                  - const activeState = currentUrl === link.href
+                  li.main-nav__item
+                    each value, key in link.text
+                      if headerMods === key
+                        a.main-nav__link(href=link.href)= value
+                          if (link.icon === true)
+                            +icon("polygon", 13, 10, headerMods)
+                    if link.subItems
+                      .main-nav__submenu(data-tabs="content")
+                        .container
+                          ul.main-nav__sublist(data-tabs="element")
+                            each subItem in link.subItems
+                              li.main-nav__subitem
+                                each value, key in subItem.text
+                                  if headerMods === key
+                                    a.main-nav__sublink(href=subItem.href)=value
+                                      if (subItem.icon ===true)
+                                        +icon("polygon", 13, 10, headerMods)
+                                if subItem.tags
+                                  .main-nav__subsubmenu
+                                    ul.main-nav__subsublist
+                                      each tag in subItem.tags
+                                        li
+                                          a.main-nav__sublink(href=tag.href)= tag.text
+
+
+
+            .header__lang
+              +lang-bar(headerMods)
+              a.header__phone(href="tel:+77292216023" aria-label="Позвонить нам")= "+7 7292-216 023"
