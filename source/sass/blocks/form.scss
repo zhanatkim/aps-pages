@@ -1,3 +1,30 @@
 .form {
+  display: flex;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include vp-767 {
+      color: $color-default-black;
+    }
+  }
+}
+
+.form__btn {
+  letter-spacing: 2px;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  color: $color-default-white;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+
+  @include vp-767 {
+    color: $color-default-black;
+  }
 
 }

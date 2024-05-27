@@ -1,0 +1,19 @@
+extends ../../components/base/layout
+
+block variables
+  - const lang = "en"
+  - const page = "services"
+  - const title = "Services" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "en"
+  - const hasFooter = true
+  - const footerMods = "en"
+  - const currentUrl = "services.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+   +services-hero(lang)
+   +services-catalog(lang)
+
+block modals

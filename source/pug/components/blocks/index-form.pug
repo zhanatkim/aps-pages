@@ -3,12 +3,12 @@ mixin index-form(lang)
     const formData = {
       "ru": {
         title: "Напишите нам",
-        text: "Наши менеджеры  ответят на ваши вопросы , произведут расчет стоимости услуг и подготовят индивидуальное коммерческое предложение.",
+        text: "Наши менеджеры ответят на&nbsp;ваши вопросы , произведут расчет стоимости услуг и&nbsp;подготовят индивидуальное коммерческое предложение.",
         label1: "Имя",
         label2: "e-mail",
         label3: "Телефон",
         label4: "Ваше сообщение",
-        circs: "Я согласен на обработку моих персональных данных",
+        circs: "Я согласен на обработку моих персональных данных.",
         btn: "отправить",
       },
       "en": {
@@ -18,7 +18,7 @@ mixin index-form(lang)
         label2: "e-mail",
         label3: "Phone",
         label4: "Your message",
-        circs: "I'm agree to process my personal data",
+        circs: "I'm agree to process my personal data.",
         btn: "send",
       },
       "kz": {
@@ -28,38 +28,42 @@ mixin index-form(lang)
         label2: "e-mail",
         label3: "телефон нөмірі",
         label4: "Сіздің хабарламаңыз",
-        circs: "Мен жеке деректерімді өңдеуге келісемін",
+        circs: "Мен жеке деректерімді өңдеуге келісемін.",
         btn: "жіберу",
       },
     }
   section.index-form
     .container
       .index-form__wrapper
-        .index-form__form.form
+        .index-form__column
           each value, key in formData
             if lang === key
               h2.index-form__title.title.title--dark!=value.title
               p.index-form__text!=value.text
-              form(action="#" method="post")
-                +custom-input({
-                  inputLabel: value.label1,
-                  inputName: "Имя",
-                })(class="form-input--name")
-                +custom-input({
-                  inputLabel: value.label2,
-                  inputName: "e-mail",
-                })(class="form-input--email")
-                +custom-input({
-                  inputLabel: value.label3,
-                  inputName: "Телефон",
-                })(class="form-input--phone")
-                +custom-textarea({
-                  inputLabel: value.label4,
-                  inputName: "Сообщение",
-                })
-                +btn({
-                  type: "submit",
-                  text: value.btn,
-                })(class="form__submit")
+              .index-form__form.form
+                form(action="#" method="post")
+                  +custom-input({
+                    inputLabel: value.label1,
+                    inputName: "user-name",
+                  })(class="form-input--name")
+                  +custom-input({
+                    inputLabel: value.label2,
+                    inputName: "user-email",
+                  })(class="form-input--email")
+                  +custom-input({
+                    inputLabel: value.label3,
+                    inputName: "user-phone",
+                  })(class="form-input--phone")
+                  +custom-textarea({
+                    inputLabel: value.label4,
+                    inputName: "user-message",
+                  })
+                  +custom-toggle({
+                    inputLabel: value.circs,
+                  })
+                  +btn({
+                    type: "submit",
+                    text: value.btn,
+                  })(class="form__btn btn--line")
         .index-form__image
-          +picture("content", "form", "jpg", 644, 848, "petroleum refinery", lang)
+          +picture("content", "form", "jpg", 644, 848, "pipes", lang)

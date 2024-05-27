@@ -1,28 +1,38 @@
 .news {
-  padding: 54px 0 70px;
-  margin-bottom: 42px;
+  padding: 98px 0;
   background-color: $color-bg-orange;
+
+  @include vp-1023 {
+    padding: 40px 0;
+  }
+
+  @include vp-767 {
+    padding: 20px 0;
+  }
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10%;
+    grid-template-columns: 50% 1fr;
+    gap: 5%;
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
 
-.news__left {
+.news__image {
   width: 100%;
-  min-height: 312px;
+
   position: relative;
   overflow: hidden;
   display: flex;
-  // justify-content: flex-start;
-  // align-items: flex-start;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  height: 100%;
+  padding: 0 0 82%;
+  overflow: hidden;
 
   .news__mark {
     position: absolute;
@@ -34,6 +44,44 @@
     font-weight: 700;
     padding: 10px 20px;
     line-height: 150%;
+    z-index: 1;
+
+    @include vp-1023 {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+
+    @include vp-767 {
+      top: 20px;
+      left: 20px;
+      font-size: 12px;
+    }
+  }
+
+  @include vp-1023 {
+    // min-height: unset;
+  }
+}
+
+.news__image {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0 0 73%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
   }
 }
 
@@ -41,11 +89,34 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-self: center;
 
   p {
-    width: 80%;
     margin: 28px 0 0;
     padding: 0;
     text-align: justify;
+
+    @include vp-1023 {
+      font-size: 14px;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+    }
+  }
+}
+
+.news__link {
+  @include link-interactive;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 110%;
+
+  @include vp-1023 {
+    font-size: 24px;
+  }
+
+  @include vp-767 {
+    font-size: 20px;
   }
 }

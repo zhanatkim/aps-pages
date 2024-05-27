@@ -1,0 +1,19 @@
+extends ../../components/base/layout
+
+block variables
+  - const lang = "kz"
+  - const page = "services"
+  - const title = "Қызметтер" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "kz"
+  - const hasFooter = true
+  - const footerMods = "kz"
+  - const currentUrl = "services.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+   +services-hero(lang)
+   +services-catalog(lang)
+
+block modals

@@ -1,0 +1,17 @@
+mixin breadcrumbs(href, breadcrumb, isCard)
+  -
+    const mainLinks = {
+      "ru": "Главная",
+      "en": "Main",
+      "kz": "Басты бет",
+    }
+
+  .breadcrumbs
+    each value, key in mainLinks
+      if lang === key
+        a(href="index.html")!=value
+        +icon("bc-arrow", 9, 7, lang)
+        a(href=href)!=breadcrumb
+        if (isCard)
+          +icon("bc-arrow", 9, 7, lang)
+          a(href=href)!=isCard

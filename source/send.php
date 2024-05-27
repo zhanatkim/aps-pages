@@ -14,6 +14,7 @@
   $userName = $_POST['user-name'];
   $userPhone = $_POST['user-phone'];
   $userEmail = $_POST['user-email'];
+  $userMessage = $_POST['user-message'];
 
   try {
     //Server settings
@@ -34,12 +35,12 @@
 
     //Content
     $mail->isHTML(true);                                         //Письмо в формате HTML для использования тегов
-    $mail->Subject = "Заявка с сайта example.com";               //Тема письмы
-    $mail->Body = "Имя: $userName. <br>Телефон: $userPhone. <br>Почта: $userEmail"; //Тело письмы
+    $mail->Subject = "Запрос с сайта asiapetroservice.kz";               //Тема письмы
+    $mail->Body = "Имя: $userName. <br>Телефон: $userPhone. <br>Почта: $userEmail. <br>Сообщение: $userMessage"; //Тело письмы
 
     $mail->send();
-    echo 'Письмо отправлено!';
+    echo 'Запрос отправлен!';
   } catch (Exception $e) {
-    echo "Письмо не отправлено!. Ошибка отправки: {$mail->ErrorInfo}";
+    echo "Запрос не отправлен!. Ошибка отправки: {$mail->ErrorInfo}";
   }
 ?>

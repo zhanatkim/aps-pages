@@ -2,34 +2,34 @@ mixin news(lang)
   -
     const data = {
       "ru": {
-        title: "Заголовок новости",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+        title: "Новое поколение буровых растворов - POLYCAT",
+        text: "В 2024 году создано и внедрено собственное производство по выпуску полимера для нового поколения полимеркатионных буровых растворов для бурения скважин в сложных горно-геологических условиях.",
         btn: "Новое",
         hHidden: "Новости",
       },
       "en": {
-        title: "Title#1",
+        title: "New generation of drilling solutions - POLYCAT",
         text: "Text#1",
         btn: "new",
         hHidden: "News",
       },
       "kz": {
-        title: "Тақырып#1",
+        title: "POLYCAT - Бұрғылау ерітінділерінің жаңа буыны",
         text: "Mәтін#1",
         btn:  "жаңа",
         hHidden: "Жаңалықтар",
       }
     }
+
   section.news
     .container
       .news__wrapper
-
         each value, key in data
           if lang === key
             .h2.visually-hidden!=value.hHidden
-            .news__left
-              +picture("slides", "news", "jpg", 556, 312, "petroleum refinery", lang)
+            .news__image
+              +picture("content", "index-news-desktop", "jpg", 556, 411, "petroleum refinery", lang)
               span.news__mark!=value.btn
             .news__right
-              +btn({href: "#", text: value.title})(class="news__btn btn btn--news")
+              a.news__link(href= "polycat.html")!=value.title
               p!=value.text

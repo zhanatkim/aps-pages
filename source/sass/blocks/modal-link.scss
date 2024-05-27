@@ -1,0 +1,141 @@
+.modal-link {
+  width: 100%;
+  padding-top: 60px;
+
+  @include vp-1023 {
+    padding-top: 45px;
+  }
+
+  @include vp-767 {
+    padding-top: 30px;
+  }
+}
+
+.modal-link__button {
+  position: relative;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  color: $color-default-black;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include vp-767 {
+    width: fit-content;
+    align-self: center;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #F0F0F0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  &::after {
+    content: "";
+    width: 15%;
+    height: 100%;
+    background-color: $color-accent-main;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: width $trans-default, background-color $trans-600;
+  }
+
+  @include hover-focus {
+    &::after {
+      width: 100%;
+      background-color: transparent;
+      background: linear-gradient(to right, #EF9840 12%, rgba(#EF9840, 0.5) 26%, transparent 47%);
+    }
+  }
+}
+
+.modal-link__icon {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: 60px;
+    height: 48px;
+  }
+
+  @include vp-1023 {
+    padding: 10px 15px;
+
+    svg {
+      width: 40px;
+      height: 32px;
+    }
+  }
+  @include vp-767 {
+    padding: 15px 20px;
+
+    svg {
+      width: 30px;
+      height: 24px;
+    }
+  }
+}
+
+.modal-link__wrapper {
+  display: grid;
+  grid-template-columns: 14% 1fr;
+}
+
+.modal-link__right {
+  display: flex;
+
+  align-content: center;
+  width: 100%;
+  padding-left: 6%;
+
+}
+
+.modal-link__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 150%;
+
+  width: 80%;
+  text-align: left;
+
+  @include vp-1023 {
+    font-size: 13px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.modal-link__short-text {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 150%;
+
+
+  @include vp-767 {
+    display: flex;
+    font-size: 12px;
+  }
+}

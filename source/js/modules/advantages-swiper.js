@@ -6,15 +6,17 @@ const swiperOptions = {
     nextEl: '.advantages__swiper-button--next',
     prevEl: '.advantages__swiper-button--prev',
   },
-  centeredSlides: false,
   loop: true,
-  slidesPerView: 1,
-  spaceBetween: 12,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  speed: 600,
+  spaceBetween: 20,
   breakpoints: {
     768: {
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 26,
+    },
+    1024: {
+      spaceBetween: 40,
     },
   },
 };

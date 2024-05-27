@@ -1,15 +1,27 @@
 .hero {
-  // position: absolute;
-  // width: 100%;
-  // height: auto;
-  // top: 0;
-  // left: 0;
-
   display: flex;
-
-  // z-index: -1;
   overflow: hidden;
-  aspect-ratio: 768 / 436;
+  aspect-ratio: 1811 / 759;
+
+  @include vp-1327 {
+    aspect-ratio: 1811 / 850;
+  }
+
+  @include vp-1279 {
+    aspect-ratio: 1811 /900;
+  }
+
+  @include vp-1023 {
+    aspect-ratio: 768 / 436;
+  }
+
+  @include vp-767 {
+    aspect-ratio: 320 / 220;
+  }
+
+  @include vp-569 {
+    aspect-ratio: 320 / 280;
+  }
 }
 
 .hero__swiper {
@@ -23,6 +35,7 @@
 .hero__wrapper {
   width: 100%;
   height: 100%;
+  align-items: stretch;
 }
 
 // .hero__parallax {

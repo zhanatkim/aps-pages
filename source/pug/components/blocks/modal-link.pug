@@ -1,0 +1,27 @@
+mixin modal-link(lang)
+  -
+    const links = {
+      "ru": "напишите нам, мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответим на&nbsp;все интересующие вопросы",
+      "en": "write to&nbsp;us, we&nbsp;will contact you as&nbsp;soon as&nbsp;possible and answer all your questions",
+      "kz": "бізге жазыңыз, біз сізбен мүмкіндігінше тезірек хабарласамыз және барлық сұрақтарыңызға жауап береміз",
+    }
+
+  -
+    const shortLinks = {
+      "ru": "Получить консультацию",
+      "en": "Get a consultation",
+      "kz": "Консультация алу үшін",
+    }
+
+  .modal-link
+    button(class="modal-link__button", type="button")&attributes(attributes)
+      .modal-link__wrapper
+        .modal-link__icon
+          +icon("envelope", 60, 48, lang)
+        .modal-link__right
+          each value, key in links
+            if lang === key
+              span.modal-link__text!=value
+          each value, key in shortLinks
+            if lang === key
+              span.modal-link__short-text!=value

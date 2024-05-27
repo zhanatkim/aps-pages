@@ -5,33 +5,109 @@
   grid-template-columns: 1fr;
   row-gap: 80px;
 
+  @include vp-1023 {
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  @include vp-767 {
+    background-color: $color-bg-dark;
+    color: $color-default-white;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
   &__top {
     width: 100%;
     padding-bottom: 80px;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 50px;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+
+    gap: 10%;
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      padding-bottom: 50px;
+    }
+    @include vp-767 {
+      padding-bottom: 40px;
+      gap: 20px;
+    }
   }
 
   &__table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 1fr 1fr;
+    gap: 7%;
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__column {
+    width: 100%;
     display: flex;
-    // width: 100%;
+    flex-direction: column;
+    gap: 26px;
 
-
-    th {
-      padding: 0;
-      padding-left: 30px;
-      max-width: 200px;
-      font-size: 14px;
-      font-weight: 400;
-      text-transform: uppercase;
-      text-align: left;
+    @include vp-1023 {
     }
 
-    td {
-      padding: 0;
-      padding-left: 30px;
+    @include vp-767 {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
 
+  &__key {
+    padding: 0;
+
+    max-width: 200px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: left;
+
+    @include vp-1023 {
+      font-size: 12px;
+    }
+    @include vp-767 {
+      color: $color-text-form;
+      font-size: 10px;
+    }
+  }
+
+  &__value {
+    padding: 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+      line-height: 130%;
+    }
+
+    @include vp-1023 {
+      font-size: 14px;
+    }
+    @include vp-767 {
+      font-size: 13px;
+    }
+  }
+
+  &__link {
+    @include link-interactive;
+
+    @include vp-767 {
+      color: $color-default-white;
     }
   }
 
@@ -41,6 +117,12 @@
 
     iframe {
       width: 100%;
+      aspect-ratio: 1160 / 406;
+
+      @include vp-1023 {
+      }
+      @include vp-767 {
+      }
     }
   }
 }

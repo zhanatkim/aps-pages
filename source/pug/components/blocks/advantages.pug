@@ -3,8 +3,8 @@ mixin advantages(lang)
     const slides = [
       {
         "ru": {
-          title: "Заголовок преимущества",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Документальное сопровождение",
+          text: "Все работы сопровождаются полным пакетом технической и финансовой документации и  документации по технике безопасности.",
           icon: "calendar-clock",
         },
         "en": {
@@ -20,8 +20,8 @@ mixin advantages(lang)
       },
       {
         "ru": {
-          title: "Заголовок преимущества#2",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Аккредитация",
+          text: "Имеем аккредитацию в Казахстане в области НИОКР.",
           icon: "flask",
         },
         "en": {
@@ -30,15 +30,15 @@ mixin advantages(lang)
           icon: "flask",
         },
         "kz": {
-          title: "Тақырып#2",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Аккредитация",
+          text: "Имеем аккредитацию в Казахстане в области НИОКР.",
           icon: "flask",
         }
       },
       {
         "ru": {
-          title: "Заголовок преимущества#3",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Оборудование и производство",
+          text: "Cобственная производственная база поддержки в г. Актау с  аккредитованной лабораторией.",
           icon: "forklift",
         },
         "en": {
@@ -54,8 +54,8 @@ mixin advantages(lang)
       },
       {
         "ru": {
-          title: "Заголовок преимущества#4",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Стандарты",
+          text: "Мы следуем международным стандартам в области ОТ, ТБ и ООС.",
           icon: "globe",
         },
         "en": {
@@ -71,8 +71,8 @@ mixin advantages(lang)
       },
       {
         "ru": {
-          title: "Заголовок преимущества#5",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Партнеры",
+          text: "Сотрудничаем со многими ведущими мировыми производителями, научно-исследовательскими и проектными институтами и бюро.",
           icon: "handshake-angle",
         },
         "en": {
@@ -88,8 +88,8 @@ mixin advantages(lang)
       },
       {
         "ru": {
-          title: "Заголовок преимущества#6",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.",
+          title: "Опытная команда профессиналов",
+          text: "Ключевой персонал имеет более 20 лет опыта и регулярно проходит обучение. Рабочая сила –более 40 профессионалов.",
           icon: "users-alt",
         },
         "en": {
@@ -112,10 +112,11 @@ mixin advantages(lang)
           each value, key in slide
             if lang === key
               .swiper-slide.advantages-slide
-                .advantages-slide__icon
-                  +icon(value.icon, 24, 24, lang)
-                h3.advantages-slide__title.title.title--small!=value.title
-                p!=value.text
+                .advantages-slide__wrapper
+                  .advantages-slide__icon
+                    +icon(value.icon, 24, 24, lang)
+                  h3.advantages-slide__title.title.title--small!=value.title
+                  p!=value.text
       .advantages__swiper-button.advantages__swiper-button--prev.swiper-button-prev
       .advantages__swiper-button.advantages__swiper-button--next.swiper-button-next
 

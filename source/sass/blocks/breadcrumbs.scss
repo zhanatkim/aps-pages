@@ -1,0 +1,22 @@
+.breadcrumbs {
+  padding-bottom: 50px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+
+  @include vp-1023 {
+    display: none;
+  }
+
+  a {
+    @include link-interactive;
+
+    padding: 5px 0;
+    line-height: 100%;
+    color: $color-default-black;
+  }
+}
+
+

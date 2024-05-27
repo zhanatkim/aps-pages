@@ -2,19 +2,22 @@ mixin index-about(lang)
   -
     const data = {
       "ru": {
-        title: "Вводная информация о компании. Текстовый блок с ссылкой на страницу “О нас”",
-        text: "Услуги по буровым растворам во время бурения, жидкостям глушения, растворам используемым при КРС/ПРС, заканчивании скважин,  услуги по кислотным и реагентным обработкам скважин, ликвидация межколонных проявлений. Предоставление лабораторных услуг компаниям нефтегазового сектора. Производство реагентов для бурения скважин. Подбор и  производство нефтепромысловой химии: Поглотители сероводорода, деэмульгаторы, ингибиторы...",
-        btn: "ПОДРОБНЕЕ о нас",
+        title: "ТОО «Asia Petro Service»",
+        text: "предоставляет полный спектр услуг по приготовлению и контролю за качеством буровых растворов, растворов для заканчивания скважин, капитального и подземного ремонта скважин, жидкостей глушения и другие.",
+        btn: "подробнее о нас",
+        alt: "сотрудники ТОО «Asia Petro Service»",
       },
       "en": {
-        title: "Title#1",
+        title: "Asia Petro Service LLP",
         text: "Text#1",
         btn: "MORE ABOUT US",
+        alt: "сотрудники ТОО «Asia Petro Service»",
       },
       "kz": {
-        title: "Тақырып#1",
+        title: "«Азия Петро Сервис» ЖШС",
         text: "Mәтін#1",
         btn:  "БІЗ ТУРАЛЫ ТОЛЫҒЫРАҚ",
+        alt: "сотрудники ТОО «Asia Petro Service»",
       }
     }
 
@@ -23,7 +26,9 @@ mixin index-about(lang)
       .index-about__wrapper
         each value, key in data
           if lang === key
-            h2.index-about__title.title.title--medium!=value.title
             .index-about__left
+              h2.index-about__title.title.title--medium!=value.title
               p!=value.text
-              +btn({href: "catalog.html", text: value.btn})(class="btn--line index-about__btn")
+            .index-about__image
+              +picture("content", "index-about-desktop", "jpg", 595, 492, value.alt, lang)
+            +btn({href: "about.html", text: value.btn})(class="btn--line index-about__btn")

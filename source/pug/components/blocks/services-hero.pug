@@ -1,0 +1,41 @@
+mixin services-hero(lang)
+  -
+    const heros = [
+      {
+        "ru": {
+          href: "services.html",
+          breadcrumb: "Услуги",
+          title: "УСЛУГИ",
+          text: "по&nbsp;приготовлению и&nbsp;контролю за&nbsp;качеством буровых растворов, растворов для заканчивания и&nbsp;ремонта скважин, кислотной обработке скважин и&nbsp;трубопроводов...",
+          image: "services-hero",
+          width: 1440,
+          height: 503,
+          imageAlt: "сотрудники ТОО АзияПетроСервис",
+        },
+        "en": {
+          breadcrumb: "Services",
+          href: "services.html",
+          title: "Services",
+          text: "по&nbsp;приготовлению и&nbsp;контролю за&nbsp;качеством буровых растворов, растворов для заканчивания и&nbsp;ремонта скважин, кислотной обработке скважин и&nbsp;трубопроводов...",
+          image: "services-hero",
+          width: 1440,
+          height: 503,
+          imageAlt: "employees of AsiaPetroService LLP",
+        },
+        "kz": {
+          breadcrumb: "Қызметтер",
+          href: "services.html",
+          title: "Қызметтер",
+          text: "по&nbsp;приготовлению и&nbsp;контролю за&nbsp;качеством буровых растворов, растворов для заканчивания и&nbsp;ремонта скважин, кислотной обработке скважин и&nbsp;трубопроводов...",
+          image: "services-hero",
+          width: 1440,
+          height: 503,
+          imageAlt: "«Азияпетросервис» ЖШС қызметкерлері",
+        }
+      },
+    ]
+
+  each hero in heros
+    each value, key in hero
+      if lang === key
+        +hero2(value)

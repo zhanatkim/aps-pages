@@ -11,16 +11,16 @@ const swiperOptions = {
   //   prevEl: '.hero__control--prev',
   // },
   slidesPerView: 1,
-  speed: 1000,
+  speed: 1500,
   // effect: 'fade',
   // parallax: true,
   // cssmode: true,
   loop: true,
-  // autoplay: {
-  //   delay: 3000,
-  //   paused: true,
-  //   timeLeft: 4000,
-  // },
+  autoplay: {
+    delay: 3000,
+    paused: true,
+    timeLeft: 4000,
+  },
 };
 
 export const heroSwiper = new Swiper('.hero__swiper', swiperOptions);

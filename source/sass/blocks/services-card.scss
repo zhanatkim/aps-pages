@@ -1,0 +1,123 @@
+.services-card {
+  padding: 25px;
+  cursor: pointer;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: box-shadow $trans-default;
+
+  @include hover-focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+
+    &:active {
+      box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+    }
+  }
+
+}
+
+.services-card__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.services-card__top {
+  display: flex;
+  position: relative;
+  padding: 8px;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include vp-767 {
+      width: 20px;
+      height: 30px;
+    }
+  }
+}
+
+.services-card__title{
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+
+  @include vp-767 {
+    font-size: 16px;
+  }
+}
+
+.services-card__text {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+
+  @include vp-767 {
+    font-size: 14px;
+  }
+}
+
+.services-card__btn {
+  gap: 12px;
+  letter-spacing: 1px;
+
+  transition: color $trans-default, opacity $trans-default;
+
+  svg {
+    transition: transform $trans-default;
+
+    @include vp-1023 {
+      width: 7px;
+      height: auto;
+    }
+
+    @include vp-767 {
+      width: 6px;
+      height: auto;
+    }
+  }
+
+  @include vp-1279 {
+    font-size: 16px;
+  }
+
+  @include vp-1023 {
+    font-size: 14px;
+  }
+
+  @include vp-767 {
+    font-size: 10px;
+  }
+
+  @include hover-focus {
+    color: $color-accent-main;
+
+    svg {
+      transform: translate(8px);
+    }
+
+    &:active {
+      svg {
+        transform: translate(-10px);
+      }
+    }
+  }
+
+  &:active {
+    svg {
+      transform: translate(-10px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.2;
+  }
+}

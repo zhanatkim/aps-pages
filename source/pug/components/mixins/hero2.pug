@@ -1,0 +1,11 @@
+mixin hero2(data)
+  .hero2&attributes(attributes)
+    .container
+      +breadcrumbs(data.href, data.breadcrumb, data.isCard)
+    .hero2__wrapper
+      .container
+        .hero2__inner
+          h1.hero2__title.title.title--hero2!=data.title
+          p.hero2__text!=data.text
+      .hero2__image
+       +picture("content", data.image, "jpg", data.width, data.height, data.altText, lang)

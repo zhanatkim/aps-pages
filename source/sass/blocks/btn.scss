@@ -4,12 +4,13 @@
   padding: 10px 30px;
   font-weight: 700;
   font-size: 20px;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  cursor: pointer;
 
   &--arrow {
     gap: 12px;
     background-color: $color-accent-main;
+    letter-spacing: 1px;
 
     border-radius: 5px;
 
@@ -35,13 +36,16 @@
     }
 
     @include vp-1023 {
+      border-radius: 2px;
       padding: 6px 20px;
       font-size: 14px;
     }
+
     @include vp-767 {
       padding: 4px 14px;
       font-size: 10px;
     }
+
     @include hover-focus {
       box-shadow: 0 0 6px $color-bg-light;
 
@@ -68,8 +72,12 @@
   }
 
   &--line {
+    letter-spacing: -1px;
     color: $color-default-black;
     position: relative;
+
+    border: none;
+    background-color: transparent;
 
     &::after {
       content: "";
@@ -78,11 +86,12 @@
       top: 50%;
       transform: translate(0, -50%);
       width: 100%;
-      height: 5px;
+      height: 10%;
       z-index: -1;
-      background-color: rgba($color-accent-main, 0.8);
+      background-color: rgba($color-accent-main, 0.6);
       transition: height $trans-default;
       border-radius: 2px;
+      z-index: -4;
     }
 
     @include hover-focus {
@@ -101,6 +110,20 @@
       opacity: 0.2;
     }
 
+    @include vp-1279 {
+      font-size: 16px;
+    }
+
+    @include vp-1023 {
+      padding: 6px 20px;
+      font-size: 14px;
+    }
+
+    @include vp-767 {
+      padding: 4px 14px;
+      font-size: 12px;
+
+    }
   }
 
   &--news {

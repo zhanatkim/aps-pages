@@ -118,6 +118,7 @@
 // ПОДМЕНЮ
 
 .main-nav__submenu {
+  width: 100%;
   padding-top: 60px;
 
   display: flex;
@@ -137,10 +138,13 @@
 
 .main-nav__subsublist,
 .main-nav__sublist {
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .main-nav__sublist {

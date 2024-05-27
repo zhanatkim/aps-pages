@@ -4,9 +4,9 @@ mixin index-contacts(lang)
       "ru": {
         title: "Контакты",
         th1: "АДРЕС",
-        th2: "Телефон",
+        th2: "ТЕЛЕФОН",
         th3: "E-mail",
-        address: "Республика Казахстан, г. Актау",
+        address: "130000, Республика Казахстан, Мангистауская область, город Актау, Промышленная зона&#8470;&nbsp;6, участок 91/5.",
         phone: "Позвонить нам",
         email: "Написать нам",
       },
@@ -35,17 +35,19 @@ mixin index-contacts(lang)
         each value, key in data
           if lang === key
             h2.index-contacts__title.title.title--contacts!=value.title
-            table.index-contacts__table
-              tr
-                th!=value.th1
-                th!=value.th2
-                th!=value.th3
-              tr
-                td!=value.address
-                td
-                  a.index-contacts__link(href="tel:+77292333211" aria-label=value.phone)!="+7 (729) 2333211"
-                td
-                  a.index-link(href="mailto:info@mail.com"  aria-label=value.email)!="info@mail.com"
+            .index-contacts__table
+              .index-contacts__column
+                span.index-contacts__key!=value.th1
+                .index-contacts__value
+                  p!=value.address
+              .index-contacts__column
+                span.index-contacts__key!=value.th2
+                .index-contacts__value
+                  a.index-contacts__link(href="tel:+77292216023" aria-label=value.phone)!="+7 7292-216 023"
+              .index-contacts__column
+                span.index-contacts__key!=value.th3
+                .index-contacts__value
+                  a.index-contacts__link(href="mailto:info@asiapetroservice.kz"  aria-label=value.email)!="info@asiapetroservice.kz"
       .index-contacts__map
         iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11548.694284334688!2d51.253193!3d43.644557!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41b4326479fd9ae7%3A0x3048c8c985d984b!2z0KLQntCeIEFzaWEgUGV0cm8gU2VydmljZQ!5e0!3m2!1sen!2skz!4v1710484290921!5m2!1sen!2skz" width="1160" height="406" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
 

@@ -1,31 +1,87 @@
 .advantages-slide {
+  width: 320px;
+  height: auto;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  transition: transform $trans-600;
+
+  @include vp-767 {
+    width: 280px;
+  }
+
+  // &.swiper-slide-active {
+  //   transform: translateY(-15px);
+  // }
+}
+
+.advantages-slide__wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 40px 20px 60px;
+  gap: 12px;
+  padding: 40px 20px 40px;
   border: 1px solid rgba($color-bg-dark, 0.2);
-  // width: calc((100% - 180px) / 6);
-  max-width: 460px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  @include vp-1023 {
+    padding: 30px 14px;
+    gap: 10px;
+  }
+
+  @include vp-767 {
+    padding: 24px 10px;
+  }
 
   p {
     text-align: center;
     margin: 0;
     font-size: 14px;
     line-height: 150%;
-  }
 
-  @include vp-767 {
-    max-width: unset;
-    width: 100%;
+    @include vp-1023 {
+      font-size: 12px;
+    }
+    @include vp-767 {
+      font-size: 12px;
+    }
   }
 }
 
 .advantages-slide__icon {
-  border: 1px solid $color-bg-dark;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 16px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include vp-1023 {
+    padding: 14px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  @include vp-767 {
+    padding: 11px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.advantages-slide__title {
+  margin-top: 8px;
+  text-align: center;
 }

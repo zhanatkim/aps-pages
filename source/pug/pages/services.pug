@@ -3,7 +3,7 @@ extends ../components/base/layout
 block variables
   - const lang = "ru"
   - const page = "services"
-  - const title = "AsiaPetroservice - Услуги" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Услуги" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = "ru"
@@ -13,8 +13,7 @@ block variables
 
 block main
   main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
-
+   +services-hero(lang)
+   +services-catalog(lang)
 
 block modals
