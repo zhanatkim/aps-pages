@@ -1,5 +1,5 @@
 .services-catalog {
-  padding-bottom: 55px;
+  padding-bottom: 80px;
 
   @include vp-1023 {
     padding-bottom: 35px;
@@ -37,6 +37,10 @@
 
   &__button {
     justify-self: center;
+
+    &.is-hidden {
+      display: none;
+    }
   }
 
 }

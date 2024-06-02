@@ -7,6 +7,7 @@ import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
 import {menuToggle} from './modules/menu-toggle.js';
+import {servicesCardsRender} from './modules/services-cards-render.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     menuToggle();
+    servicesCardsRender();
     // initModals();
     // uploadFile();
     // uploadImageDrop();

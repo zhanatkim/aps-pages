@@ -7,6 +7,11 @@
   gap: 15px;
 
   @include vp-1023 {
+    padding-bottom: 30px;
+    gap: 10px;
+  }
+
+  @include vp-767 {
     display: none;
   }
 
@@ -16,6 +21,11 @@
     padding: 5px 0;
     line-height: 100%;
     color: $color-default-black;
+
+    @include vp-1023 {
+      padding: 3px 0;
+      font-size: 13px;
+    }
   }
 }
 

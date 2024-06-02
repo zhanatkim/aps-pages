@@ -4670,6 +4670,16 @@ button,
           flex-direction: column;
   padding: 50px 0 100px;
 }
+@media (max-width: 1023px) {
+  .hero2 {
+    padding: 30px 0 50px;
+  }
+}
+@media (max-width: 767px) {
+  .hero2 {
+    padding: 20px 0 24px;
+  }
+}
 
 .hero2__wrapper {
   position: relative;
@@ -4766,6 +4776,12 @@ button,
 }
 @media (max-width: 1023px) {
   .breadcrumbs {
+    padding-bottom: 30px;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .breadcrumbs {
     display: none;
   }
 }
@@ -4792,6 +4808,12 @@ button,
 .breadcrumbs a:disabled {
   opacity: 0.75;
 }
+@media (max-width: 1023px) {
+  .breadcrumbs a {
+    padding: 3px 0;
+    font-size: 13px;
+  }
+}
 
 .services-card {
   padding: 25px;
@@ -4809,6 +4831,7 @@ button,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 20px;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
@@ -4832,6 +4855,14 @@ button,
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
           box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
 }
+.services-card.is-hidden {
+  display: none;
+}
+@media (max-width: 767px) {
+  .services-card {
+    gap: 14px;
+  }
+}
 
 .services-card__wrapper {
   display: -webkit-box;
@@ -4842,6 +4873,11 @@ button,
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 26px;
+}
+@media (max-width: 767px) {
+  .services-card__wrapper {
+    gap: 14px;
+  }
 }
 
 .services-card__top {
@@ -4876,9 +4912,18 @@ button,
 }
 
 .services-card__text {
+  margin: 0;
+  padding: 0;
   font-size: 18px;
-  font-weight: 700;
-  line-height: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+@media (max-width: 1023px) {
+  .services-card__text {
+    font-size: 16px;
+  }
 }
 @media (max-width: 767px) {
   .services-card__text {
@@ -4887,6 +4932,10 @@ button,
 }
 
 .services-card__btn {
+  padding-left: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 12px;
   letter-spacing: 1px;
   -webkit-transition: color 0.3s ease, opacity 0.3s ease;
@@ -4958,7 +5007,7 @@ button,
 }
 
 .services-catalog {
-  padding-bottom: 55px;
+  padding-bottom: 80px;
 }
 @media (max-width: 1023px) {
   .services-catalog {
@@ -5008,6 +5057,9 @@ button,
 .services-catalog__button {
   justify-self: center;
 }
+.services-catalog__button.is-hidden {
+  display: none;
+}
 
 .modal-link {
   width: 100%;
@@ -5036,9 +5088,6 @@ button,
 }
 @media (max-width: 767px) {
   .modal-link__button {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
     -ms-flex-item-align: center;
         align-self: center;
   }
@@ -5065,6 +5114,11 @@ button,
   -webkit-transition: width 0.3s ease, background-color 0.6s ease;
   transition: width 0.3s ease, background-color 0.6s ease;
 }
+@media (max-width: 767px) {
+  .modal-link__button::after {
+    width: 33%;
+  }
+}
 @media (hover: hover) {
   .modal-link__button:hover:not(.focus-visible)::after {
     width: 100%;
@@ -5074,6 +5128,12 @@ button,
   }
 }
 .modal-link__button.focus-visible:focus::after {
+  width: 100%;
+  background-color: transparent;
+  background: -webkit-gradient(linear, left top, right top, color-stop(12%, #EF9840), color-stop(26%, rgba(239, 152, 64, 0.5)), color-stop(47%, transparent));
+  background: linear-gradient(to right, #EF9840 12%, rgba(239, 152, 64, 0.5) 26%, transparent 47%);
+}
+.modal-link__button:active::after {
   width: 100%;
   background-color: transparent;
   background: -webkit-gradient(linear, left top, right top, color-stop(12%, #EF9840), color-stop(26%, rgba(239, 152, 64, 0.5)), color-stop(47%, transparent));
@@ -5104,7 +5164,7 @@ button,
 }
 @media (max-width: 767px) {
   .modal-link__icon {
-    padding: 15px 20px;
+    padding: 15px;
   }
   .modal-link__icon svg {
     width: 30px;
@@ -5116,6 +5176,11 @@ button,
   display: grid;
   grid-template-columns: 14% 1fr;
 }
+@media (max-width: 767px) {
+  .modal-link__wrapper {
+    grid-template-columns: 30% 1fr;
+  }
+}
 
 .modal-link__right {
   display: -webkit-box;
@@ -5125,6 +5190,11 @@ button,
       align-content: center;
   width: 100%;
   padding-left: 6%;
+}
+@media (max-width: 767px) {
+  .modal-link__right {
+    padding-left: 10%;
+  }
 }
 
 .modal-link__text {
@@ -5163,7 +5233,6 @@ button,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
   line-height: 150%;

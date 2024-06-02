@@ -6,6 +6,6 @@ mixin services-card(card, lang)
           .services-card__top
             +icon("card-title-icon",24, 36, lang)
             h2.services-card__title.title!=value.title
-          p.sevice-card__text!=value.text
+          p.services-card__text!=value.text
         +btn({href: card.href, text: `${value.btn}`})(class="services-card__btn")
           +icon("arrow", 9, 16, lang)

@@ -8,9 +8,9 @@ const header = document.querySelector('.header');
 const breakpoint = window.matchMedia('(max-width:767px)');
 
 const nav = document.querySelector('.drop-menu');
+const dropMenu = document.querySelector('.main-nav__submenu');
 
 const serviceTab = nav.querySelectorAll('.main-nav__item > .main-nav__link')[0];
-
 
 function closeMenu() {
   nav.classList.remove('is-active');
@@ -47,6 +47,7 @@ export const menuToggle = () => {
     breakpoint.addEventListener('change', () => {
       if (!breakpoint.matches) {
         closeMenu();
+        dropMenu.setAttribute('style', 'height:unset;');
       } else {
         initTabs();
       }
