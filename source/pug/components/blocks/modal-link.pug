@@ -14,7 +14,7 @@ mixin modal-link(lang)
     }
 
   .modal-link
-    button(class="modal-link__button", type="button")&attributes(attributes)
+    button(class="modal-link__button", type="button" data-open-modal="form-modal")&attributes(attributes)
       .modal-link__wrapper
         .modal-link__icon
           +icon("envelope", 60, 48, lang)

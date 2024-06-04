@@ -79,6 +79,11 @@
     border: none;
     background-color: transparent;
 
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -91,7 +96,6 @@
       background-color: rgba($color-accent-main, 0.6);
       transition: height $trans-default;
       border-radius: 2px;
-      z-index: -4;
     }
 
     @include hover-focus {

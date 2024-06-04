@@ -43,6 +43,8 @@
   textarea {
     min-height: 100px;
   }
+
+
 }
 
 .form-input__label,
@@ -55,5 +57,31 @@
 
   @include vp-767 {
     color: $color-default-black;
+  }
+}
+
+.form-input--modal,
+.form-textarea--modal {
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea   {
+    color: $color-bg-dark;
+    border-color: rgba($color-bg-dark, 0.3);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: $color-bg-dark;
+    }
+  }
+
+  .form-input__label,
+  .form-textarea__label {
+    color: $color-bg-dark;
   }
 }

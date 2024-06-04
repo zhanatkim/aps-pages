@@ -1,0 +1,65 @@
+mixin form-modal(lang)
+  -
+    const formData = {
+      "ru": {
+        title: "Напишите нам",
+        text: "Наши менеджеры ответят на&nbsp;ваши вопросы , произведут расчет стоимости услуг и&nbsp;подготовят индивидуальное коммерческое предложение.",
+        label1: "Имя",
+        label2: "e-mail",
+        label3: "Телефон",
+        label4: "Ваше сообщение",
+        circs: "Я согласен на обработку моих персональных данных.",
+        btn: "отправить",
+      },
+      "en": {
+        title: "Contact us",
+        text: "Our managers will answer all your questions, calculate the cost of services and prepare an individual commercial offer.",
+        label1: "Name",
+        label2: "e-mail",
+        label3: "Phone",
+        label4: "Your message",
+        circs: "I'm agree to process my personal data.",
+        btn: "send",
+      },
+      "kz": {
+        title: "Бізге жазыңыз",
+        text: "Біздің менеджерлер сұрақтарыңызға жауап береді, қызметтердің құнын есептейді және жеке коммерциялық ұсыныс дайындайды.",
+        label1: "Аты",
+        label2: "e-mail",
+        label3: "телефон нөмірі",
+        label4: "Сіздің хабарламаңыз",
+        circs: "Мен жеке деректерімді өңдеуге келісемін.",
+        btn: "жіберу",
+      },
+    }
+  .form-modal(data-modal="form-modal")
+    .form-modal__wrapper
+      each value, key in formData
+        if lang === key
+          h2.form-modal__title.title!=value.title
+          p.form-modal__text!=value.text
+          .form-modal__form.form
+            form(action="#" method="post")
+              +custom-input({
+                inputLabel: value.label1,
+                inputName: "user-name",
+              })(class="form-input--modal")
+              +custom-input({
+                inputLabel: value.label2,
+                inputName: "user-email",
+              })(class="form-input--modal")
+              +custom-input({
+                inputLabel: value.label3,
+                inputName: "user-phone",
+              })(class="form-input--modal")
+              +custom-textarea({
+                inputLabel: value.label4,
+                inputName: "user-message",
+              })(class="form-textarea--modal")
+              +custom-toggle({
+                inputLabel: value.circs,
+              })
+              +btn({
+                type: "submit",
+                text: value.btn,
+              })(class="form-modal__btn btn--line")
