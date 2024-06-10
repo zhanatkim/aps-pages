@@ -1,0 +1,41 @@
+mixin products-hero(lang)
+  -
+    const heros = [
+      {
+        "ru": {
+          href: "catalog.html",
+          breadcrumb: "Продукция",
+          title: "Продукция",
+          text: "для заканчивания и&nbsp;ремонта скважин, кислотной обработки скважин и&nbsp;трубопроводов...",
+          image: "products-hero",
+          width: 1440,
+          height: 516,
+          imageAlt: "сотрудники ТОО АзияПетроСервис",
+        },
+        "en": {
+          breadcrumb: "Products",
+          href: "catalog.html",
+          title: "Products",
+          text: "for completion and repair of wells, acid treatment of wells and pipelines...",
+          image: "products-hero",
+          width: 1440,
+          height: 516,
+          imageAlt: "employees of AsiaPetroService LLP",
+        },
+        "kz": {
+          breadcrumb: "Қызметтер",
+          href: "catalog.html",
+          title: "Қызметтер",
+          text: "ұңғымаларды аяқтау және жөндеу, ұңғымаларды және құбырларды қышқылмен өңдеу...",
+          image: "products-hero",
+          width: 1440,
+          height: 516,
+          imageAlt: "«Азияпетросервис» ЖШС қызметкерлері",
+        }
+      },
+    ]
+
+  each hero in heros
+    each value, key in hero
+      if lang === key
+        +hero2(value)

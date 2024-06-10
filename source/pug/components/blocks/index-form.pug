@@ -60,7 +60,8 @@ mixin index-form(lang)
                   })
                   +custom-toggle({
                     inputLabel: value.circs,
-                  })
+                    icon: true
+                  })(class="form-toggle")
                   +btn({
                     type: "submit",
                     text: value.btn,

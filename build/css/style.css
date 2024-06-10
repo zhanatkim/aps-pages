@@ -1254,6 +1254,10 @@ video {
   display: block;
   max-width: 100%;
   height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 textarea {
@@ -4195,8 +4199,8 @@ button,
 }
 
 .index-contacts {
-  padding-top: 120px;
-  padding-bottom: 45px;
+  padding-top: 80px;
+  padding-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 80px;
@@ -4387,6 +4391,24 @@ button,
 }
 .index-form__image {
   width: 100%;
+  height: 100%;
+  position: relative;
+}
+.index-form__image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(91, 61, 33, 0.22);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media (max-width: 767px) {
+  .index-form__image::after {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .index-form__image {
@@ -4394,7 +4416,15 @@ button,
   }
 }
 .index-form__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .index-form__column {
   padding: 70px 10% 90px;
@@ -4625,10 +4655,10 @@ button,
   margin: -1px;
   clip: rect(0 0 0 0);
 }
-.form-toggle input:checked + .form-toggle__icon {
+.form-toggle input:checked + .toggle__icon {
   color: #000000;
 }
-.form-toggle input:checked + .form-toggle__icon svg {
+.form-toggle input:checked + .toggle__icon svg {
   display: block;
 }
 @media (hover: hover) {
@@ -4640,17 +4670,16 @@ button,
   border-color: #ef9840;
 }
 @media (hover: hover) {
-  .form-toggle input:checked:hover:not(.focus-visible) + .form-toggle__icon {
+  .form-toggle input:checked:hover:not(.focus-visible) + .toggle__icon {
     border-color: transparent;
     color: #ef9840;
   }
 }
-.form-toggle input:checked.focus-visible:focus + .form-toggle__icon {
+.form-toggle input:checked.focus-visible:focus + .toggle__icon {
   border-color: transparent;
   color: #ef9840;
 }
-
-.form-toggle__icon {
+.form-toggle .toggle__icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4669,30 +4698,29 @@ button,
   border-style: solid;
   border-color: transparent;
 }
-.form-toggle__icon svg {
+.form-toggle .toggle__icon svg {
   display: none;
 }
 @media (max-width: 767px) {
-  .form-toggle__icon {
+  .form-toggle .toggle__icon {
     width: 15px;
     height: 15px;
     background-color: #ffffff;
     border-color: #000000;
   }
 }
-
-.form-toggle__label {
+.form-toggle .toggle__label {
   font-size: 14px;
   line-height: 110%;
   cursor: pointer;
 }
 @media (max-width: 1023px) {
-  .form-toggle__label {
+  .form-toggle .toggle__label {
     font-size: 12px;
   }
 }
 @media (max-width: 767px) {
-  .form-toggle__label {
+  .form-toggle .toggle__label {
     color: #000000;
   }
 }
@@ -5281,6 +5309,142 @@ button,
     display: flex;
     font-size: 12px;
   }
+}
+
+.product-card {
+  width: 100%;
+  max-width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fafafa;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+          box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}
+@media (hover: hover) {
+  .product-card:hover:not(.focus-visible) {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 5px 15px;
+  }
+  .product-card:hover:not(.focus-visible):active {
+    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+            box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  }
+}
+.product-card.focus-visible:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 5px 15px;
+}
+.product-card.focus-visible:focus:active {
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+          box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}
+
+.product-card__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0 25px;
+  gap: 14px;
+}
+
+.product-card__top {
+  padding: 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+
+.product-card__title {
+  width: 100%;
+  text-transform: uppercase;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: auto;
+  color: #000000;
+}
+@media (max-width: 767px) {
+  .product-card__title {
+    font-size: 20px;
+  }
+}
+
+.product-card__group {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ef9840;
+  line-height: 120%;
+}
+
+.product-card__unit {
+  width: 100%;
+  display: inline;
+}
+.product-card__unit span {
+  display: inline;
+}
+
+.product-card__key {
+  font-weight: 500;
+  font-size: 14px;
+  color: #151515;
+  line-height: normal;
+  margin-right: 6px;
+}
+
+.product-card__value {
+  font-weight: 400;
+  font-size: 14px;
+  color: #9D9D9D;
+  line-height: normal;
+}
+
+.product-card__btn {
+  border: none;
+  outline: none;
+  background-color: rgba(58, 56, 56, 0.8);
+  border-radius: 0 12px 12px 0;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 10px 39px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  text-transform: none;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media (hover: hover) {
+  .product-card__btn:hover:not(.focus-visible) {
+    background-color: rgba(239, 152, 64, 0.8);
+  }
+}
+.product-card__btn.focus-visible:focus {
+  background-color: rgba(239, 152, 64, 0.8);
+}
+.product-card__btn:active {
+  background-color: rgba(239, 152, 64, 0.9);
 }
 
 /* @mixin hover-focus {

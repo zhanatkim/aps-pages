@@ -85,7 +85,138 @@
           </div>
         </div>
       </header>
-      <main></main>
+      <main>
+        <div class="hero2">
+          <div class="container">
+            <div class="breadcrumbs"><a href="index.html">Главная</a>
+              <svg width="9" height="7" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#bc-arrow"></use>
+              </svg><a href="catalog.html">Продукция</a>
+            </div>
+          </div>
+          <div class="hero2__wrapper">
+            <div class="container">
+              <div class="hero2__inner">
+                <h1 class="hero2__title title title--hero2">Продукция</h1>
+                <p class="hero2__text">для заканчивания и&nbsp;ремонта скважин, кислотной обработки скважин и&nbsp;трубопроводов...</p>
+              </div>
+            </div>
+            <div class="hero2__image">
+              <picture>
+                <source type="image/webp" srcset="img/content/products-hero.webp, img/content/products-hero@2x.webp 2x"><img src="img/content/products-hero.jpg" srcset="img/content/products-hero@2x.jpg 2x" width="1440" height="516">
+              </picture>
+            </div>
+          </div>
+        </div>
+        <section class="products-catalog">
+          <div class="container">
+            <div class="products-catalog__wrapper">
+              <section class="filter">
+                <div class="filter__search search"></div>
+                <div class="filter__wrapper">
+                  <form action="#" method="post">
+                    <div class="filter__inner">
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="weights" id="1" name="product-sort"><span class="toggle__label">Утяжелители</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="thickeners" id="2" name="product-sort"><span class="toggle__label">Загустители</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="ph" id="3" name="product-sort"><span class="toggle__label">Регулятор pH</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="filtration" id="4" name="product-sort"><span class="toggle__label">Регуляторы фильтрации</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="deflocculants" id="5" name="product-sort"><span class="toggle__label">Дефлокулянты</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="salts" id="6" name="product-sort"><span class="toggle__label">Соли</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="shale" id="7" name="product-sort"><span class="toggle__label">Регулятор состояния сланцев</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="plugging" id="8" name="product-sort"><span class="toggle__label">Пластозакупоривающие материалы</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="various" id="9" name="product-sort"><span class="toggle__label">Разные материалы</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="colmatants" id="10" name="product-sort"><span class="toggle__label">Кольматанты, растворимые в кислоте</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="consumables" id="11" name="product-sort"><span class="toggle__label">Расходные материалы</span>
+                        </label>
+                      </div>
+                      <div class="toggle filter__toggle">
+                        <label>
+                          <input type="checkbox" value="cementation" id="12" name="product-sort"><span class="toggle__label">Реагенты для цементирования </span>
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn filter__btn-reset" type="reset"><span>очистить</span>
+                    </button>
+                    <button class="btn filter__btn-submit" type="submit"><span>Поиск</span>
+                    </button>
+                  </form>
+                </div>
+              </section>
+              <div class="products-catalog__catalog">
+                <article class="product-card" data-sort="weights">
+                  <div class="product-card__wrapper">
+                    <div class="product-card__top">
+                      <h3 class="product-card__title title">Барит</h3>
+                      <p class="product-card__group">Утяжелители</p>
+                      <div class="product-card__unit"><span class="product-card__key">Форма выпуска:</span><span class="product-card__value">мешок</span></div>
+                      <div class="product-card__unit"><span class="product-card__key">Минимальный объем:</span><span class="product-card__value">1500 кг</span></div>
+                    </div>
+                    <button class="btn product-card__btn" type="button" data-open-modal="form-modal"><span>Запросить</span>
+                    </button>
+                  </div>
+                </article>
+                <button class="btn btn--line products-catalog__button" type="button"><span>Загрузить ещё</span>
+                </button>
+              </div>
+            </div>
+            <div class="modal-link">
+              <button class="modal-link__button" type="button" data-open-modal="form-modal">
+                <div class="modal-link__wrapper">
+                  <div class="modal-link__icon">
+                    <svg width="60" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#envelope"></use>
+                    </svg>
+                  </div>
+                  <div class="modal-link__right"><span class="modal-link__text">напишите нам, мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответим на&nbsp;все интересующие вопросы</span><span class="modal-link__short-text">Получить консультацию</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
       <footer class="footer ru">
         <div class="container">
           <div class="footer__wrapper"><a class="footer__logo" href="index.html" aria-label="На главную страницу">
@@ -104,6 +235,55 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="modal modal--preload modal--form" data-modal="form-modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="form-modal" data-modal="form-modal">
+            <div class="form-modal__wrapper">
+              <h2 class="form-modal__title title">Напишите нам</h2>
+              <p class="form-modal__text">Наши менеджеры ответят на&nbsp;ваши вопросы , произведут расчет стоимости услуг и&nbsp;подготовят индивидуальное коммерческое предложение.</p>
+              <div class="form-modal__form form">
+                <form action="#" method="post">
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">Имя</span>
+                      <input type="text" name="user-name">
+                    </label>
+                  </div>
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">e-mail</span>
+                      <input type="text" name="user-email">
+                    </label>
+                  </div>
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">Телефон</span>
+                      <input type="text" name="user-phone">
+                    </label>
+                  </div>
+                  <div class="form-textarea form-textarea--modal">
+                    <label><span class="form-textarea__label">Ваше сообщение</span>
+                      <textarea name="user-message"></textarea>
+                    </label>
+                  </div>
+                  <div class="toggle">
+                    <label>
+                      <input type="checkbox"><span class="toggle__label">Я согласен на обработку моих персональных данных.</span>
+                    </label>
+                  </div>
+                  <button class="btn form-modal__btn btn--line" type="submit"><span>отправить</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

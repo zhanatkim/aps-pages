@@ -1,0 +1,57 @@
+mixin products-catalog (lang)
+  -
+    const btns = {
+      "ru": "Загрузить ещё",
+      "en": "Load more",
+      "kz": "Көбірек",
+    }
+
+  -
+    const data = [
+      {
+        id: 1,
+        sort: "weights",
+        content: {
+          "ru": {
+            btn: "Запросить",
+            key1: "Форма выпуска:",
+            key2: "Минимальный объем:",
+            title: "Барит",
+            group: "Утяжелители",
+            unit: "мешок",
+            min: "1500 кг",
+
+          },
+          "en": {
+            btn: "Request",
+            key1: "Release form:",
+            key2: "Minimum volume:",
+            title: "Barite",
+            group: "Weights",
+            unit: "sack",
+            min: "1500 kg",
+          },
+          "kz": {
+            btn: "Сұраныс",
+            key1: "Форма выпуска:",
+            key2: "Минимальный объем:",
+            title: "Барит",
+            group: "Утяжелители",
+            unit: "мешок",
+            min: "1500 кг",
+          }
+        }
+      }
+    ]
+  section.products-catalog
+    .container
+      .products-catalog__wrapper
+        +products-filter(lang)(class="products-catalog__filter")
+
+        .products-catalog__catalog
+          each card in data
+            +product-card(card, lang)
+          each value, key in btns
+            if key === lang
+              +btn({text: value, type: "button"})(class="btn--line products-catalog__button")
+      +modal-link(lang)

@@ -1,0 +1,152 @@
+mixin products-filter (lang)
+  -
+    const search = {
+      "ru": "Поиск",
+      "en": "Search",
+      "kz": "Іздеу",
+    }
+
+  -
+    const resets = {
+      "ru": "очистить",
+      "en": "clear",
+      "kz": "анық",
+    }
+  -
+    const submits = {
+      "ru": "Поиск",
+      "en": "Search",
+      "kz": "Іздеу",
+    }
+
+  -
+    const data = [
+      {
+        id: 1,
+        sort: "weights",
+        content: {
+          "ru": "Утяжелители",
+          "en": "",
+          "kz": "Утяжелители",
+        }
+      },
+      {
+        id: 2,
+        sort: "thickeners",
+        content: {
+          "ru": "Загустители",
+          "en": "Thickeners",
+          "kz": "Загустители",
+        }
+      },
+      {
+        id: 3,
+        sort: "ph",
+        content: {
+          "ru": "Регулятор pH",
+          "en": "pH regulator",
+          "kz": "Регулятор pH",
+        }
+      },
+      {
+        id: 4,
+        sort: "filtration",
+        content: {
+          "ru": "Регуляторы фильтрации",
+          "en": "Filtration regulators",
+          "kz": "Регуляторы фильтрации",
+        }
+      },
+      {
+        id: 5,
+        sort: "deflocculants",
+        content: {
+          "ru": "Дефлокулянты",
+          "en": "Deflocculants",
+          "kz": "Дефлокулянты",
+        }
+      },
+      {
+        id: 6,
+        sort: "salts",
+        content: {
+          "ru": "Соли",
+          "en": "Salts",
+          "kz": "Соли",
+        }
+      },
+      {
+        id: 7,
+        sort: "shale",
+        content: {
+          "ru": "Регулятор состояния сланцев",
+          "en": "Shale condition regulator",
+          "kz": "Регулятор состояния сланцев",
+        }
+      },
+      {
+        id: 8,
+        sort: "plugging",
+        content: {
+          "ru": "Пластозакупоривающие материалы",
+          "en": "Formation plugging materials",
+          "kz": "Пластозакупоривающие материалы",
+        }
+      },
+      {
+        id: 9,
+        sort: "various",
+        content: {
+          "ru": "Разные материалы",
+          "en": "Various materials",
+          "kz": "Разные материалы",
+        }
+      },
+      {
+        id: 10,
+        sort: "colmatants",
+        content: {
+          "ru": "Кольматанты, растворимые в кислоте",
+          "en": "Acid soluble colmatants ",
+          "kz": "Кольматанты, растворимые в кислоте",
+        }
+      },
+      {
+        id: 11,
+        sort: "consumables",
+        content: {
+          "ru": "Расходные материалы",
+          "en": "Consumables",
+          "kz": "Расходные материалы",
+        }
+      },
+      {
+        id: 12,
+        sort: "cementation",
+        content: {
+          "ru": "Реагенты для цементирования ",
+          "en": "Reagents for cementation",
+          "kz": "Реагенты для цементирования ",
+        }
+      },
+    ]
+  section.filter
+    .filter__search.search
+    .filter__wrapper
+      form(action="#" method="post")
+        .filter__inner
+          each input in data
+            each value, key in input.content
+              if lang === key
+                +custom-toggle({
+                  inputName: "product-sort",
+                  inputValue: input.sort,
+                  inputId: input.id,
+                  inputLabel: value
+                })(class="filter__toggle")
+        each value, key in resets
+          if lang === key
+            +btn({text: value, type: "reset"})(class="filter__btn-reset")
+        each value, key in submits
+          if lang === key
+            +btn({text: value, type: "submit"})(class="filter__btn-submit")

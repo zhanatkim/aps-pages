@@ -6,12 +6,14 @@ mixin custom-toggle(options = {})
   - const inputName = options.inputName ? options.inputName : false
   - const inputValue = options.inputValue ? options.inputValue : false
   - const lang = options.lang ? options.lang : false
+  - const icon = options.icon ? options.icon : false
 
-  .form-toggle&attributes(attributes)
+  .toggle&attributes(attributes)
     label
       input(type=inputType, value=inputValue, id=inputId, name=inputName, checked=inputChecked)
-      span.form-toggle__icon
-        +icon("icon-checkbox", 10, 8, lang)
+      if icon
+        span.toggle__icon
+          +icon("icon-checkbox", 10, 8, lang)
       if inputLabel
-        span.form-toggle__label!= inputLabel
+        span.toggle__label!= inputLabel
 
