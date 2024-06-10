@@ -1,0 +1,98 @@
+.products-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  gap: 30px;
+}
+
+.products-filter__wrapper {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.products-filter__btn-submit {
+  display: none;
+  justify-self: center;
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.products-filter__btn-reset {
+  display: flex;
+  align-self: center;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.products-filter__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.products-filter__toggle {
+  position: relative;
+
+  input {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+
+    &:checked + .toggle__label {
+      color: $color-default-white;
+      background-color: $color-accent-main;
+      border-color: $color-accent-main;
+
+    }
+
+    @include hover-focus {
+      & + .toggle__label {
+        border-color: $color-accent-main;
+        color: $color-accent-main;
+      }
+    }
+
+    &:checked {
+      @include hover-focus {
+        & + .toggle__label {
+          color: $color-accent-main;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .toggle__label {
+    border-radius: 6px;
+    padding: 10px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F6F6F6;
+    position: relative;
+    display: flex;
+
+    font-size: 16px;
+
+    transition: color $trans-default, background-color $trans-default, border-color $trans-default;
+
+    @include vp-1023 {
+      font-size: 14px;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+      padding: 6px 14px;
+    }
+  }
+}

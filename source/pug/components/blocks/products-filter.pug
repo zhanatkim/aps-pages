@@ -130,11 +130,11 @@ mixin products-filter (lang)
         }
       },
     ]
-  section.filter
-    .filter__search.search
-    .filter__wrapper
+  section.products-filter
+    .products-filter__search.search
+    .products-filter__wrapper
       form(action="#" method="post")
-        .filter__inner
+        .products-filter__inner
           each input in data
             each value, key in input.content
               if lang === key
@@ -143,10 +143,10 @@ mixin products-filter (lang)
                   inputValue: input.sort,
                   inputId: input.id,
                   inputLabel: value
-                })(class="filter__toggle")
+                })(class="products-filter__toggle")
         each value, key in resets
           if lang === key
-            +btn({text: value, type: "reset"})(class="filter__btn-reset")
+            +btn({text: value, type: "reset"})(class="btn--dark products-filter__btn-reset")
         each value, key in submits
           if lang === key
-            +btn({text: value, type: "submit"})(class="filter__btn-submit")
+            +btn({text: value, type: "submit"})(class="btn--dark products-filter__btn-submit")

@@ -143,4 +143,17 @@
     line-height: normal;
     text-transform: capitalize;
   }
+
+  &--dark {
+    background-color: $color-bg-dark;
+    color: $color-default-white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color $trans-default;
+
+    @include hover-focus {
+      background-color: $color-accen-main;
+    }
+  }
 }
