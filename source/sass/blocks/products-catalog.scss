@@ -9,3 +9,22 @@
   width: 100%;
   gap: 39px;
 }
+
+.products-catalog__catalog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 45px;
+
+  @include vp-1023 {
+    gap: 30px;
+    margin-bottom: 34px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+}

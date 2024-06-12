@@ -153,7 +153,7 @@
     transition: background-color $trans-default;
 
     @include hover-focus {
-      background-color: $color-accen-main;
+      background-color: $color-accent-main;
     }
   }
 }

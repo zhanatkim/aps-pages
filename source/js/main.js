@@ -7,7 +7,8 @@ import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
 import {menuToggle} from './modules/menu-toggle.js';
-import {servicesCardsRender} from './modules/services-cards-render.js';
+import {servicesCardsRender} from './modules/services-cards-render';
+import {productsCardsRender} from './modules/products-cards-render';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     menuToggle();
     servicesCardsRender();
+    productsCardsRender();
     initModals();
     uploadFile();
     uploadImageDrop();

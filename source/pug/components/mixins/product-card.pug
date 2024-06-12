@@ -1,11 +1,11 @@
 mixin product-card(card, lang)
   each value, key in card.content
     if lang === key
-      article.product-card(data-sort=`${card.sort}`)
+      article.product-card(data-sort=`${card.sort}`, data-id=`${card.id}`)
         .product-card__wrapper
           .product-card__top
-            h3.product-card__title.title!=value.title
-            p.product-card__group!=value.group
+            h3.product-card__title.title!=value.group
+            p.product-card__group!=value.title
             .product-card__unit
               span.product-card__key!=value.key1
               span.product-card__value!=value.unit
