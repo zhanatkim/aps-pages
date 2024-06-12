@@ -36,6 +36,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 20% 10%;
+  background-color: #f2f2f2;
+  border-radius: 10px;
 }
 
 .products-filter__toggle {
@@ -81,18 +84,20 @@
     border-color: #F6F6F6;
     position: relative;
     display: flex;
+    background-color: $color-default-white;
 
-    font-size: 16px;
+    font-size: 14px;
 
     transition: color $trans-default, background-color $trans-default, border-color $trans-default;
 
     @include vp-1023 {
-      font-size: 14px;
+      font-size: 12px;
+      padding: 6px 14px;
     }
 
     @include vp-767 {
       font-size: 12px;
-      padding: 6px 14px;
+
     }
   }
 }

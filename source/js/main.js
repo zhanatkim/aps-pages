@@ -9,6 +9,7 @@ import './modules/hero-swiper';
 import {menuToggle} from './modules/menu-toggle.js';
 import {servicesCardsRender} from './modules/services-cards-render';
 import {productsCardsRender} from './modules/products-cards-render';
+import {selectCards} from './modules/products-filter';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     menuToggle();
     servicesCardsRender();
     productsCardsRender();
+    selectCards();
     initModals();
     uploadFile();
     uploadImageDrop();

@@ -6,8 +6,7 @@ let renderedCards = [];
 export const sliceCards = (cardsList, cardsButton, CARDS_AMOUNT_AT_ONCE) => {
   renderedCardsCount += CARDS_AMOUNT_AT_ONCE;
   ArrCards = Array.from(cardsList);
-
-  if (renderedCardsCount > ArrCards.length) {
+  if (renderedCardsCount >= ArrCards.length) {
     cardsButton.classList.add('is-hidden');
     renderedCardsCount = ArrCards.length;
     renderedCards = ArrCards;
@@ -22,6 +21,10 @@ export const sliceCards = (cardsList, cardsButton, CARDS_AMOUNT_AT_ONCE) => {
   }
 };
 
-export const clearCardsList = () => {
+export const clearCardsList = (cardsButton) => {
   renderedCardsCount = 0;
+  if (cardsButton.classList.contains('is-hidden')) {
+    cardsButton.classList.remove('is-hidden');
+  }
+
 };

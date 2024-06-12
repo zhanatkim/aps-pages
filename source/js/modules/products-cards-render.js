@@ -1,12 +1,13 @@
 import {sliceCards, clearCardsList} from './cards-render';
 
-const CARDS_DESK = 8;
-const CARDS_MOBILE = 6;
+const CARDS_DESK = 16;
+
+const CARDS_MOBILE = 10;
 
 const cardsList = document.querySelectorAll('.product-card');
 const cardsButton = document.querySelector('.products-catalog__button');
 
-const breakpoint = window.matchMedia('(max-width:767px)');
+const breakpoint = window.matchMedia('(max-width:1023px)');
 
 const productscardsRender = () => {
   return breakpoint.matches ? sliceCards(cardsList, cardsButton, CARDS_DESK) : sliceCards(cardsList, cardsButton, CARDS_MOBILE);
@@ -14,11 +15,11 @@ const productscardsRender = () => {
 
 const breakpointChecker = () => {
   if (!breakpoint.matches) {
-    clearCardsList();
+    clearCardsList(cardsButton);
     sliceCards(cardsList, cardsButton, CARDS_DESK);
     return;
   }
-  clearCardsList();
+  clearCardsList(cardsButton);
   sliceCards(cardsList, cardsButton, CARDS_MOBILE);
 };
 

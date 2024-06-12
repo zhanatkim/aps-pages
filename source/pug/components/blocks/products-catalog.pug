@@ -2246,7 +2246,8 @@ mixin products-catalog (lang)
             min: "",
           }
         }
-      },{
+      },
+      {
         id: 69,
         sort: "cementation",
         content: {
@@ -2548,11 +2549,11 @@ mixin products-catalog (lang)
     .container
       .products-catalog__wrapper
         +products-filter(lang)(class="products-catalog__filter")
-
-        .products-catalog__catalog
-          each card in data
-            +product-card(card, lang)
-        each value, key in btns
-          if key === lang
-            +btn({text: value, type: "button"})(class="btn--line products-catalog__button")
+        .products-catalog__inner
+          .products-catalog__catalog
+            each card in data
+              +product-card(card, lang)
+          each value, key in btns
+            if key === lang
+              +btn({text: value, type: "button"})(class="btn--line products-catalog__button")
       +modal-link(lang)

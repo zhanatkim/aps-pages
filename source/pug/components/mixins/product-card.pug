@@ -3,14 +3,12 @@ mixin product-card(card, lang)
     if lang === key
       article.product-card(data-sort=`${card.sort}`, data-id=`${card.id}`)
         .product-card__wrapper
+          h3.product-card__title.title!=value.group
           .product-card__top
-            h3.product-card__title.title!=value.group
             p.product-card__group!=value.title
             .product-card__unit
-              span.product-card__key!=value.key1
               span.product-card__value!=value.unit
-            .product-card__unit
-              span.product-card__key!=value.key2
               span.product-card__value!=value.min
 
-          +btn({text: value.btn, type: "button"})(class="product-card__btn", data-open-modal="form-modal")
+        +btn({text: value.btn, type: "button"})(class="product-card__btn", data-open-modal="form-modal")
+          +icon("arrow", 9, 16, lang)

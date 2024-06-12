@@ -1,14 +1,16 @@
 .product-card {
   width: 100%;
-  height: 100%;
-  max-width: 280px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 10px;
 
   transition: box-shadow $trans-default;
-  // overflow: hidden;
   border-radius: 5px;
 
-  background-color: #fafafa;
+  background-color: #fefefe;
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
 
   @include hover-focus {
@@ -19,98 +21,192 @@
     }
   }
 
+  &.is-hidden {
+    display: none;
+  }
+
+  &.is-filtered {
+    display: none;
+  }
+
+
+  @include vp-1023 {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .product-card__wrapper {
-  width: 100%;
+  width: calc(100% - 150px);
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6%;
 
-  padding: 20px 0 25px;
-  gap: 14px;
+  @include vp-1279 {
+    gap: 3%;
+  }
+
+  @include vp-1023 {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .product-card__top {
-  width: 100%;
-  padding: 0 24px;
+  width: calc(100% - 340px);
+  // padding: 0 24px;
 
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6%;
+
+  @include vp-1279 {
+    width: calc(100% - 260px);
+    gap: 2px;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 5px 0;
+  }
+
 }
 
 .product-card__title {
-  width: 100%;
+  width: 250px;
 
-  // word-break: break-all;
-
+  vertical-align: middle;
   text-transform: uppercase;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(#000000, 0.2);
 
-  font-size: 20px;
+
+  font-size: 18px;
   font-weight: 600;
   line-height: 110%;
   color: #000000;
 
+  @include vp-1279 {
+    font-size: 16px;
+    width: 200px;
+  }
+
+  @include vp-1023 {
+    font-size: 13px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(#000000, 0.2);
+  }
+
   @include vp-767 {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
 .product-card__group {
+  max-width: 180px;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  color: $color-accent-main;
+  // color: $color-accent-main;
+  color: #9D9D9D;
   line-height: 120%;
+  flex-grow: 1;
+  width: 80%;
+
+  @include vp-1279 {
+    width: 70%;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+  }
 }
 
 .product-card__unit {
-  width: 100%;
-  display: inline;
+  width: max-content;
+  max-width: 200px;
+  display: flex;
+  gap: 6px;
+  justify-content: flex-start;
 
   span {
     display: inline;
   }
 }
 
-.product-card__key {
-  font-weight: 500;
-  font-size: 14px;
-  color: #151515;
-  line-height: normal;
-  margin-right: 6px;
-}
-
 .product-card__value {
+  width: max-content;
   font-weight: 400;
   font-size: 14px;
   color: #9D9D9D;
   line-height: normal;
+
+  @include vp-1279 {
+    font-size: 12px;
+  }
+
+  @include vp-1023 {
+    padding-top: 12px;
+    // width: 100%;
+    // font-size: 10px;
+  }
 }
 
 .product-card__btn {
-  border: none;
-  outline: none;
-  background-color: rgba($color-bg-dark, 0.8);
-  border-radius: 0 12px 12px 0;
-  color: $color-default-white;
-  font-size: 14px;
-  line-height: 100%;
-  padding: 10px 39px;
+  padding-left: 0;
   width: fit-content;
-  cursor: pointer;
-  text-transform: none;
+  gap: 12px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 12px;
 
-  transition: background-color $trans-default, color $trans-default;
+  transition: color $trans-default, opacity $trans-default;
+
+  svg {
+    transition: transform $trans-default;
+    width: 6px;
+    height: auto;
+
+    @include vp-767 {
+      width: 4px;
+      height: auto;
+    }
+  }
+
+  @include vp-1023 {
+    font-size: 10px;
+  }
 
   @include hover-focus {
-    background-color: rgba($color-accent-main, 0.8);
+    color: $color-accent-main;
+
+    svg {
+      transform: translate(8px);
+    }
+
+    &:active {
+      svg {
+        transform: translate(-10px);
+      }
+    }
   }
 
   &:active {
-    background-color: rgba($color-accent-main, 0.9);
+    svg {
+      transform: translate(-10px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.2;
   }
 }
