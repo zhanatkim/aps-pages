@@ -12,7 +12,7 @@ const dropMenu = document.querySelector('.main-nav__submenu');
 
 const serviceTab = nav.querySelectorAll('.main-nav__item > .main-nav__link')[0];
 
-function closeMenu() {
+export function closeMenu() {
   nav.classList.remove('is-active');
   toggle.classList.remove('is-active');
   toggle.removeEventListener('click', closeMenu);

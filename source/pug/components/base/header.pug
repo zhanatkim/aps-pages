@@ -88,11 +88,23 @@ mixin header(headerMods, currentUrl, lang)
         },
       },
     ]
+  -
+    const filterBtns = {
+      "ru": "Фильтр",
+      "en": "Filter",
+      "kz": "Cүзгі"
+    }
 
   header.header(class=headerMods)
     .container
       .header__wrapper
         +header-logo(headerMods)
+        if currentUrl === "catalog.html"
+          button.header__filter-toggle(type="button", aria-label="Filter-toggle", aria-pressed="false")
+            each value, key in filterBtns
+              if headerMods === key
+                span!=value
+                +icon("polygon", 7, 7)
         button.header__toggle(type="button", aria-label="Menu toggle", aria-pressed="false")
           span.header__toggle-item
           //- +icon("icon-burger", 20, 20)

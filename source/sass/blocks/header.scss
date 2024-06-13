@@ -154,3 +154,55 @@
     }
   }
 }
+
+.header__filter-toggle {
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+  font-family: $ff-default;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 100%;
+  width: fit-content;
+  gap: 5px;
+  color: $color-default-black;
+  cursor: pointer;
+
+  transition: color $trans-default;
+
+  svg {
+    transition: color $trans-default, transform $trans-default;
+  }
+
+  @include hover-focus {
+    color: $color-accent-main;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:active {
+    color: $color-accent-main;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include vp-767 {
+    display: flex;
+  }
+
+  &.is-active {
+    color: $color-default-black;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

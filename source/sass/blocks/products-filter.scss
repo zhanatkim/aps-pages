@@ -20,6 +20,9 @@
   }
 
   @include vp-767 {
+    background-color: $color-bg-layout;
+    border-radius: 0;
+    padding: 0;
     position: fixed;
     top: 64px;
     left: 0;
@@ -36,8 +39,19 @@
     height: 100%;
     opacity: 1;
     visibility: visible;
+    overflow-y: scroll;
+
+    form {
+      background-color: #fffefc;
+      border-radius: 0 0 40px 40px;
+      padding: 60px 20px 60px;
+      height: calc(100% - 60px);
+      overflow-y: scroll;
+    }
+
   }
 }
+
 
 .products-filter__btn-submit {
   display: none;
@@ -45,6 +59,11 @@
 
   @include vp-767 {
     display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px 20px;
   }
 }
 
@@ -64,6 +83,12 @@
   padding: 20% 10%;
   background-color: #f2f2f2;
   border-radius: 10px;
+
+  @include vp-767 {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
 }
 
 .products-filter__toggle {
