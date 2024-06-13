@@ -1,7 +1,64 @@
 .about-swiper {
   width: 100%;
+  padding: 28px 0;
 }
 
 .about-swiper__swiper {
   width: 100%;
+  padding-bottom: 90px;
+
+}
+
+.about-swiper__wrapper {
+  height: auto;
+}
+
+.about-swiper__slide {
+  box-shadow: 0 0 20px 0 rgba(71, 38, 5, 0.1);
+  background: rgba(243, 232, 222, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-swiper__image {
+  width: 100%;
+  padding: 0 0 80%;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about-swiper__text {
+  padding: 20px 10px;
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 109%;
+    text-align: center;
+    color: #2d383f;
+
+    @include vp-1023 {
+      font-size: 16px;
+    }
+  }
+}
+
+.about-swiper__btn {
+  bottom: 0;
 }

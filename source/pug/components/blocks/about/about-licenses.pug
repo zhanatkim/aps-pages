@@ -129,12 +129,12 @@ mixin about-licenses(lang)
       ]
     }
 
-  .section.about-licenses
+  section.about-licenses
     .container
       .about-licenses__top
         each value, key in titles
           if lang === key
-            h2.about-licenses__title.title!=value
+            h2.about-licenses__title.title.title--about!=value
         each value, key in texts
           if lang === key
             p.about-licenses__text!=value

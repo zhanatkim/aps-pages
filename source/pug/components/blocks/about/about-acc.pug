@@ -1,0 +1,81 @@
+mixin about-acc (lang)
+  -
+    const data = {
+      "ru": {
+        key1: "Юридический адрес",
+        addr: "130000, Республика   Казахстан, Мангистауская область, город Актау, Промышленная зона№6, участок   91/5. Производственная база ТОО “Asia Petro Service”",
+        key2: "БИН",
+        bin: "120340015002",
+        key3: "Расчетные счета",
+        acc: "KZ298560000005101089 (KZT)<br>KZ838560000005101087 (RUR)<br>KZ568560000005101088 (USD)<br>KZ138560000005101086 (EUR)",
+        key4: "Банк",
+        bank: "Филиал АО “Банк ЦентрКредит”   в г. Актау Республика Казахстан,  Мангистауская область, 130000, г. Актау, 12 микрорайон,  12 зд., БИН 980741000394",
+        key5: "Бик",
+        bik: "KCJBKZKX",
+        key6: "Директор",
+        dir: "Яремко Артем Владимирович",
+      },
+      "en": {
+        key1: "Legal address",
+        addr: "130000, Republic of Kazakhstan, Mangystau region, Aktau city, Industrial zone No. 6, section 91/5. Production base of “Asia Petro Service” LLP",
+        key2: "BIN",
+        bin: "120340015002",
+        key3: "Current accounts",
+        acc: "KZ298560000005101089 (KZT)<br>KZ838560000005101087 (RUR)<br>KZ568560000005101088 (USD)<br>KZ138560000005101086 (EUR)",
+        key4: "Bank",
+        bank: "Branch of Bank CenterCredit JSC in Aktau Republic of Kazakhstan, Mangistau region, 130000, Aktau, 12 microdistrict, 12 building, BIN 980741000394",
+        key5: "Bic",
+        bik: "KCJBKZKX",
+        key6: "Director",
+        dir: "Yaremko Artem Vladimirovich",
+      },
+      "kz": {
+        key1: "Заңды мекен-жайы",
+        addr: "130000, Қазақстан Республикасы, Маңғыстау облысы, Ақтау қаласы, № 6 өнеркәсіптік аймақ, 91/5-бөлім. «Азия Петро Сервис» ЖШС өндірістік базасы",
+        key2: "БИН",
+        bin: "120340015002",
+        key3: "Ағымдағы шоттар",
+        acc: "KZ298560000005101089 (KZT)<br>KZ838560000005101087 (RUR)<br>KZ568560000005101088 (USD)<br>KZ138560000005101086 (EUR)",
+        key4: "Банк",
+        bank: "«Банк ЦентрКредит» АҚ Ақтау қаласындағы филиалы Қазақстан Республикасы, Маңғыстау облысы, 130000, Ақтау қ., 12 шағын аудан, 12 корпус, БСН 980741000394",
+        key5: "Бик",
+        bik: "KCJBKZKX",
+        key6: "Директор",
+        dir: "Яремко Артем Владимирович",
+      },
+    }
+
+  -
+    const titles = {
+      "ru": "Реквизиты",
+      "en": "Requisites",
+      "kz": "Pеквизиттер"
+    }
+
+  section.about-acc
+    .container
+      each value, key in titles
+        if lang === key
+          h2.about-acc__title.title.title--about!=value
+      ul.about-acc__list
+        each text, key in data
+          if lang === key
+            li.about-acc__item
+              span.about-acc__key!=text.key1
+              span.about-acc__value!=text.addr
+            li.about-acc__item
+              span.about-acc__key!=text.key2
+              span.about-acc__value!=text.bin
+            li.about-acc__item
+              span.about-acc__key!=text.key3
+              span.about-acc__value!=text.acc
+            li.about-acc__item
+              span.about-acc__key!=text.key4
+              span.about-acc__value!=text.bank
+            li.about-acc__item
+              span.about-acc__key!=text.key5
+              span.about-acc__value!=text.bik
+            li.about-acc__item
+              span.about-acc__key!=text.key6
+              span.about-acc__value!=text.dir
+      +modal-link(lang)

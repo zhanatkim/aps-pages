@@ -41,7 +41,7 @@ mixin about-hero(lang)
   each hero in heros
     each value, key in hero
       if lang === key
-        +hero2(value)
+        +hero2(value)(class="about-hero")
   each title, key in titles
     if lang === key
   h1.visually-hidden!=title

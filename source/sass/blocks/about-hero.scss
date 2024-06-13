@@ -1,0 +1,38 @@
+.about-hero {
+
+  .hero2__wrapper::after {
+    background: linear-gradient(11deg, rgba(80, 63, 43, 0.33) 0%, rgba(80, 63, 43, 0.33) 100%);
+  }
+
+  .hero2__inner {
+    width: 60%;
+    padding: 22% 0 6%;
+
+    @include vp-767 {
+      width: 100%;
+      padding: 10% 0 4%;
+    }
+  }
+
+  .hero2__text {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 117%;
+    color: #ffffff;
+
+    @include vp-1023 {
+      font-size: 24px;
+    }
+
+    @include vp-767 {
+      color: $color-default-black;
+      font-weight: 600;
+    }
+  }
+
+  .hero2__image {
+    img {
+      object-position: top left;
+    }
+  }
+}

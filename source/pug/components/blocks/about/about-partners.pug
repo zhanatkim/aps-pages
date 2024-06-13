@@ -85,7 +85,7 @@ mixin about-partners ()
       .about-partners__top
         each title, key in titles
           if lang === key
-            h2.about-partners__title.title!=title
+            h2.about-partners__title.title.title--about!=title
         each text, key in texts
           if lang === key
             p.about-partners__text!=text
@@ -93,7 +93,7 @@ mixin about-partners ()
         .about-partners__wrapper.swiper-wrapper
           each slide in slides
             .about-partners__slide.swiper-slide
-              a(href=slide.href, data-id=slide.name)
+              a(href=slide.href, data-id=slide.name, data-open-modal="about-link-modal")
                 +img-doc("slides", slide.image, slide.format, slide.width, slide.height, slide.name)
         .about-partners__pagination.swiper-pagination
         .about-partners__btn.about-partners__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev

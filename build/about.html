@@ -86,7 +86,7 @@
         </div>
       </header>
       <main>
-        <div class="hero2">
+        <div class="hero2 about-hero">
           <div class="container">
             <div class="breadcrumbs"><a href="index.html">Главная</a>
               <svg width="9" height="7" aria-hidden="true">
@@ -108,7 +108,7 @@
           </div>
         </div>
         <h1 class="visually-hidden">AsiaPetroservice - О нас</h1>
-        <div class="section about-swiper">
+        <section class="about-swiper">
           <div class="container">
             <div class="about-swiper__swiper swiper">
               <div class="swiper-wrapper about-swiper__wrapper">
@@ -145,11 +145,11 @@
               <div class="about-swiper__btn about-swiper__btn--next swiper-button swiper-button--next swiper-button-next"></div>
             </div>
           </div>
-        </div>
-        <div class="section about-licenses">
+        </section>
+        <section class="about-licenses">
           <div class="container">
             <div class="about-licenses__top">
-              <h2 class="about-licenses__title title">Лицензии и сертификаты</h2>
+              <h2 class="about-licenses__title title title--about">Лицензии и сертификаты</h2>
               <p class="about-licenses__text">Имеем аккредитацию в Казахстане в области НИОКР. Мы следуем международным стандартам в области ОТ, ТБ и ООС.</p>
             </div>
             <div class="about-licenses__swiper swiper">
@@ -176,27 +176,53 @@
               <div class="about-licenses__btn about-licenses__btn--next swiper-button swiper-button--next swiper-button-next"></div>
             </div>
           </div>
-        </div>
+        </section>
         <section class="about-partners">
           <div class="container">
             <div class="about-partners__top">
-              <h2 class="about-partners__title title">Партнеры</h2>
+              <h2 class="about-partners__title title title--about">Партнеры</h2>
               <p class="about-partners__text">Сотрудничаем со многими ведущими мировыми производителями, научно-исследовательскими и проектными институтами и бюро.</p>
             </div>
             <div class="about-partners__swiper swiper">
               <div class="about-partners__wrapper swiper-wrapper">
-                <div class="about-partners__slide swiper-slide"><a href="https://www.westcomplus.com/" data-id="WestComPlus"><img src="img/slides/partner-wcp.png" width="234" height="48" alt="WestComPlus"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://www.mpservices.ru/" data-id="Макс Петролеум Сервис"><img src="img/slides/partner-max.png" width="128" height="97" alt="Макс Петролеум Сервис"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://www.dftme.com/" data-id="DFT"><img src="img/slides/partner-dft.png" width="300" height="66" alt="DFT"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://hitechfluid.com/" data-id="HiTech Fluid Systems"><img src="img/slides/partner-htech.png" width="234" height="100" alt="HiTech Fluid Systems"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://stepoiltools.ru/" data-id="ТОО «СТЕП Ойлтулз»"><img src="img/slides/partner-sot.png" width="234" height="84" alt="ТОО «СТЕП Ойлтулз»"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://gcind.kz/" data-id="Global Chemicals Industries"><img src="img/slides/partner-gci.png" width="222" height="64" alt="Global Chemicals Industries"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="https://www.himburneft.ru/" data-id="НПО ХИМБУРНЕФТЬ"><img src="img/slides/partner-hbn.jpg" width="300" height="219" alt="НПО ХИМБУРНЕФТЬ"></a></div>
-                <div class="about-partners__slide swiper-slide"><a href="http://www.longstarchem.com" data-id="WEIFANG LONGSTAR CHEMICAL INC."><img src="img/slides/partner-long.png" width="224" height="60" alt="WEIFANG LONGSTAR CHEMICAL INC."></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="https://www.westcomplus.com/" data-id="WestComPlus" data-open-modal="about-link-modal"><img src="img/slides/partner-wcp.png" width="234" height="48" alt="WestComPlus"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://www.mpservices.ru/" data-id="Макс Петролеум Сервис" data-open-modal="about-link-modal"><img src="img/slides/partner-max.png" width="128" height="97" alt="Макс Петролеум Сервис"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://www.dftme.com/" data-id="DFT" data-open-modal="about-link-modal"><img src="img/slides/partner-dft.png" width="300" height="66" alt="DFT"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://hitechfluid.com/" data-id="HiTech Fluid Systems" data-open-modal="about-link-modal"><img src="img/slides/partner-htech.png" width="234" height="100" alt="HiTech Fluid Systems"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://stepoiltools.ru/" data-id="ТОО «СТЕП Ойлтулз»" data-open-modal="about-link-modal"><img src="img/slides/partner-sot.png" width="234" height="84" alt="ТОО «СТЕП Ойлтулз»"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://gcind.kz/" data-id="Global Chemicals Industries" data-open-modal="about-link-modal"><img src="img/slides/partner-gci.png" width="222" height="64" alt="Global Chemicals Industries"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="https://www.himburneft.ru/" data-id="НПО ХИМБУРНЕФТЬ" data-open-modal="about-link-modal"><img src="img/slides/partner-hbn.jpg" width="300" height="219" alt="НПО ХИМБУРНЕФТЬ"></a></div>
+                <div class="about-partners__slide swiper-slide"><a href="http://www.longstarchem.com" data-id="WEIFANG LONGSTAR CHEMICAL INC." data-open-modal="about-link-modal"><img src="img/slides/partner-long.png" width="224" height="60" alt="WEIFANG LONGSTAR CHEMICAL INC."></a></div>
               </div>
               <div class="about-partners__pagination swiper-pagination"></div>
               <div class="about-partners__btn about-partners__btn--prev swiper-button swiper-button--prev swiper-button-prev"></div>
               <div class="about-partners__btn about-partners__btn--next swiper-button swiper-button--next swiper-button-next"></div>
+            </div>
+          </div>
+        </section>
+        <section class="about-acc">
+          <div class="container">
+            <h2 class="about-acc__title title title--about">Реквизиты</h2>
+            <ul class="about-acc__list">
+              <li class="about-acc__item"><span class="about-acc__key">Юридический адрес</span><span class="about-acc__value">130000, Республика   Казахстан, Мангистауская область, город Актау, Промышленная зона№6, участок   91/5. Производственная база ТОО “Asia Petro Service”</span></li>
+              <li class="about-acc__item"><span class="about-acc__key">БИН</span><span class="about-acc__value">120340015002</span></li>
+              <li class="about-acc__item"><span class="about-acc__key">Расчетные счета</span><span class="about-acc__value">KZ298560000005101089 (KZT)<br>KZ838560000005101087 (RUR)<br>KZ568560000005101088 (USD)<br>KZ138560000005101086 (EUR)</span></li>
+              <li class="about-acc__item"><span class="about-acc__key">Банк</span><span class="about-acc__value">Филиал АО “Банк ЦентрКредит”   в г. Актау Республика Казахстан,  Мангистауская область, 130000, г. Актау, 12 микрорайон,  12 зд., БИН 980741000394</span></li>
+              <li class="about-acc__item"><span class="about-acc__key">Бик</span><span class="about-acc__value">KCJBKZKX</span></li>
+              <li class="about-acc__item"><span class="about-acc__key">Директор</span><span class="about-acc__value">Яремко Артем Владимирович</span></li>
+            </ul>
+            <div class="modal-link">
+              <button class="modal-link__button" type="button" data-open-modal="form-modal">
+                <div class="modal-link__wrapper">
+                  <div class="modal-link__icon">
+                    <svg width="60" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#envelope"></use>
+                    </svg>
+                  </div>
+                  <div class="modal-link__right"><span class="modal-link__text">напишите нам, мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответим на&nbsp;все интересующие вопросы</span><span class="modal-link__short-text">Получить консультацию</span>
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
         </section>
@@ -219,6 +245,76 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="modal modal--preload modal--form" data-modal="form-modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="form-modal" data-modal="form-modal">
+            <div class="form-modal__wrapper">
+              <h2 class="form-modal__title title">Напишите нам</h2>
+              <p class="form-modal__text">Наши менеджеры ответят на&nbsp;ваши вопросы , произведут расчет стоимости услуг и&nbsp;подготовят индивидуальное коммерческое предложение.</p>
+              <div class="form-modal__form form">
+                <form action="#" method="post">
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">Имя</span>
+                      <input type="text" name="user-name">
+                    </label>
+                  </div>
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">e-mail</span>
+                      <input type="text" name="user-email">
+                    </label>
+                  </div>
+                  <div class="form-input form-input--modal">
+                    <label><span class="form-input__label">Телефон</span>
+                      <input type="text" name="user-phone">
+                    </label>
+                  </div>
+                  <div class="form-textarea form-textarea--modal">
+                    <label><span class="form-textarea__label">Ваше сообщение</span>
+                      <textarea name="user-message"></textarea>
+                    </label>
+                  </div>
+                  <div class="toggle">
+                    <label>
+                      <input type="checkbox"><span class="toggle__label">Я согласен на обработку моих персональных данных.</span>
+                    </label>
+                  </div>
+                  <button class="btn form-modal__btn btn--line" type="submit"><span>отправить</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload modal--link" data-modal="about-link-modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="about-link-modal" data-modal="about-link-modal">
+            <p class="about-link-modal__text">Вы собираетесь открыть ссылку</p>
+            <div class="about-link-modal__bottom">
+              <button class="btn" type="button" data-close-modal><span></span>Вернуться
+              </button>
+              <button class="btn" href="#" type="button"><span></span>Открыть
+              </button>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

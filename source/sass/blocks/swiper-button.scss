@@ -1,6 +1,7 @@
 .swiper-button {
   background-color: $color-accent-main;
   color: $color-default-white;
+  border-radius: 3px;
 
   width: 36px;
   height: 36px;
@@ -12,11 +13,11 @@
   }
 
   &--next {
-    left: calc(50% + 21px);
+    left: calc(50% + 20px);
   }
 
   &--prev {
-    left: calc(50% - 39px);
+    left: calc(50% - 56px);
   }
 
   @include vp-767 {

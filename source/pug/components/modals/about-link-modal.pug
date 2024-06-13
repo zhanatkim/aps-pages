@@ -1,0 +1,27 @@
+mixin about-link-modal(lang)
+  -
+    const content = {
+      "ru": {
+        text: "Вы собираетесь открыть ссылку",
+        a: "Открыть",
+        rst: "Вернуться"
+      },
+      "en": {
+        text: "You are about to open a link",
+        a: "Open",
+        rst: "Return",
+      },
+      "kz": {
+        text: "Сіз сілтемені ашқалы жатырсыз",
+        a: "Ашық",
+        rst: "Қайту"
+      },
+    }
+
+  .about-link-modal(data-modal="about-link-modal")
+    each value, key in content
+      if lang === key
+        p.about-link-modal__text!=value.text
+        .about-link-modal__bottom
+          +btn(type="button", data-close-modal)!=value.rst
+          +btn(href="#")!=value.a
