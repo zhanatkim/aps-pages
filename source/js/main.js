@@ -10,6 +10,9 @@ import {menuToggle} from './modules/menu-toggle.js';
 import {servicesCardsRender} from './modules/services-cards-render';
 import {productsCardsRender} from './modules/products-cards-render';
 import {selectCards} from './modules/products-filter';
+// import {renderResetButton} from './modules/search-button.js';
+import {searching} from './modules/searching.js';
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
     servicesCardsRender();
     productsCardsRender();
     selectCards();
+    // renderResetButton();
+    searching();
     initModals();
     uploadFile();
     uploadImageDrop();

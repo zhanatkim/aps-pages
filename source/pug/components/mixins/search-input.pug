@@ -1,0 +1,9 @@
+mixin search-input(options = {})
+  - const inputLabel = options.inputLabel || ""
+  - const inputId = options.inputId || false
+  - const inputName = options.inputName || false
+  - const inputPlaceholder = options.inputPlaceholder || false
+
+    label(for=inputId)!=inputLabel
+      +icon("search", 16, 16)
+      input(type="text", id="search", placeholder=inputPlaceholder)

@@ -1,0 +1,7 @@
+mixin search(data= {})
+  - const {input, btn, placeholder} = data
+
+  .search&attributes(attributes)
+    form(action="#" method="get")
+      +search-input(input, placeholder)
+        +btn.search__reset(type="reset", aria-label="Очистить строку поиска")

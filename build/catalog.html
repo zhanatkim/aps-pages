@@ -111,8 +111,17 @@
         <section class="products-catalog">
           <div class="container">
             <div class="products-catalog__wrapper">
-              <section class="products-filter">
-                <div class="products-filter__search search"></div>
+              <div class="products-filter">
+                <div class="search products-filter__search">
+                  <form action="#" method="get">
+                    <label>
+                      <svg width="16" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#search"></use>
+                      </svg>
+                      <input type="text" id="search" placeholder="Поиск">
+                    </label>
+                  </form>
+                </div>
                 <div class="products-filter__wrapper">
                   <form action="#" method="post">
                     <div class="products-filter__inner">
@@ -183,7 +192,7 @@
                     </button>
                   </form>
                 </div>
-              </section>
+              </div>
               <div class="products-catalog__inner">
                 <div class="products-catalog__catalog">
                   <article class="product-card" data-sort="weights" data-id="1">

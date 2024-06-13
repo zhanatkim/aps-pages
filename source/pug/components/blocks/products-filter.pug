@@ -130,8 +130,25 @@ mixin products-filter (lang)
         }
       },
     ]
-  section.products-filter
-    .products-filter__search.search
+
+  -
+    const searchData = {
+      "ru": "Поиск",
+      "en": "Search",
+      "kz": "Іздеу"
+    }
+  .products-filter
+    each value, key in searchData
+      if lang === key
+        +search({
+          input: {
+            inputLabel: "",
+            inputName: "search",
+            inputPlaceholder: value,
+            classMods: ["hidden-label"],
+          },
+          btn: {},
+        })(class="products-filter__search")
     .products-filter__wrapper
       form(action="#" method="post")
         .products-filter__inner
