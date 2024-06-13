@@ -1,0 +1,100 @@
+mixin about-partners ()
+  -
+    const titles = {
+      "ru": "Партнеры",
+      "en": "Partners",
+      "kz": "Серіктестер"
+    }
+  -
+    const texts = {
+      "ru": "Сотрудничаем со многими ведущими мировыми производителями, научно-исследовательскими и проектными институтами и бюро.",
+      "en": "We cooperate with many of the world's leading manufacturers, research and design institutes and bureaus.",
+      "kz": "Біз әлемнің көптеген жетекші өндірушілерімен, ғылыми-зерттеу және жобалау институттарымен және бюроларымен ынтымақтасамыз."
+    }
+
+  -
+    const slides = [
+      {
+        name: "WestComPlus",
+        href: "https://www.westcomplus.com/",
+        image: "partner-wcp",
+        width: 234,
+        height: 48,
+        format: "png",
+      },
+      {
+        name: "Макс Петролеум Сервис",
+        href: "http://www.mpservices.ru/",
+        image: "partner-max",
+        width: 128,
+        height: 97,
+        format: "png",
+      },
+      {
+        name: "DFT",
+        href: "http://www.dftme.com/",
+        image: "partner-dft",
+        width: 300,
+        height: 66,
+        format: "png",
+      },
+      {
+        name: "HiTech Fluid Systems",
+        href: "http://hitechfluid.com/",
+        image: "partner-htech",
+        width: 234,
+        height: 100,
+        format: "png",
+      },
+      {
+        name: "ТОО «СТЕП Ойлтулз»",
+        href: "http://stepoiltools.ru/",
+        image: "partner-sot",
+        width: 234,
+        height: 84,
+        format: "png",
+      },
+      {
+        name: "Global Chemicals Industries",
+        href: "http://gcind.kz/",
+        image: "partner-gci",
+        width: 222,
+        height: 64,
+        format: "png",
+      },
+      {
+        name: "НПО ХИМБУРНЕФТЬ",
+        href: "https://www.himburneft.ru/",
+        image: "partner-hbn",
+        width: 300,
+        height: 219,
+        format: "jpg",
+      },
+      {
+        name: "WEIFANG LONGSTAR CHEMICAL INC.",
+        href: "http://www.longstarchem.com",
+        image: "partner-long",
+        width: 224,
+        height: 60,
+        format: "png",
+      }
+    ]
+
+  section.about-partners
+    .container
+      .about-partners__top
+        each title, key in titles
+          if lang === key
+            h2.about-partners__title.title!=title
+        each text, key in texts
+          if lang === key
+            p.about-partners__text!=text
+      .about-partners__swiper.swiper
+        .about-partners__wrapper.swiper-wrapper
+          each slide in slides
+            .about-partners__slide.swiper-slide
+              a(href=slide.href, data-id=slide.name)
+                +img-doc("slides", slide.image, slide.format, slide.width, slide.height, slide.name)
+        .about-partners__pagination.swiper-pagination
+        .about-partners__btn.about-partners__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev
+        .about-partners__btn.about-partners__btn--next.swiper-button.swiper-button--next.swiper-button-next

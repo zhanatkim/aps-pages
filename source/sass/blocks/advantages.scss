@@ -24,9 +24,6 @@
   &__swiper-button {
     width: 36px;
     height: 36px;
-    background-color: $color-accent-main;
-    color: $color-default-white;
-
     top: auto;
     bottom: 20px;
 
@@ -42,8 +39,6 @@
       left: calc(50% - 39px);
     }
 
-
-    @include vp-1023 {}
     @include vp-767 {
       width: 24px;
       height: 24px;
@@ -60,7 +55,6 @@
         left: calc(50% - 27px);
       }
     }
-
   }
 
 }

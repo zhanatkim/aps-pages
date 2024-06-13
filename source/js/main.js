@@ -6,6 +6,9 @@ import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
+import './modules/about-swiper';
+import './modules/licenses-swiper';
+import './modules/partners-swiper';
 import {menuToggle} from './modules/menu-toggle.js';
 import {servicesCardsRender} from './modules/services-cards-render';
 import {productsCardsRender} from './modules/products-cards-render';

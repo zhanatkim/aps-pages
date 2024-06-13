@@ -1,0 +1,81 @@
+mixin about-swiper(lang)
+  -
+    const slides = [
+      {
+        image: "about-slide1",
+        width : 555,
+        height: 448,
+        altTexts: {
+          "ru": "слайд1",
+          "en": "slide1",
+          "kz": "слайды1",
+        },
+        texts: {
+          "ru": "Cобственная производственная база поддержки в&nbsp;г. Актау с&nbsp;аккредитованной лабораторией.",
+          "en": "Own production support base in Aktau with an accredited laboratory.",
+          "kz": "Ақтауда аккредиттелген зертханасы бар жеке өндірісті қолдау базасы.",
+        },
+      },
+      {
+        image: "about-slide2",
+        width : 555,
+        height: 448,
+        altTexts: {
+          "ru": "слайд2",
+          "en": "slide2",
+          "kz": "слайды2",
+        },
+        texts: {
+          "ru": "Производственный цех реагентов для буровых растворов.",
+          "en": "Production workshop of reagents for drilling fluids.",
+          "kz": "Бұрғылау ерітінділеріне арналған реагенттерді өндіру цехы.",
+        },
+      },
+      {
+        image: "about-slide3",
+        width : 555,
+        height: 448,
+        altTexts: {
+          "ru": "слайд3",
+          "en": "slide3",
+          "kz": "слайды3",
+        },
+        texts: {
+          "ru": "Производственный цех по&nbsp;выпуску добычной химии: деэмульгаторы, ингибиторы коррозии, поглотители сероводорода, биоциды и&nbsp;другие.",
+          "en": "Production workshop for the production of mining chemicals: demulsifiers, corrosion inhibitors, hydrogen sulfide absorbers, biocides and others.",
+          "kz": "Тау-кен химикаттарын өндіретін өндірістік цех: деэмульгаторлар, коррозияға қарсы ингибиторлар, күкіртсутекті сіңіргіштер, биоцидтер және т.б.",
+        },
+      },
+      {
+        image: "about-slide4",
+        width : 555,
+        height: 448,
+        altTexts: {
+          "ru": "слайд4",
+          "en": "slide4",
+          "kz": "слайды4",
+        },
+        texts: {
+          "ru": "Специальная техника в&nbsp;количестве 6&nbsp;единиц для оказания услуг по&nbsp;кислотной и&nbsp;химической обработке скважин.",
+          "en": "Special equipment in the amount of 6 units to provide services for acid and chemical treatment of wells.",
+          "kz": "Ұңғымаларды қышқылдық және химиялық өңдеу бойынша қызмет көрсету үшін 6 бірлік көлемінде арнайы техника.",
+        },
+      },
+    ]
+
+  .section.about-swiper
+    .container
+      .about-swiper__swiper.swiper
+        .swiper-wrapper.about-swiper__wrapper
+          each slide in slides
+            .swiper-slide.about-swiper__slide
+              .about-swiper__image
+                each value, key in slide.altTexts
+                  if lang === key
+                    +img('slides', slide.image, 'jpg', slide.width, slide.height, value)
+              .about-swiper__text
+                each value, key in slide.texts
+                  if lang === key
+                    p!=value
+        .about-swiper__btn.about-swiper__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev
+        .about-swiper__btn.about-swiper__btn--next.swiper-button.swiper-button--next.swiper-button-next

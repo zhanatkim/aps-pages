@@ -4167,8 +4167,6 @@ button,
 .advantages__swiper-button {
   width: 36px;
   height: 36px;
-  background-color: #ef9840;
-  color: #ffffff;
   top: auto;
   bottom: 20px;
 }
@@ -4875,7 +4873,7 @@ button,
 }
 
 .hero2__inner {
-  padding: 9% 0 8.2%;
+  padding: 20% 0 8.2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6043,6 +6041,47 @@ button,
 }
 .search:hover .search__reset, .search[data-opacity="1"] .search__reset {
   opacity: 1;
+}
+
+.swiper-button {
+  background-color: #ef9840;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  top: auto;
+  bottom: 20px;
+}
+.swiper-button::after {
+  font-size: 18px;
+}
+.swiper-button--next {
+  left: calc(50% + 21px);
+}
+.swiper-button--prev {
+  left: calc(50% - 39px);
+}
+@media (max-width: 767px) {
+  .swiper-button {
+    width: 24px;
+    height: 24px;
+  }
+  .swiper-button::after {
+    font-size: 14px;
+  }
+  .swiper-button--next {
+    left: calc(50% + 15px);
+  }
+  .swiper-button--prev {
+    left: calc(50% - 27px);
+  }
+}
+
+.about-swiper {
+  width: 100%;
+}
+
+.about-swiper__swiper {
+  width: 100%;
 }
 
 /* @mixin hover-focus {

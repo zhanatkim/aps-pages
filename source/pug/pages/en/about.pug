@@ -1,23 +1,20 @@
-extends ../components/base/layout
+extends ../../components/base/layout
 
 block variables
-  - const lang = "ru"
+  - const lang = "en"
   - const page = "about"
   - const title = "AsiaPetroservice - О нас" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
-  - const headerMods = "ru"
+  - const headerMods = "en"
   - const hasFooter = true
-  - const footerMods = "ru"
+  - const footerMods = "en"
   - const currentUrl = "about.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
   main
-    +about-hero(lang)
-    +about-swiper(lang)
-    +about-licenses(lang)
-    +about-partners(lang)
-
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
 
 
 block modals
