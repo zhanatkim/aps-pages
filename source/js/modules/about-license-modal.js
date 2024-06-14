@@ -3,7 +3,6 @@ const modal = document.querySelector('.modal--license');
 
 const onLinkOpenModal = (evt) => {
   const link = evt.target.closest('.about-licenses__slide');
-  console.log(link.innerHTML);
   // evt.preventDefault();
   const content = modal.querySelector('.about-license-modal');
   content.innerHTML = link.innerHTML;

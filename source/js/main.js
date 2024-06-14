@@ -9,6 +9,9 @@ import './modules/hero-swiper';
 import './modules/about-swiper';
 import './modules/licenses-swiper';
 import './modules/partners-swiper';
+import './modules/events-swiper-22';
+import './modules/events-swiper-23';
+
 import {menuToggle} from './modules/menu-toggle.js';
 import {servicesCardsRender} from './modules/services-cards-render';
 import {productsCardsRender} from './modules/products-cards-render';

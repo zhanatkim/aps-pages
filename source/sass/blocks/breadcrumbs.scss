@@ -22,6 +22,10 @@
     line-height: 100%;
     color: $color-default-black;
 
+    @include vp-1279 {
+      font-size: 14px;
+    }
+
     @include vp-1023 {
       padding: 3px 0;
       font-size: 13px;

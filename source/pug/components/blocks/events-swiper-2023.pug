@@ -1,0 +1,61 @@
+mixin events-swiper-2023(lang)
+  -
+    const titles = {
+      "ru": "Фото-материалы с турнира по боксу в 2023году в г.Актау.",
+      "en": "Photos from the boxing tournament in 2023 in Aktau.",
+      "kz": "2023 жылы Ақтауда өткен бокс турнирінен суреттер."
+    }
+
+  -
+    const subtitles = {
+      "ru": "В 2023 году команда ТОО «АзияПетроСервис» поддержала турнир по боксу среди молодежи.",
+      "en": "In 2023, the AsiaPetroService LLP team supported a boxing tournament among youth.",
+      "kz": "2023 жылы «АзияПетроСервис» ЖШС командасы жастар арасында бокстан турнир өткізуге қолдау көрсетті."
+    }
+  -
+    const slides = [
+      {
+        text: {
+          "ru": "2023г - Турнир по Боксу совместно с QAZ STYLE PRO BOXING в честь Заслуженного тренера Советского союза В.В. Голованова.",
+          "en": "2023 - Boxing tournament together with QAZ STYLE PRO BOXING in honor of the Honored Trainer of the Soviet Union V.V. Golovanov.",
+          "kz": " 2023 - QAZ STYLE PRO BOXING-пен бірге бокстан турнир құрметіне Кеңес Одағының еңбек сіңірген жаттықтырушысы В.В. Голованов.",
+        },
+        image: "event-2023-1",
+        alt: "slide-1",
+      },
+      {
+        image: "event-2023-2",
+        alt: "slide-2",
+      },
+      {
+        image: "event-2023-3",
+        alt: "slide-3",
+      },
+      {
+        image: "event-2023-4",
+        alt: "slide-4",
+      },
+      {
+        image: "event-2023-5",
+        alt: "slide-5",
+      },
+      {
+        image: "event-2023-6",
+        alt: "slide-6",
+      },
+      {
+        image: "event-2023-7",
+        alt: "slide-7",
+      },
+      {
+        image: "event-2023-8",
+        alt: "slide-8",
+      },
+    ]
+  section.events
+    .container
+      each subtitle, key in subtitles
+        if lang === key
+          h2.events__title.title!=subtitle
+      +events-swiper(slides, 23, lang)
+

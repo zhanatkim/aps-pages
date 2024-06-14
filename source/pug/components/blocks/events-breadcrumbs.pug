@@ -1,0 +1,33 @@
+mixin events-breadcrumbs(lang)
+  -
+    const data = {
+      "ru": {
+          href: "events.html",
+          breadcrumb: "События",
+      },
+      "en": {
+          href: "events.html",
+          breadcrumb: "Events",
+      },
+      "kz": {
+          href: "events.html",
+          breadcrumb: "Оқиғалар",
+      },
+    }
+
+  -
+    const titles = {
+      "ru": "События, проводимые с участием ТОО АзияПетроСервис.",
+      "en": "Events held with the participation of AsiaPetroService LLP.",
+      "kz": "«АзияПетроСервис» ЖШС қатысуымен өткен іс-шаралар."
+    }
+
+  .events-hero
+    .container
+      each value, key in data
+        if lang === key
+          +breadcrumbs(value.href, value.breadcrumb)
+      each title, key in titles
+        if lang === key
+          h1.visually-hidden!=title
+

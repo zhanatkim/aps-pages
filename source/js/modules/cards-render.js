@@ -22,9 +22,10 @@ export const sliceCards = (cardsList, cardsButton, CARDS_AMOUNT_AT_ONCE) => {
 };
 
 export const clearCardsList = (cardsButton) => {
-  renderedCardsCount = 0;
-  if (cardsButton.classList.contains('is-hidden')) {
-    cardsButton.classList.remove('is-hidden');
+  if (cardsButton) {
+    renderedCardsCount = 0;
+    if (cardsButton.classList.contains('is-hidden')) {
+      cardsButton.classList.remove('is-hidden');
+    }
   }
-
 };

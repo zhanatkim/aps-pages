@@ -1,0 +1,28 @@
+mixin events-swiper (slides, year, lang)
+  .events__swiper.events-swiper.swiper.events-swiper--full(class=`events-swiper${year} events-swiper${year}--full`)
+    .events-swiper__wrapper.swiper-wrapper
+      each slide in slides
+        .events-swiper__slide.swiper-slide
+          if (slide.text)
+            each value, key in slide.text
+              if lang === key
+                .events-swiper__inner
+                  p!=value
+          .events-swiper__image
+            +img("slides", slide.image, "jpg", 1160, 626, slide.alt)
+
+    //- .events-swiper__btn.events-swiper__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev
+    //- .events-swiper__btn.events-swiper__btn--next.swiper-button.swiper-button--next.swiper-button-next
+
+  .events__swiper.events-swiper.swiper.events-swiper--thumb(class=`events-swiper${year} events-swiper${year}--thumb`)
+    .events-swiper__wrapper.swiper-wrapper
+      each slide in slides
+        .events-swiper__slide.swiper-slide
+          if (slide.text)
+            each value, key in slide.text
+              if lang === key
+                .events-swiper__inner
+                  p!=value
+          .events-swiper__image
+            +img("slides", slide.image, "jpg", 1160, 626, slide.alt)
+
