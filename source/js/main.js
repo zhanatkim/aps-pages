@@ -16,6 +16,8 @@ import {selectCards} from './modules/products-filter';
 // import {renderResetButton} from './modules/search-button';
 import {searching} from './modules/searching';
 import {renderFilterMobile} from './modules/filter-toggle-mobile';
+import {setLinkOpenModal} from './modules/about-link-partners';
+import {setLicenseOpenModal} from './modules/about-license-modal';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -38,6 +40,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // renderResetButton();
     searching();
     renderFilterMobile();
+    setLinkOpenModal();
+    setLicenseOpenModal();
     initModals();
     uploadFile();
     uploadImageDrop();

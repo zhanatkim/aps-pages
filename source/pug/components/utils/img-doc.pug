@@ -1,4 +1,4 @@
 mixin img-doc(path, image, format, width, height, altText, lang)
   - const sub = lang === "kz" || lang === "en" ? "" : ""
-    img(src= sub + "img/" + path + "/" + image + "." + format, width= width, height= height, alt= altText)
+    img(src= sub + "img/" + path + "/" + image + "." + format, width= width, height= height, alt= altText, oncontextmenu="return false;")
 

@@ -143,7 +143,7 @@ mixin about-licenses(lang)
           each value, key in slides
             if lang === key
               each slide in value
-                .about-licenses__slide.swiper-slide
+                .about-licenses__slide.swiper-slide(data-open-modal="about-license-modal")
                   +img-doc("slides", slide.image, "jpg", slide.width, slide.height, slide.license)
         .about-licenses__pagination.swiper-pagination
         .about-licenses__btn.about-licenses__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev

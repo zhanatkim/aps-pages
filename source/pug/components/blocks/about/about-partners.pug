@@ -93,7 +93,7 @@ mixin about-partners ()
         .about-partners__wrapper.swiper-wrapper
           each slide in slides
             .about-partners__slide.swiper-slide
-              a(href=slide.href, data-id=slide.name, data-open-modal="about-link-modal")
+              a.about-partners__link(href=slide.href, data-id=slide.name, data-open-modal="about-link-modal")
                 +img-doc("slides", slide.image, slide.format, slide.width, slide.height, slide.name)
         .about-partners__pagination.swiper-pagination
         .about-partners__btn.about-partners__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev

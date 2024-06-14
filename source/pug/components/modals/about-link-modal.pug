@@ -2,17 +2,17 @@ mixin about-link-modal(lang)
   -
     const content = {
       "ru": {
-        text: "Вы собираетесь открыть ссылку",
+        text: "Вы собираетесь открыть внешнюю ссылку. Хотите закрыть эту страницу?",
         a: "Открыть",
         rst: "Вернуться"
       },
       "en": {
-        text: "You are about to open a link",
+        text: "You are about to open an external link. Do you want to close this page?",
         a: "Open",
         rst: "Return",
       },
       "kz": {
-        text: "Сіз сілтемені ашқалы жатырсыз",
+        text: "Сіз сыртқы сілтемені ашқалы жатырсыз. Бұл бетті жапқыңыз келе ме?",
         a: "Ашық",
         rst: "Қайту"
       },
@@ -24,4 +24,4 @@ mixin about-link-modal(lang)
         p.about-link-modal__text!=value.text
         .about-link-modal__bottom
           +btn(type="button", data-close-modal)!=value.rst
-          +btn(href="#")!=value.a
+          +btn({href: "#"})(class="about-link-modal__link", data-close-modal)!=value.a

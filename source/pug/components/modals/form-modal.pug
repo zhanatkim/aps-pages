@@ -58,7 +58,8 @@ mixin form-modal(lang)
               })(class="form-textarea--modal")
               +custom-toggle({
                 inputLabel: value.circs,
-              })
+                icon: true
+              })(class="form-toggle form-modal__toggle")
               +btn({
                 type: "submit",
                 text: value.btn,

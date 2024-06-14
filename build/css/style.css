@@ -2215,7 +2215,7 @@ button,
           flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   visibility: hidden;
@@ -2284,16 +2284,16 @@ button,
   background: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 @media (hover: hover) {
   .modal__close-btn:hover:not(.focus-visible) {
-    opacity: 0.5;
+    color: #ef9840;
   }
 }
 .modal__close-btn.focus-visible:focus {
-  opacity: 0.5;
+  color: #ef9840;
 }
 .modal--responsive .modal__content {
   width: 100%;
@@ -2320,6 +2320,70 @@ button,
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+.modal--link .modal__content {
+  overflow: hidden;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal--link .about-link-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.modal--link .about-link-modal__text {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 0;
+  padding: 30px 0;
+  font-weight: 500;
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .modal--link .about-link-modal__text {
+    font-size: 14px;
+  }
+}
+.modal--link .about-link-modal__bottom {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+}
+.modal--link .about-link-modal__bottom .btn {
+  border: none;
+  background-color: transparent;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+@media (hover: hover) {
+  .modal--link .about-link-modal__bottom .btn:hover:not(.focus-visible) {
+    color: #ef9840;
+  }
+}
+.modal--link .about-link-modal__bottom .btn.focus-visible:focus {
+  color: #ef9840;
+}
+.modal--link .about-link-modal__bottom .btn:active {
+  color: #ef9840;
 }
 
 .btn {
@@ -4791,12 +4855,10 @@ button,
 }
 @media (hover: hover) {
   .form-toggle input:checked:hover:not(.focus-visible) + .toggle__icon {
-    border-color: transparent;
     color: #ef9840;
   }
 }
 .form-toggle input:checked.focus-visible:focus + .toggle__icon {
-  border-color: transparent;
   color: #ef9840;
 }
 .form-toggle .toggle__icon {
@@ -4843,6 +4905,41 @@ button,
   .form-toggle .toggle__label {
     color: #000000;
   }
+}
+
+.form-modal {
+  padding: 20px;
+}
+
+.form-modal__text {
+  font-size: 14px;
+  line-height: 150%;
+}
+@media (max-width: 767px) {
+  .form-modal__text {
+    font-size: 12px;
+  }
+}
+
+.form-modal__btn {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.form-modal__btn::after {
+  z-index: 0;
+}
+
+@media (hover: hover) {
+  .form-modal__toggle input:hover:not(.focus-visible) + .toggle__icon {
+    border-color: #ef9840;
+  }
+}
+.form-modal__toggle input.focus-visible:focus + .toggle__icon {
+  border-color: #ef9840;
+}
+.form-modal__toggle .toggle__icon {
+  border-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 }
 
 .hero2 {

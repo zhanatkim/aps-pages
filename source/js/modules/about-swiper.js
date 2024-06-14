@@ -6,7 +6,7 @@ const swiperOptions = {
     nextEl: '.about-swiper__btn--next',
     prevEl: '.about-swiper__btn--prev',
   },
-  // loop: true,
+  loop: true,
   // centeredSlides: true,
   slidesPerView: 1,
   speed: 600,

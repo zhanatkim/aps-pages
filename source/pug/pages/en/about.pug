@@ -13,8 +13,20 @@ block variables
 
 block main
   main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
+    +about-hero(lang)
+    +about-swiper(lang)
+    +about-licenses(lang)
+    +about-partners(lang)
+    +about-acc(lang)
+
+
 
 
 block modals
+  +modal(class="modal--form", data-modal="form-modal")
+    +form-modal(lang)
+  +modal(class="modal--link", data-modal="about-link-modal")
+    +about-link-modal(lang)
+  +modal(class="modal--license", data-modal="about-license-modal")
+    +about-license-modal(lang)
+
