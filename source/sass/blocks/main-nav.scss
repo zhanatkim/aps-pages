@@ -22,6 +22,7 @@
   }
 
   @include vp-767 {
+    padding: 20px;
     font-size: 12px;
   }
 
@@ -97,8 +98,10 @@
 
 .main-nav__item {
   @include vp-767 {
-    padding: 26px 0;
+    padding: 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     &::after {
       content: "";
@@ -133,7 +136,26 @@
   user-select: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity $trans-default;
+  height: 0;
+  overflow: hidden;
+  transition: opacity $trans-default, height $trans-default, visibility $trans-default;
+
+  @include vp-767 {
+    height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding-top: 0;
+
+    &.is-active {
+      height: 100%;
+      visibility: visible;
+      overflow: visible;
+      opacity: 1;
+      position: static;
+    }
+  }
 }
 
 .main-nav__subsublist,
@@ -145,17 +167,45 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+
+  @include vp-767 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
 
-.main-nav__sublist {
-  height: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition:  height $trans-default, max-height $trans-default;
-}
+// .main-nav__sublist {
+//   height: 0;
+//   max-height: 0;
+//   overflow: hidden;
+//   transition:  height $trans-default, max-height $trans-default;
+
+//   @include vp-767 {
+//     height: 100%;
+//     max-height: 100%;
+//   }
+// }
 
 .main-nav__subitem {
   position: relative;
+
+  @include vp-767 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $color-light-gray;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }
 
 .main-nav__sublist {
@@ -183,14 +233,23 @@
   line-height: 110%;
   width: 340px;
 
+  @include vp-1279 {
+    font-size: 14px;
+  }
+
   @include vp-1023 {
-    font-size: 16px;
     width: 210px;
     padding-bottom: 40px;
   }
 
   @include vp-767 {
-    font-size: 14px;
+    width: 100%;
+    font-size: 12px;
+    padding: 20px;
+
+    svg {
+      display: none;
+    }
   }
 
   svg {
@@ -202,15 +261,11 @@
       height: auto;
     }
   }
-
-  @include vp-1023 {
-    font-size: 16px;
-  }
 }
 
 .main-nav__subsubmenu {
   position: absolute;
-  top: 80%;
+  top: 75%;
   z-index: 2;
 
   padding: 60px 60px 0;
@@ -223,8 +278,9 @@
   user-select: none;
   opacity: 0;
   visibility: hidden;
+  height: 0;
 
-  transition: opacity $trans-default;
+  transition: opacity $trans-default, height $trans-default;
 
   @include vp-1023 {
     padding: 40px 40px 0;
@@ -233,37 +289,51 @@
 
 .main-nav__subsublist {
   flex-direction: column;
-  height: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: height $trans-default, max-height $trans-default;
 
-  @include vp-1023 {
+  @include vp-767 {
+    height: 100%;
   }
 }
 
 // Наведение
 
-.main-nav__item:hover > .main-nav__link,
-.main-nav__subitem:hover > .main-nav__sublink {
-  color: $color-accent-main;
-  outline: none;
+.main-nav__item {
+  @include hover-focus {
+    .main-nav__link {
+      color: $color-accent-main;
+      outline: none;
 
-  svg {
-    transform: rotate(180deg);
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .main-nav__submenu {
+      user-select: all;
+      opacity: 1;
+      height: 260px;
+      visibility: visible;
+      overflow: visible;
+    }
   }
 }
 
-.main-nav__item:hover > .main-nav__submenu,
-.main-nav__subitem:hover > .main-nav__subsubmenu {
-  user-select: all;
-  opacity: 1;
-  visibility: visible;
-}
+.main-nav__subitem {
+  @include hover-focus {
+    .main-nav__sublink {
+      color: $color-accent-main;
+      outline: none;
 
-.main-nav__item:hover > .main-nav__submenu > .container > .main-nav__sublist,
-.main-nav__subitem:hover > .main-nav__subsubmenu >.main-nav__subsublist {
-  height: 100%;
-  overflow: visible;
-  max-height: 100%;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .main-nav__subsubmenu {
+      user-select: all;
+      opacity: 1;
+      visibility: visible;
+      height: 220px;
+    }
+  }
 }

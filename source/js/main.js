@@ -21,6 +21,7 @@ import {searching} from './modules/searching';
 import {renderFilterMobile} from './modules/filter-toggle-mobile';
 import {setLinkOpenModal} from './modules/about-link-partners';
 import {setLicenseOpenModal} from './modules/about-license-modal';
+import {setSubmenu} from './modules/submenu-toggle';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -37,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     menuToggle();
+    setSubmenu();
     servicesCardsRender();
     productsCardsRender();
     selectCards();

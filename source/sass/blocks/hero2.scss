@@ -10,6 +10,21 @@
 
   @include vp-767 {
     padding: 20px 0 24px;
+
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: -64px;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(255, 236, 218, 0.64) 1.83%, rgba(188, 153, 117, 0.2) 65.37%, rgba(97, 76, 57, 0) 89.62%);
+    }
+
+
   }
 }
 
@@ -45,6 +60,7 @@
   width: 34%;
 
   @include vp-767 {
+    padding: 10% 0 6%;
     width: 100%;
     gap: 20px;
   }

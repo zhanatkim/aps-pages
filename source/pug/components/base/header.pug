@@ -110,8 +110,8 @@ mixin header(headerMods, currentUrl, lang)
           //- +icon("icon-burger", 20, 20)
         .header__right.drop-menu
           .drop-menu__wrapper
-            nav.main-nav(data-tabs="parent")
-              ul.main-nav__list(data-tabs="controls")
+            nav.main-nav
+              ul.main-nav__list
                 each link in headerLinks
                   - const activeState = currentUrl === link.href
                   li.main-nav__item
@@ -121,9 +121,9 @@ mixin header(headerMods, currentUrl, lang)
                           if (link.icon === true)
                             +icon("polygon", 13, 10, headerMods)
                     if link.subItems
-                      .main-nav__submenu(data-tabs="content")
+                      .main-nav__submenu
                         .container
-                          ul.main-nav__sublist(data-tabs="element")
+                          ul.main-nav__sublist
                             each subItem in link.subItems
                               li.main-nav__subitem
                                 each value, key in subItem.text
