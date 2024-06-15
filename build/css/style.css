@@ -1211,6 +1211,34 @@ button.swiper-pagination-bullet {
   font-display: swap;
   src: url("../fonts/montserrat-extrabold.woff2") format("woff2"), url("../fonts/montserrat-extrabold.woff") format("woff");
 }
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/rubik-regular.woff2") format("woff2"), url("../fonts/rubik-regular.woff") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/rubik-semibold.woff2") format("woff2"), url("../fonts/rubik-semibold.woff") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/rubik-bold.woff2") format("woff2"), url("../fonts/rubik-bold.woff") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/rubik-extrabold.woff2") format("woff2"), url("../fonts/rubik-extrabold.woff") format("woff");
+}
 *,
 *::before,
 *::after {
@@ -1230,7 +1258,7 @@ html {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   color: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1645,7 +1673,7 @@ button,
           align-items: center;
   border: none;
   background-color: transparent;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 100%;
@@ -2179,6 +2207,11 @@ button,
     height: 220px;
   }
 }
+@media (hover: hover) and (max-width: 1023px) {
+  .main-nav__subitem:hover:not(.focus-visible) .main-nav__subsubmenu {
+    height: 160px;
+  }
+}
 .main-nav__subitem.focus-visible:focus .main-nav__sublink {
   color: #ef9840;
   outline: none;
@@ -2194,6 +2227,11 @@ button,
   opacity: 1;
   visibility: visible;
   height: 220px;
+}
+@media (max-width: 1023px) {
+  .main-nav__subitem.focus-visible:focus .main-nav__subsubmenu {
+    height: 160px;
+  }
 }
 
 .footer {
@@ -2505,7 +2543,7 @@ button,
 }
 
 .btn {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2657,7 +2695,7 @@ button,
   -webkit-transition: color 0.3s ease, opacity 0.3s ease;
   transition: color 0.3s ease, opacity 0.3s ease;
   padding: 0;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   color: #000000;
   font-size: 40px;
   font-style: normal;
@@ -3539,7 +3577,7 @@ button,
 .title {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
 }
 .title--large {
   color: #000000;
@@ -3590,7 +3628,7 @@ button,
   }
 }
 .title--medium {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   color: #000000;
   font-size: 40px;
   font-style: normal;

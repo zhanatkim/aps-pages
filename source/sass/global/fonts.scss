@@ -41,3 +41,49 @@
     url("../fonts/montserrat-extrabold.woff2") format("woff2"),
     url("../fonts/montserrat-extrabold.woff") format("woff");
 }
+
+// rubik
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Rubik";
+
+  font-display: swap;
+  src:
+    url("../fonts/rubik-regular.woff2") format("woff2"),
+    url("../fonts/rubik-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Rubik";
+
+  font-display: swap;
+  src:
+    url("../fonts/rubik-semibold.woff2") format("woff2"),
+    url("../fonts/rubik-semibold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Rubik";
+
+  font-display: swap;
+  src:
+    url("../fonts/rubik-bold.woff2") format("woff2"),
+    url("../fonts/rubik-bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Rubik";
+
+  font-display: swap;
+  src:
+    url("../fonts/rubik-extrabold.woff2") format("woff2"),
+    url("../fonts/rubik-extrabold.woff") format("woff");
+}

@@ -334,6 +334,10 @@
       opacity: 1;
       visibility: visible;
       height: 220px;
+
+      @include vp-1023 {
+        height: 160px;
+      }
     }
   }
 }
