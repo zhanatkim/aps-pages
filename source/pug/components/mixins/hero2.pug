@@ -7,6 +7,7 @@ mixin hero2(data)
         .hero2__inner
           if data.title
             h1.hero2__title.title.title--hero2!=data.title
-          p.hero2__text!=data.text
+          if data.text
+            p.hero2__text!=data.text
       .hero2__image
        +picture("content", data.image, "jpg", data.width, data.height, data.altText, lang)

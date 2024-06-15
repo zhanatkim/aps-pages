@@ -14,4 +14,4 @@ mixin breadcrumbs(href, breadcrumb, isCard)
         a(href=href)!=breadcrumb
         if (isCard)
           +icon("bc-arrow", 9, 7, lang)
-          a(href=href)!=isCard
+          a(href=hrefCard)!=isCard

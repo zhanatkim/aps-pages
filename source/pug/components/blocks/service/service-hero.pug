@@ -1,0 +1,98 @@
+mixin service-hero(lang, id)
+  -
+    const pages = [
+      {
+        id: 1,
+        content: {
+          "ru": {
+            href: "services.html",
+            breadcrumb: "Услуги",
+            hrefCard: "fluid-services.html",
+            isCard: "Услуги по буровым растворам",
+            title: "Услуги по буровым растворам",
+            image: "service-hero-1",
+            width: 1440,
+            height: 503,
+            imageAlt: "сотрудники ТОО АзияПетроСервис",
+          },
+          "en": {
+            href: "services.html",
+            breadcrumb: "Services",
+            hrefCard: "fluid-services.html",
+            isCard: "Drilling fluid services",
+            title: "Drilling fluid services",
+            image: "service-hero-1",
+            width: 1440,
+            height: 503,
+            imageAlt: "hero2",
+          },
+          "kz": {
+            href: "services.html",
+            breadcrumb: "қызметтері",
+            hrefCard: "fluid-services.html",
+            isCard: "Бұрғылау сұйықтығының қызметтері",
+            title: "Бұрғылау сұйықтығының қызметтері",
+            image: "service-hero-1",
+            width: 1440,
+            height: 503,
+            imageAlt: "hero2",
+          },
+        }
+      },
+      {
+        id: 2,
+        content: {
+          "ru": {
+            href: "services.html",
+            breadcrumb: "Услуги",
+            hrefCard: "repair-insulation-work.html",
+            isCard: "РЕМОНТНО-ИЗОЛЯЦИОННЫЕ РАБОТЫ",
+            title: "РЕМОНТНО-ИЗОЛЯЦИОННЫЕ РАБОТЫ",
+            image: "service-hero-2",
+            width: 1440,
+            height: 503,
+            imageAlt: "сотрудники ТОО АзияПетроСервис",
+          },
+          "en": {
+            href: "services.html",
+            breadcrumb: "Services",
+            hrefCard: "repair-insulation-work.html",
+            isCard: "Repair and insulation work",
+            title: "Repair and insulation work",
+            image: "service-hero-2",
+            width: 1440,
+            height: 503,
+            imageAlt: "hero2",
+          },
+          "kz": {
+            href: "services.html",
+            breadcrumb: "қызметтері",
+            hrefCard: "repair-insulation-work.html",
+            isCard: "Жөндеу және оқшаулау жұмыстары",
+            title: "Жөндеу және оқшаулау жұмыстары",
+            image: "service-hero-2",
+            width: 1440,
+            height: 503,
+            imageAlt: "hero2",
+          },
+        }
+      },
+    ]
+
+  each hero in pages
+    if id === hero.id
+      each value, key in hero.content
+        if lang === key
+          .service-hero&attributes(attributes)
+            .container
+              +breadcrumbs(value.href, value.breadcrumb, value.isCard)
+            .service-hero__wrapper
+              .container
+                .service-hero__inner
+                  if value.title
+                    h1.service-hero__title.title.title--service!=value.title
+                    +icon("romb", 225, 359)
+                  if value.text
+                    p.service-hero__text!=value.text
+              .service-hero__image
+                +picture("content", value.image, "jpg", value.width, value.height, value.altText, lang)
