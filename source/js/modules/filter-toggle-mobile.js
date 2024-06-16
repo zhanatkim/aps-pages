@@ -6,7 +6,7 @@ const filterToggle = document.querySelector('.header__filter-toggle');
 const header = document.querySelector('.header');
 const toggle = document.querySelector('.header__toggle');
 const breakpoint = window.matchMedia('(max-width:767px)');
-
+const submitBtn = document.querySelector('.products-filter__btn-submit');
 // const onFilterToggleOpenFilter = () => {
 //   filterWrapper.classList.toggle('is-active');
 //   filterToggle.classList.toggle('is-active');
@@ -42,9 +42,10 @@ const onFilterToggleOpenFilter = () => {
 };
 
 export const renderFilterMobile = () => {
-  if (filterWrapper && filterToggle && toggle) {
+  if (filterWrapper && filterToggle && toggle && submitBtn) {
     if (breakpoint.matches) {
       filterToggle.addEventListener('click', onFilterToggleOpenFilter);
+      submitBtn.addEventListener('click', closeFilter);
     }
   }
 };

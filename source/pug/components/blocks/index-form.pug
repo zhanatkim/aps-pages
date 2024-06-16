@@ -40,7 +40,7 @@ mixin index-form(lang)
             if lang === key
               h2.index-form__title.title.title--dark!=value.title
               p.index-form__text!=value.text
-              .index-form__form.form
+              .index-form__form.form(data-form-validate)
                 form(action="#" method="post")
                   +custom-input({
                     inputLabel: value.label1,

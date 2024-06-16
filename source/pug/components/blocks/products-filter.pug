@@ -166,4 +166,4 @@ mixin products-filter (lang)
             +btn({text: value, type: "reset"})(class="btn--dark products-filter__btn-reset")
         each value, key in submits
           if lang === key
-            +btn({text: value, type: "submit"})(class="btn--dark products-filter__btn-submit")
+            +btn({text: value, type: "button"})(class="btn--dark products-filter__btn-submit")
