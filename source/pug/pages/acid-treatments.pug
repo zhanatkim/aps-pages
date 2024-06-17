@@ -1,0 +1,23 @@
+extends ../components/base/layout
+
+block variables
+  - const lang = "ru"
+  - const page = "index"
+  - const title = "AsiaPetroservice - Кислотные и химические обработки скважин" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "ru"
+  - const hasFooter = true
+  - const footerMods = "ru"
+  - const currentUrl = "acid-treatments.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +service-hero(lang, 3)
+    +service-main(lang, 3)
+
+
+
+block modals
+  +modal(class="modal--form", data-modal="form-modal")
+    +form-modal(lang)

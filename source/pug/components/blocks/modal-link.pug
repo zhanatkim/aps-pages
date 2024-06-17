@@ -13,8 +13,8 @@ mixin modal-link(lang)
       "kz": "Консультация алу үшін",
     }
 
-  .modal-link
-    button(class="modal-link__button", type="button" data-open-modal="form-modal")&attributes(attributes)
+  .modal-link&attributes(attributes)
+    button(class="modal-link__button", type="button" data-open-modal="form-modal")
       .modal-link__wrapper
         .modal-link__icon
           +icon("envelope", 60, 48, lang)

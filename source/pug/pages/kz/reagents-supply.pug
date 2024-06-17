@@ -1,0 +1,23 @@
+extends ../../components/base/layout
+
+block variables
+  - const lang = "kz"
+  - const page = "index"
+  - const title = "AsiaPetroservice - Бұрғылау және мұнай өндіруге арналған реагенттер" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "kz"
+  - const hasFooter = true
+  - const footerMods = "kz"
+  - const currentUrl = "reagents-supply.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +service-hero(lang, 5)
+    +service-main(lang, 5)
+
+
+
+block modals
+  +modal(class="modal--form", data-modal="form-modal")
+    +form-modal(lang)

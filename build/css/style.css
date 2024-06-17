@@ -5627,7 +5627,7 @@ button,
 }
 @media (max-width: 1023px) {
   .modal-link__icon {
-    padding: 10px 15px;
+    padding: 15px;
   }
   .modal-link__icon svg {
     width: 40px;
@@ -6001,7 +6001,12 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 46px;
+  padding-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .products-catalog {
+    padding-bottom: 40px;
+  }
 }
 
 .products-catalog__wrapper {
@@ -6038,7 +6043,11 @@ button,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .products-catalog__inner {
+    padding-bottom: 20px;
+  }
 }
 
 .products-catalog__catalog {
@@ -6081,7 +6090,6 @@ button,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 15px 25px;
   gap: 30px;
 }
 @media (max-width: 1023px) {
@@ -6102,7 +6110,12 @@ button,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 30px;
+  gap: 80px;
+}
+@media (max-width: 767px) {
+  .products-filter__wrapper form {
+    gap: 30px;
+  }
 }
 @media (max-width: 767px) {
   .products-filter__wrapper {
@@ -6118,6 +6131,7 @@ button,
     height: 0;
     opacity: 0;
     visibility: hidden;
+    z-index: 10;
   }
 }
 .products-filter__wrapper.is-active {
@@ -6853,6 +6867,11 @@ button,
           flex-direction: column;
   padding: 50px 0 100px;
 }
+@media (max-width: 1279px) {
+  .service-hero {
+    padding: 30px 0 50px;
+  }
+}
 @media (max-width: 1023px) {
   .service-hero {
     padding: 30px 0 50px;
@@ -6897,9 +6916,19 @@ button,
     display: none;
   }
 }
+.service-hero__wrapper .container {
+  padding-top: 20%;
+  padding-bottom: 8.2%;
+}
+@media (max-width: 767px) {
+  .service-hero__wrapper .container {
+    padding-top: 10%;
+    padding-bottom: 6%;
+  }
+}
 
 .service-hero__inner {
-  padding: 20% 40px 8.2%;
+  padding: 0 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6913,19 +6942,25 @@ button,
 }
 @media (max-width: 767px) {
   .service-hero__inner {
-    padding: 10% 0 6%;
+    padding: 0;
     width: 100%;
     gap: 20px;
   }
 }
 .service-hero__inner svg {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  fill: rgba(244, 176, 112, 0.3);
+  bottom: -20px;
+  left: 34px;
+  opacity: 60%;
   z-index: -1;
-  width: 188px;
-  height: 300px;
+  width: 20%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .service-hero__inner svg {
+    width: 30px;
+    left: -18px;
+  }
 }
 
 .service-hero__image {
@@ -6965,6 +7000,173 @@ button,
   .service-hero__text {
     font-size: 12px;
   }
+}
+
+.service-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 100px;
+  font-size: 18px;
+  line-height: 150%;
+}
+.service-main p,
+.service-main ul,
+.service-main li {
+  text-align: justify;
+  margin: 0;
+}
+@media (max-width: 1023px) {
+  .service-main {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .service-main {
+    font-size: 14px;
+  }
+}
+
+.service-main__top {
+  display: inline;
+}
+.service-main__top p {
+  display: inline;
+  margin: 0;
+}
+
+.service-main__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+@media (max-width: 767px) {
+  .service-main__title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-main__middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.service-main__modal-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 435px;
+  float: right;
+  margin: 10px 0 10px 30px;
+  padding-top: 0;
+}
+@media (max-width: 1023px) {
+  .service-main__modal-link {
+    width: 365px;
+  }
+  .service-main__modal-link > .modal-link__icon {
+    padding: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .service-main__modal-link {
+    float: none;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.service-main__modal-link .modal-link__button::after {
+  width: 32%;
+}
+@media (max-width: 1023px) {
+  .service-main__modal-link .modal-link__button::after {
+    width: 22%;
+  }
+}
+@media (max-width: 767px) {
+  .service-main__modal-link .modal-link__button::after {
+    width: 60px;
+  }
+}
+.service-main__modal-link .modal-link__text {
+  display: none;
+}
+.service-main__modal-link .modal-link__short-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.service-main__modal-link .modal-link__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.service-main__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 30px 0;
+}
+@media (max-width: 767px) {
+  .service-main__bottom {
+    padding: 20px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.service-main__link {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  font-size: 18px;
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .service-main__link {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media (hover: hover) {
+  .service-main__link:hover:not(.focus-visible) {
+    color: rgba(239, 152, 64, 0.8);
+  }
+}
+.service-main__link.focus-visible:focus {
+  color: rgba(239, 152, 64, 0.8);
 }
 
 /* @mixin hover-focus {

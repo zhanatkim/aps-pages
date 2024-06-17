@@ -41,6 +41,7 @@ const clearTogglesList = () => {
   sliceCards(cards, cardsButton, CARDS_DESK);
 };
 
+
 export const selectCards = () => {
   if (inputsContainer && cards && reset && cardsButton) {
     inputsContainer.addEventListener('change', onInputToggle);
