@@ -1,0 +1,23 @@
+extends ../../components/base/layout
+
+block variables
+  - const lang = "en"
+  - const page = "index"
+  - const title = "AsiaPetroservice - Repair and insulation work." //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "en"
+  - const hasFooter = true
+  - const footerMods = "en"
+  - const currentUrl = "repair-insulation-work.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +service-hero(lang, 2)
+    +service-main(lang, 2)
+
+
+
+block modals
+  +modal(class="modal--form", data-modal="form-modal")
+    +form-modal(lang)
