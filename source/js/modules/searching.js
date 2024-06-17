@@ -3,7 +3,6 @@ const searchInput = document.querySelector('#search');
 
 export const searching = () => {
   if (searchInput) {
-    console.log(searchInput);
     searchInput.onInput = function () {
       let value = this.value.trim();
       let cards = document.querySelectorAll('.product-card');
