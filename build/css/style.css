@@ -7049,8 +7049,12 @@ button,
   }
 }
 
+.service-main__middle {
+  margin-top: 30px;
+}
 @media (max-width: 767px) {
   .service-main__middle {
+    margin-top: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
