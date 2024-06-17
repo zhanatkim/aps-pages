@@ -6926,13 +6926,19 @@ button,
 }
 .service-hero__inner svg {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  aspect-ratio: 225/359;
-  fill: rgba(244, 176, 112, 0.3);
+  bottom: 20%;
+  left: 34px;
+  opacity: 60%;
   z-index: -1;
-  width: 188px;
+  width: 20%;
   height: auto;
+}
+@media (max-width: 767px) {
+  .service-hero__inner svg {
+    width: 30px;
+    bottom: 2%;
+    left: -18px;
+  }
 }
 
 .service-hero__image {

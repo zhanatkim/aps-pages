@@ -91,7 +91,7 @@ mixin service-hero(lang, id)
                 .service-hero__inner
                   if value.title
                     h1.service-hero__title.title.title--service!=value.title
-                    +icon("romb", 225, 359)
+                    +icon("card-title-icon", 24, 36, lang)
                   if value.text
                     p.service-hero__text!=value.text
               .service-hero__image
