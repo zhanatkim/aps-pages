@@ -1,7 +1,11 @@
 .products-catalog {
   width: 100%;
   display: flex;
-  padding-bottom: 46px;
+  padding-bottom: 80px;
+
+  @include vp-767 {
+    padding-bottom: 40px;
+  }
 }
 
 .products-catalog__wrapper {
@@ -27,7 +31,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 20px;
+
+  @include vp-767 {
+    padding-bottom: 20px;
+  }
+
 }
 
 .products-catalog__catalog {
