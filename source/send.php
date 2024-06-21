@@ -21,16 +21,16 @@
     $mail->SMTPDebug  = SMTP::DEBUG_SERVER;
     $mail->CharSet    = "utf-8";
     $mail->isSMTP();
-    $mail->Host       = 'smtp.yandex.ru';                       //SMTP сервер, зависит от почты отправки
+    $mail->Host       = 'smtp.asiapetroservice.kz';                       //SMTP сервер, зависит от почты отправки
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'ligaatest@yandex.ru';                  //SMTP имя пользователя (почта с которой отправляем письмо)
+    $mail->Username   = 'test@asiapetroservice.kz';                  //SMTP имя пользователя (почта с которой отправляем письмо)
     $mail->Password   = 'skfbddoaxyeiqglc';                     //SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пороль от почты)
     $mail->SMTPSecure = 'ssl';                                  //Шифрование
     $mail->Port       = 465;                                    //Порт
 
     //Recipients
-    $mail->setFrom('ligaatest@yandex.ru');                       //Откуда отправляем
-    $mail->addAddress('ligamailtest@gmail.com');                 //Куда отправляем
+    $mail->setFrom('test@asiapetroservice.kz');                       //Откуда отправляем
+    $mail->addAddress('zhanatkim@gmail.com');                 //Куда отправляем
 
 
     //Content

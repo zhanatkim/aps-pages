@@ -3,7 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
-
+import {initFormValidate} from './form/init-form-validate.js';
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
 import './modules/about-swiper';
@@ -48,6 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setLinkOpenModal();
     setLicenseOpenModal();
     initModals();
+    initFormValidate();
     uploadFile();
     uploadImageDrop();
     const select = new CustomSelect();

@@ -301,18 +301,18 @@
                 <h2 class="index-form__title title title--dark">Contact us</h2>
                 <p class="index-form__text">Our managers will answer all your questions, calculate the cost of services and prepare an individual commercial offer.</p>
                 <div class="index-form__form form" data-form-validate>
-                  <form action="#" method="post">
-                    <div class="form-input form-input--name">
+                  <form action="send.php" method="post">
+                    <div class="form-input form-input--name" data-on-input-validate data-required data-validate-type="text">
                       <label><span class="form-input__label">Name</span>
                         <input type="text" name="user-name">
                       </label>
                     </div>
-                    <div class="form-input form-input--email">
+                    <div class="form-input form-input--email" data-on-input-validate data-required data-validate-type="email">
                       <label><span class="form-input__label">e-mail</span>
                         <input type="text" name="user-email">
                       </label>
                     </div>
-                    <div class="form-input form-input--phone">
+                    <div class="form-input form-input--phone" data-on-input-validate data-required data-validate-type="phone">
                       <label><span class="form-input__label">Phone</span>
                         <input type="text" name="user-phone">
                       </label>
@@ -322,7 +322,7 @@
                         <textarea name="user-message"></textarea>
                       </label>
                     </div>
-                    <div class="toggle form-toggle">
+                    <div class="toggle form-toggle" data-required data-validate-type="checkbox">
                       <label>
                         <input type="checkbox"><span class="toggle__icon">
                           <svg width="10" height="8" aria-hidden="true">

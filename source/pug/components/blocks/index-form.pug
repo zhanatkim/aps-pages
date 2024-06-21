@@ -41,19 +41,19 @@ mixin index-form(lang)
               h2.index-form__title.title.title--dark!=value.title
               p.index-form__text!=value.text
               .index-form__form.form(data-form-validate)
-                form(action="#" method="post")
+                form(action="send.php" method="post")
                   +custom-input({
                     inputLabel: value.label1,
                     inputName: "user-name",
-                  })(class="form-input--name")
+                  })(class="form-input--name", data-on-input-validate, data-required, data-validate-type="text")
                   +custom-input({
                     inputLabel: value.label2,
                     inputName: "user-email",
-                  })(class="form-input--email")
+                  })(class="form-input--email", data-on-input-validate, data-required, data-validate-type="email")
                   +custom-input({
                     inputLabel: value.label3,
                     inputName: "user-phone",
-                  })(class="form-input--phone")
+                  })(class="form-input--phone", data-on-input-validate, data-required, data-validate-type="phone")
                   +custom-textarea({
                     inputLabel: value.label4,
                     inputName: "user-message",
@@ -61,7 +61,7 @@ mixin index-form(lang)
                   +custom-toggle({
                     inputLabel: value.circs,
                     icon: true
-                  })(class="form-toggle")
+                  })(class="form-toggle", data-required, data-validate-type="checkbox")
                   +btn({
                     type: "submit",
                     text: value.btn,
