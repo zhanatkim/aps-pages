@@ -24,7 +24,7 @@
     $mail->Host       = 'smtp.asiapetroservice.kz';                       //SMTP сервер, зависит от почты отправки
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'test@asiapetroservice.kz';                  //SMTP имя пользователя (почта с которой отправляем письмо)
-    $mail->Password   = 'skfbddoaxyeiqglc';                     //SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пороль от почты)
+    $mail->Password   = 'Uy8hg20$7';                     //SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пороль от почты)
     $mail->SMTPSecure = 'ssl';                                  //Шифрование
     $mail->Port       = 465;                                    //Порт
 
