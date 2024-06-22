@@ -9,7 +9,7 @@ mixin events-swiper (slides, year, lang)
                 .events-swiper__inner
                   p!=value
           .events-swiper__image
-            +img("slides", slide.image, "jpg", 1160, 626, slide.alt)
+            +picture("slides", slide.image, "jpg", 1160, 626, slide.alt)
 
     //- .events-swiper__btn.events-swiper__btn--prev.swiper-button.swiper-button--prev.swiper-button-prev
     //- .events-swiper__btn.events-swiper__btn--next.swiper-button.swiper-button--next.swiper-button-next
@@ -24,5 +24,5 @@ mixin events-swiper (slides, year, lang)
                 .events-swiper__inner
                   p!=value
           .events-swiper__image
-            +img("slides", slide.image, "jpg", 1160, 626, slide.alt)
+            +picture("slides", slide.image, "jpg", 1160, 626, slide.alt)
 

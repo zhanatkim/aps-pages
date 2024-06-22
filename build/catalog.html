@@ -119,12 +119,16 @@
                 <div class="search products-filter__search">
                   <form action="#" method="get">
                     <label>
+                      <input type="text" id="search" name="search" placeholder="Поиск" aria-describedby="Введите в строку поиска наименование продукта">
+                    </label>
+                    <button class="btn search__reset" type="reset" aria-label="Очистить строку поиска"><span></span>
+                    </button>
+                    <button class="btn search__submit" type="submit" aria-label="Поиск"><span></span>
                       <svg width="16" height="16" aria-hidden="true">
                         <use xlink:href="img/sprite.svg#search"></use>
                       </svg>
-                      <input type="text" id="search" placeholder="Поиск">
-                    </label>
-                  </form>
+                    </button>
+                  </form><span class="search__error">Товар не найден.</span>
                 </div>
                 <div class="products-filter__wrapper">
                   <form action="#" method="post">

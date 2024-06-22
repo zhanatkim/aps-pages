@@ -3,7 +3,7 @@ mixin search-input(options = {})
   - const inputId = options.inputId || false
   - const inputName = options.inputName || false
   - const inputPlaceholder = options.inputPlaceholder || false
+  - const describe = options.describe || ""
 
     label(for=inputId)!=inputLabel
-      +icon("search", 16, 16)
-      input(type="text", id="search", placeholder=inputPlaceholder)
+      input(type="text", id="search", name="search", placeholder=inputPlaceholder, aria-describedby=describe)

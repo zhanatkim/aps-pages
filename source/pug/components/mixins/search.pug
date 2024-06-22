@@ -1,7 +1,10 @@
 mixin search(data= {})
-  - const {input, btn, placeholder} = data
+  - const {inputPlaceholder, describe, btnLabel, submitLabel, submitText, error} = data
 
   .search&attributes(attributes)
     form(action="#" method="get")
-      +search-input(input, placeholder)
-        +btn.search__reset(type="reset", aria-label="Очистить строку поиска")
+      +search-input({inputPlaceholder:inputPlaceholder, describe:describe})
+      +btn({type: "reset"})(class="search__reset", aria-label=btnLabel)
+      +btn({type: "submit", text: submitText})(class="search__submit", aria-label=submitLabel)
+        +icon("search", 16, 16)
+    span.search__error!=error

@@ -8,7 +8,7 @@ const CARDS_DESK = 16;
 
 // const breakpoint = window.matchMedia('(max-width:767px)');
 let arr = [];
-let sortedCards = [];
+
 const onInputToggle = (evt) => {
   const input = evt.target.closest('input[name="product-sort"]');
   if (!input) {
@@ -17,8 +17,13 @@ const onInputToggle = (evt) => {
     }
     return;
   }
-
-  arr.push(input.value);
+  if (input.checked === true) {
+    arr.push(input.value);
+  } else {
+    const index = arr.indexOf(input.value);
+    arr.splice(index, 1);
+  }
+  let sortedCards = [];
 
   evt.preventDefault();
   cards.forEach((card) => {
@@ -27,12 +32,18 @@ const onInputToggle = (evt) => {
     }
     arr.forEach((el) => {
       if (el === card.dataset.sort) {
-        // card.classList.remove('is-hidden');
         sortedCards.push(card);
-        sliceCards(sortedCards, cardsButton, CARDS_DESK);
+        console.log(sortedCards);
       }
     });
   });
+  if (sortedCards.length < 1) {
+    sortedCards = cards;
+    sortedCards.forEach((sortedCard) => {
+      sortedCard.classList.remove('is-hidden');
+    });
+  }
+  sliceCards(sortedCards, cardsButton, CARDS_DESK);
 };
 
 const clearTogglesList = () => {

@@ -1,15 +1,9 @@
 
-
-// const header = document.querySelector('.header');
-
 const breakpoint = window.matchMedia('(max-width:767px)');
 
-const nav = document.querySelector('.drop-menu');
-// const dropMenu = document.querySelector('.main-nav__submenu');
+const serviceTab = document.querySelectorAll('.main-nav__item > .main-nav__link')[0];
 
-const serviceTab = nav.querySelectorAll('.main-nav__item > .main-nav__link')[0];
-
-const submenu = nav.querySelector('.main-nav__submenu');
+const submenu = document.querySelector('.main-nav__submenu');
 
 
 const openSubmenu = (evt) => {
@@ -28,9 +22,11 @@ const onTabOpenSubmenu = (evt) => {
 };
 
 export const setSubmenu = () => {
-  if (breakpoint.matches) {
-    serviceTab.addEventListener('click', onTabOpenSubmenu);
-  } else {
-    serviceTab.removeEventListener('click', onTabOpenSubmenu);
+  if (submenu && serviceTab) {
+    if (breakpoint.matches) {
+      serviceTab.addEventListener('click', onTabOpenSubmenu);
+    } else {
+      serviceTab.removeEventListener('click', onTabOpenSubmenu);
+    }
   }
 };

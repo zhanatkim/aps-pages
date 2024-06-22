@@ -10,7 +10,7 @@ const breakpoint = window.matchMedia('(max-width:767px)');
 const nav = document.querySelector('.drop-menu');
 // const dropMenu = document.querySelector('.main-nav__submenu');
 
-const serviceTab = nav.querySelectorAll('.main-nav__item > .main-nav__link')[0];
+const serviceTab = document.querySelectorAll('.main-nav__item > .main-nav__link')[0];
 
 function closeMenu() {
   nav.classList.remove('is-active');
@@ -40,7 +40,7 @@ export const onToggleMenuRender = () => {
 };
 
 export const menuToggle = () => {
-  if (nav && toggle) {
+  if (nav && toggle && serviceTab && header) {
     if (breakpoint.matches) {
       toggle.addEventListener('click', onToggleMenuRender);
     } else {

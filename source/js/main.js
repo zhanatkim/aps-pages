@@ -22,6 +22,7 @@ import {renderFilterMobile} from './modules/filter-toggle-mobile';
 import {setLinkOpenModal} from './modules/about-link-partners';
 import {setLicenseOpenModal} from './modules/about-license-modal';
 import {setSubmenu} from './modules/submenu-toggle';
+// import {search} from './modules/search';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -56,6 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    // search();
   });
 });
 

@@ -133,21 +133,42 @@ mixin products-filter (lang)
 
   -
     const searchData = {
-      "ru": "Поиск",
-      "en": "Search",
-      "kz": "Іздеу"
+      "ru": {
+        inputPlaceholder: "Поиск",
+        describe: "Введите в строку поиска наименование продукта",
+        btnLabel: "Очистить строку поиска",
+        submitLabel: "Поиск",
+        error: "Товар не найден.",
+      },
+      "en": {
+        inputPlaceholder: "Search",
+        describe: "Enter the product name in the search bar",
+        btnLabel: "Clear search bar",
+        submitLabel: "Search",
+        //- submitText: "Search",
+        error: "Product not found.",
+      },
+      "kz": {
+        inputPlaceholder: "Іздеу",
+        describe: "Іздеу жолағына өнім атауын енгізіңіз",
+        btnLabel: "Іздеу жолағын тазалау",
+        submitLabel: "Іздеу",
+        //- submitText: "Іздеу",
+        error: "Өнім табылмады.",
+      },
     }
   .products-filter
     each value, key in searchData
       if lang === key
         +search({
-          input: {
-            inputLabel: "",
-            inputName: "search",
-            inputPlaceholder: value,
-            classMods: ["hidden-label"],
-          },
-          btn: {},
+          inputLabel: "",
+          inputName: "search",
+          inputPlaceholder: value.inputPlaceholder,
+          describe: value.describe,
+          btnLabel: value.btnLabel,
+          submitLabel: value.submitLabel,
+          submitText: value.submitText,
+          error: value.error,
         })(class="products-filter__search")
     .products-filter__wrapper
       form(action="#" method="post")

@@ -1,13 +1,8 @@
 .search {
   width: 100%;
-  border-radius: 10px;
-  padding: 20px 40px;
-  position: relative;
-  width: 100%;
-
-  background: #F2F2F2;
-  border: 1px solid #F3F3F3;
-  transition: opacity $trans-default;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
   @include vp-1023 {
     max-width: 100%;
@@ -19,15 +14,31 @@
   }
 
   form {
-    background-color: transparent;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 20%;
     gap: 20px;
     height: 100%;
+    width: 100%;
+
+    position: relative;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background: #F2F2F2;
+    border: 1px solid #F3F3F3;
+    border-radius: 10px;
+    transition: opacity $trans-default;
+
+    @include vp-767 {
+      padding: 5px 3px;
+    }
 
     label {
       display: flex;
+      gap: 3px;
       align-items: center;
+      width: 100%;
+      padding-right: 32px;
     }
 
     input {
@@ -35,6 +46,7 @@
       background-color: transparent;
       color: $color-default-black;
       padding: 5px;
+      flex-grow: 1;
 
       @include hover-focus {
         outline: none;
@@ -59,6 +71,7 @@
     background: transparent;
     opacity: 0;
     transition: opacity $trans-default;
+    visibility: hidden;
 
     &::after,
     &::before {
@@ -68,6 +81,8 @@
       width: 16px;
       background-color: $color-default-black;
       left: 28%;
+
+      transition: background-color $trans-default;
     }
 
     &::after {
@@ -79,15 +94,69 @@
     }
 
     &:hover {
+      &::after,
+      &::before {
+        background-color: $color-accent-hover;
+      }
+    }
+
+    &.is-active {
       opacity: 1;
+      visibility: visible;
     }
   }
 
-  &:hover,
-  &[data-opacity ="1"] {
-    .search__reset {
-      opacity: 1;
-    }
+  // &:hover,
+  // &[data-opacity ="1"] {
+  //   .search__reset {
+  //     opacity: 1;
+  //   }
+  // }
+}
+
+.search__submit {
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #AFAFAF;
+  padding: 4px;
+
+  transition: color $trans-default, opacity $trans-default;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @include hover-focus {
+    color: $color-accent-hover;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-accent-hover;
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
+.search__error {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity $trans-default;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
