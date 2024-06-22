@@ -1,8 +1,8 @@
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
-import {Form} from './modules/form-validate/form';
-import {CustomSelect} from './modules/select/custom-select';
-import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+// import {Form} from './modules/form-validate/form';
+// import {CustomSelect} from './modules/select/custom-select';
+// import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initFormValidate} from './form/init-form-validate.js';
 import './modules/advantages-swiper';
 import './modules/hero-swiper';
@@ -48,13 +48,13 @@ window.addEventListener('DOMContentLoaded', () => {
     setLicenseOpenModal();
     initModals();
     initFormValidate();
-    uploadFile();
-    uploadImageDrop();
-    const select = new CustomSelect();
-    select.init();
-    const form = new Form();
-    window.form = form;
-    form.init();
+    // uploadFile();
+    // uploadImageDrop();
+    // const select = new CustomSelect();
+    // select.init();
+    // const form = new Form();
+    // window.form = form;
+    // form.init();
   });
 });
 
