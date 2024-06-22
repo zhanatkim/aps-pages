@@ -33,7 +33,6 @@ const onInputToggle = (evt) => {
     arr.forEach((el) => {
       if (el === card.dataset.sort) {
         sortedCards.push(card);
-        console.log(sortedCards);
       }
     });
   });

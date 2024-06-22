@@ -16,13 +16,11 @@ import {menuToggle} from './modules/menu-toggle.js';
 import {servicesCardsRender} from './modules/services-cards-render';
 import {productsCardsRender} from './modules/products-cards-render';
 import {selectCards} from './modules/products-filter';
-// import {renderResetButton} from './modules/search-button';
 import {searching} from './modules/searching';
 import {renderFilterMobile} from './modules/filter-toggle-mobile';
 import {setLinkOpenModal} from './modules/about-link-partners';
 import {setLicenseOpenModal} from './modules/about-license-modal';
 import {setSubmenu} from './modules/submenu-toggle';
-// import {search} from './modules/search';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -57,7 +55,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
-    // search();
   });
 });
 
