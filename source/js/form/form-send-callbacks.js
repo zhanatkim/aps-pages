@@ -26,6 +26,7 @@ export const baseSendSuccess = (target) => {
 export const baseSendError = () => {
   errors.forEach((key, value) => {
     if (document.querySelector('html').getAttribute('lang') === key) {
+      console.log(document.querySelector('html').getAttribute('lang'));
       // eslint-disable-next-line no-console
       console.log(value);
     }
