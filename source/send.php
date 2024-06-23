@@ -21,7 +21,7 @@
     $mail->SMTPDebug  = SMTP::DEBUG_SERVER;
     $mail->CharSet    = "utf-8";
     $mail->isSMTP();
-    $mail->Host       = 'smtp.asiapetroservice.kz';                       //SMTP сервер, зависит от почты отправки
+    $mail->Host       = 'pkz5.hoster.kz';                       //SMTP сервер, зависит от почты отправки
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'test@asiapetroservice.kz';                  //SMTP имя пользователя (почта с которой отправляем письмо)
     $mail->Password   = 'Uy8hg20$7';                     //SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пороль от почты)

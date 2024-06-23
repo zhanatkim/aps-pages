@@ -1,7 +1,7 @@
 import FormsValidate from './form-validate';
 import {sendMail} from './send-mail';
 import {baseSendSuccess, baseSendError} from './form-send-callbacks';
-const formWrappers = document.querySelectorAll('[data-validate]');
+const formWrappers = document.querySelectorAll('[data-form-validate]');
 const sendUrl = 'send.php';
 
 const baseValidationSuccessCallback = (evt) => {
