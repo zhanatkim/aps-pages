@@ -10,6 +10,7 @@ const swiperOptions = {
   //   nextEl: '.hero__control--next',
   //   prevEl: '.hero__control--prev',
   // },
+  lazy: true,
   slidesPerView: 1,
   speed: 1500,
   // effect: 'fade',
