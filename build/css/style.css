@@ -4879,6 +4879,21 @@ button,
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.form-input.is-invalid input,
+.form-input.is-invalid textarea,
+.form-textarea.is-invalid input,
+.form-textarea.is-invalid textarea {
+  border: 1px solid rgba(239, 152, 64, 0.8);
+}
+.form-input.is-invalid input:focus, .form-input.is-invalid input:hover,
+.form-input.is-invalid textarea:focus,
+.form-input.is-invalid textarea:hover,
+.form-textarea.is-invalid input:focus,
+.form-textarea.is-invalid input:hover,
+.form-textarea.is-invalid textarea:focus,
+.form-textarea.is-invalid textarea:hover {
+  border: 1px solid rgba(239, 152, 64, 0.5);
+}
 .form-input input,
 .form-input textarea,
 .form-textarea input,
@@ -4998,6 +5013,9 @@ button,
           justify-content: flex-start;
   gap: 10px;
   cursor: pointer;
+}
+.form-toggle.is-invalid .toggle__icon {
+  border-color: rgba(239, 152, 64, 0.8);
 }
 .form-toggle input {
   display: block;

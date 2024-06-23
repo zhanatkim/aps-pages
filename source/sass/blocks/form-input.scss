@@ -7,6 +7,18 @@
     flex-direction: column;
   }
 
+  &.is-invalid {
+    input,
+    textarea {
+      border: 1px solid $color-accent-hover;
+
+      &:focus,
+      &:hover {
+        border: 1px solid rgba($color-accent-hover, 0.5);
+      }
+    }
+  }
+
   input,
   textarea   {
     flex-grow: 1;

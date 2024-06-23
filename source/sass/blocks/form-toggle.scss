@@ -10,6 +10,12 @@
     cursor: pointer;
   }
 
+  &.is-invalid {
+    .toggle__icon {
+      border-color: $color-accent-hover;
+    }
+  }
+
 
   input {
     display: block;
