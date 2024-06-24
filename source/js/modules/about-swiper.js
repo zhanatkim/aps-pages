@@ -1,5 +1,5 @@
 const Swiper = global.Swiper;
-// const breakpoint = window.matchMedia('(max-width:767px)');
+const swiperContainer = document.querySelector('.about-swiper__swiper');
 
 const swiperOptions = {
   navigation: {
@@ -7,7 +7,6 @@ const swiperOptions = {
     prevEl: '.about-swiper__btn--prev',
   },
   loop: true,
-  // centeredSlides: true,
   slidesPerView: 1,
   speed: 600,
   spaceBetween: 50,
@@ -18,4 +17,9 @@ const swiperOptions = {
   },
 };
 
-export const aboutSwiper = new Swiper('.about-swiper__swiper', swiperOptions);
+export const setAboutSwiper = () => {
+  if (swiperContainer) {
+    // eslint-disable-next-line
+    const aboutSwiper = new Swiper(swiperContainer, swiperOptions);
+  }
+};

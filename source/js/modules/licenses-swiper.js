@@ -1,5 +1,5 @@
 const Swiper = global.Swiper;
-// const breakpoint = window.matchMedia('(max-width:767px)');
+const swiperContainer = document.querySelector('.about-licenses__swiper');
 
 const swiperOptions = {
   navigation: {
@@ -20,4 +20,9 @@ const swiperOptions = {
   },
 };
 
-export const aboutSwiper = new Swiper('.about-licenses__swiper', swiperOptions);
+export const setLicensesSwiper = () => {
+  if (swiperContainer) {
+    // eslint-disable-next-line
+    const licensesSwiper = new Swiper(swiperContainer, swiperOptions);
+  }
+};
