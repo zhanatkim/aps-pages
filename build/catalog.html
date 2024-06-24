@@ -1301,19 +1301,19 @@
             <div class="form-modal__wrapper">
               <h2 class="form-modal__title title">Напишите нам</h2>
               <p class="form-modal__text">Наши менеджеры ответят на&nbsp;ваши вопросы , произведут расчет стоимости услуг и&nbsp;подготовят индивидуальное коммерческое предложение.</p>
-              <div class="form-modal__form form">
-                <form action="#" method="post">
-                  <div class="form-input form-input--modal">
+              <div class="form-modal__form form" data-form-validate>
+                <form action="send.php" method="post">
+                  <div class="form-input form-input--modal" data-on-input-validate data-required aria-required="true" data-validate-type="text">
                     <label><span class="form-input__label">Имя</span>
                       <input type="text" name="user-name">
                     </label>
                   </div>
-                  <div class="form-input form-input--modal">
+                  <div class="form-input form-input--modal" data-on-input-validate data-required aria-required="true" data-validate-type="email">
                     <label><span class="form-input__label">e-mail</span>
                       <input type="text" name="user-email">
                     </label>
                   </div>
-                  <div class="form-input form-input--modal">
+                  <div class="form-input form-input--modal" data-on-input-validate data-required aria-required="true" data-validate-type="phone">
                     <label><span class="form-input__label">Телефон</span>
                       <input type="text" name="user-phone">
                     </label>
@@ -1323,7 +1323,7 @@
                       <textarea name="user-message"></textarea>
                     </label>
                   </div>
-                  <div class="toggle form-toggle form-modal__toggle">
+                  <div class="toggle form-toggle form-modal__toggle" data-required aria-required="true" data-validate-type="toggle-group">
                     <label>
                       <input type="checkbox"><span class="toggle__icon">
                         <svg width="10" height="8" aria-hidden="true">
@@ -1333,6 +1333,8 @@
                   </div>
                   <button class="btn form-modal__btn btn--line" type="submit"><span>отправить</span>
                   </button>
+                  <p class="form__success">Ваш запрос успешно отправлен.</p>
+                  <p class="form__error">Произошла ошибка отправки. Проверьте заполненные поля.</p>
                 </form>
               </div>
             </div>

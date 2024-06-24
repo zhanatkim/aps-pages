@@ -10,6 +10,8 @@ mixin form-modal(lang)
         label4: "Ваше сообщение",
         circs: "Я согласен на обработку моих персональных данных.",
         btn: "отправить",
+        success: "Ваш запрос успешно отправлен.",
+        error: "Произошла ошибка отправки. Проверьте заполненные поля.",
       },
       "en": {
         title: "Contact us",
@@ -20,6 +22,8 @@ mixin form-modal(lang)
         label4: "Your message",
         circs: "I'm agree to process my personal data.",
         btn: "send",
+        success: "Your request has been sent successfully.",
+        error: "A sending error occurred. Check the filled fields.",
       },
       "kz": {
         title: "Бізге жазыңыз",
@@ -30,6 +34,8 @@ mixin form-modal(lang)
         label4: "Сіздің хабарламаңыз",
         circs: "Мен жеке деректерімді өңдеуге келісемін.",
         btn: "жіберу",
+        success: "Сұрауыңыз сәтті жіберілді.",
+        error: "Жіберу қатесі орын алды. Толтырылған өрістерді тексеріңіз.",
       },
     }
   .form-modal(data-modal="form-modal")
@@ -38,20 +44,20 @@ mixin form-modal(lang)
         if lang === key
           h2.form-modal__title.title!=value.title
           p.form-modal__text!=value.text
-          .form-modal__form.form
-            form(action="#" method="post")
+          .form-modal__form.form(data-form-validate)
+            form(action="send.php" method="post")
               +custom-input({
                 inputLabel: value.label1,
                 inputName: "user-name",
-              })(class="form-input--modal")
+              })(class="form-input--modal", data-on-input-validate, data-required, aria-required="true", data-validate-type="text")
               +custom-input({
                 inputLabel: value.label2,
                 inputName: "user-email",
-              })(class="form-input--modal")
+              })(class="form-input--modal", data-on-input-validate, data-required, aria-required="true", data-validate-type="email")
               +custom-input({
                 inputLabel: value.label3,
                 inputName: "user-phone",
-              })(class="form-input--modal")
+              })(class="form-input--modal", data-on-input-validate, data-required, aria-required="true", data-validate-type="phone")
               +custom-textarea({
                 inputLabel: value.label4,
                 inputName: "user-message",
@@ -59,8 +65,10 @@ mixin form-modal(lang)
               +custom-toggle({
                 inputLabel: value.circs,
                 icon: true
-              })(class="form-toggle form-modal__toggle")
+              })(class="form-toggle form-modal__toggle", data-required, aria-required="true", data-validate-type="toggle-group")
               +btn({
                 type: "submit",
                 text: value.btn,
               })(class="form-modal__btn btn--line")
+              p.form__success!=value.success
+              p.form__error!=value.error
