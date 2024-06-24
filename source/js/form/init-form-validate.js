@@ -4,6 +4,20 @@ import {baseSendSuccess, baseSendError} from './form-send-callbacks';
 const formWrappers = document.querySelectorAll('[data-form-validate]');
 const sendUrl = 'send.php';
 
+const clearMsgs = () => {
+  const errorMsg = document.querySelector('.form__error');
+  const successMsg = document.querySelector('.form__success');
+
+  if (errorMsg && successMsg) {
+    if (errorMsg.classList.contains('is-open')) {
+      errorMsg.classList.remove('is-open');
+    }
+    if (successMsg.classList.contains('is-open')) {
+      successMsg.classList.remove('is-open');
+    }
+  }
+};
+
 const baseValidationSuccessCallback = (evt) => {
   evt.preventDefault();
   const url = evt.target.getAttribute('action') || sendUrl;
@@ -14,28 +28,28 @@ const baseValidationErrorCallback = (evt) => {
   evt.preventDefault();
 };
 
-const customExampleValidationSuccessCallback = (evt) => {
-  evt.preventDefault();
-  window.clearForm(evt.target);
-  // eslint-disable-next-line no-console
-  console.log('Ваша форма успешна отправлена');
-};
+// const customExampleValidationSuccessCallback = (evt) => {
+//   evt.preventDefault();
+//   window.clearForm(evt.target);
+//   // eslint-disable-next-line no-console
+//   console.log('Ваша форма успешна отправлена');
+// };
 
-const customExampleValidationErrorCallback = (e) => {
-  e.preventDefault();
-  // eslint-disable-next-line no-console
-  console.error('Отправка формы невозможна, заполните все обязательные поля');
-};
+// const customExampleValidationErrorCallback = (e) => {
+//   e.preventDefault();
+//   // eslint-disable-next-line no-console
+//   console.error('Отправка формы невозможна, заполните все обязательные поля');
+// };
 
 const callbacks = {
   base: {
     validationSuccessCallback: baseValidationSuccessCallback,
     validationErrorCallback: baseValidationErrorCallback,
   },
-  customExample: {
-    validationSuccessCallback: customExampleValidationSuccessCallback,
-    validationErrorCallback: customExampleValidationErrorCallback,
-  },
+  // customExample: {
+  //   validationSuccessCallback: customExampleValidationSuccessCallback,
+  //   validationErrorCallback: customExampleValidationErrorCallback,
+  // },
 };
 
 const setCustomPhoneInputsEvent = () => {
@@ -51,6 +65,7 @@ const setCustomPhoneInputsEvent = () => {
 const initFormValidate = () => {
   if (formWrappers.length) {
     setCustomPhoneInputsEvent();
+    clearMsgs();
     formWrappers.forEach((wrapper) => {
       let callback = wrapper.dataset.callback;
 

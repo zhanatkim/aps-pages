@@ -5,7 +5,7 @@ import {Form} from './modules/form-validate/form';
 // import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initFormValidate} from './form/init-form-validate.js';
 import './modules/advantages-swiper';
-import './modules/hero-swiper';
+import {setHeroSwiper} from './modules/hero-swiper';
 import './modules/about-swiper';
 import './modules/licenses-swiper';
 import './modules/partners-swiper';
@@ -24,7 +24,6 @@ import {setSubmenu} from './modules/submenu-toggle';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
   // Utils
   // ---------------------------------
 
@@ -33,21 +32,24 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
+  menuToggle();
+  setSubmenu();
+  servicesCardsRender();
+  productsCardsRender();
+  selectCards();
+  searching();
+  renderFilterMobile();
+  setLinkOpenModal();
+  setLicenseOpenModal();
+  initModals();
+  initFormValidate();
+  setHeroSwiper();
+
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    menuToggle();
-    setSubmenu();
-    servicesCardsRender();
-    productsCardsRender();
-    selectCards();
+
     // renderResetButton();
-    searching();
-    renderFilterMobile();
-    setLinkOpenModal();
-    setLicenseOpenModal();
-    initModals();
-    initFormValidate();
     // uploadFile();
     // uploadImageDrop();
     // const select = new CustomSelect();

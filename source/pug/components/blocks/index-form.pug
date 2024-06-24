@@ -10,6 +10,8 @@ mixin index-form(lang)
         label4: "Ваше сообщение",
         circs: "Я согласен на обработку моих персональных данных.",
         btn: "отправить",
+        success: "Ваш запрос успешно отправлен.",
+        error: "Произошла ошибка отправки. Проверьте заполненные поля.",
       },
       "en": {
         title: "Contact us",
@@ -20,6 +22,8 @@ mixin index-form(lang)
         label4: "Your message",
         circs: "I'm agree to process my personal data.",
         btn: "send",
+        success: "Your request has been sent successfully.",
+        error: "A sending error occurred. Check the filled fields.",
       },
       "kz": {
         title: "Бізге жазыңыз",
@@ -30,8 +34,11 @@ mixin index-form(lang)
         label4: "Сіздің хабарламаңыз",
         circs: "Мен жеке деректерімді өңдеуге келісемін.",
         btn: "жіберу",
+        success: "Сұрауыңыз сәтті жіберілді.",
+        error: "Жіберу қатесі орын алды. Толтырылған өрістерді тексеріңіз.",
       },
     }
+
   section.index-form
     .container
       .index-form__wrapper
@@ -66,5 +73,7 @@ mixin index-form(lang)
                     type: "submit",
                     text: value.btn,
                   })(class="form__btn btn--line")
+                  p.form__success!=value.success
+                  p.form__error!=value.error
         .index-form__image
           +picture("content", "form", "jpg", 644, 848, "pipes", lang)

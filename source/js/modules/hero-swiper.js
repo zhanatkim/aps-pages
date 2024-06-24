@@ -1,21 +1,15 @@
 const Swiper = global.Swiper;
-// const breakpoint = window.matchMedia('(max-width:767px)');
+const swiperContainer = document.querySelector('.hero__swiper');
+
 
 const swiperOptions = {
   pagination: {
     el: '.hero__pagination',
     clickable: true,
   },
-  // navigation: {
-  //   nextEl: '.hero__control--next',
-  //   prevEl: '.hero__control--prev',
-  // },
   lazy: true,
   slidesPerView: 1,
   speed: 1500,
-  // effect: 'fade',
-  // parallax: true,
-  // cssmode: true,
   loop: true,
   autoplay: {
     delay: 3000,
@@ -24,6 +18,12 @@ const swiperOptions = {
   },
 };
 
-export const heroSwiper = new Swiper('.hero__swiper', swiperOptions);
+
+export const setHeroSwiper = () => {
+  if (swiperContainer) {
+    // eslint-disable-next-line
+    const heroSwiper = new Swiper(swiperContainer, swiperOptions);
+  }
+};
 
 
