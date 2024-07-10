@@ -12,6 +12,7 @@ mixin index-form(lang)
         btn: "отправить",
         success: "Ваш запрос успешно отправлен.",
         error: "Произошла ошибка отправки. Проверьте заполненные поля.",
+        php: "send.php",
       },
       "en": {
         title: "Contact us",
@@ -24,6 +25,7 @@ mixin index-form(lang)
         btn: "send",
         success: "Your request has been sent successfully.",
         error: "A sending error occurred. Check the filled fields.",
+        php: "en-send.php",
       },
       "kz": {
         title: "Бізге жазыңыз",
@@ -36,6 +38,7 @@ mixin index-form(lang)
         btn: "жіберу",
         success: "Сұрауыңыз сәтті жіберілді.",
         error: "Жіберу қатесі орын алды. Толтырылған өрістерді тексеріңіз.",
+        php: "kz-send.php",
       },
     }
 
@@ -48,7 +51,7 @@ mixin index-form(lang)
               h2.index-form__title.title.title--dark!=value.title
               p.index-form__text!=value.text
               .index-form__form.form(data-form-validate)
-                form(action="send.php" method="post")
+                form(action=value.php method="post")
                   +custom-input({
                     inputLabel: value.label1,
                     inputName: "user-name",

@@ -13,10 +13,12 @@
   grid-template-columns: 32% 1fr;
   width: 100%;
   gap: 39px;
+  padding-bottom: 40px;
 
   @include vp-1023 {
     grid-template-columns: 40% 1fr;
     gap: 3%;
+    padding-bottom: 0;
   }
 
   @include vp-767 {

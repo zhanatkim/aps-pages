@@ -12,6 +12,7 @@ mixin form-modal(lang)
         btn: "отправить",
         success: "Ваш запрос успешно отправлен.",
         error: "Произошла ошибка отправки. Проверьте заполненные поля.",
+        php: "send.php",
       },
       "en": {
         title: "Contact us",
@@ -24,6 +25,7 @@ mixin form-modal(lang)
         btn: "send",
         success: "Your request has been sent successfully.",
         error: "A sending error occurred. Check the filled fields.",
+        php: "en-send.php",
       },
       "kz": {
         title: "Бізге жазыңыз",
@@ -36,6 +38,7 @@ mixin form-modal(lang)
         btn: "жіберу",
         success: "Сұрауыңыз сәтті жіберілді.",
         error: "Жіберу қатесі орын алды. Толтырылған өрістерді тексеріңіз.",
+        php: "kz-send.php",
       },
     }
   .form-modal(data-modal="form-modal")
@@ -45,7 +48,7 @@ mixin form-modal(lang)
           h2.form-modal__title.title!=value.title
           p.form-modal__text!=value.text
           .form-modal__form.form(data-form-validate)
-            form(action="send.php" method="post")
+            form(action=value.php method="post")
               +custom-input({
                 inputLabel: value.label1,
                 inputName: "user-name",

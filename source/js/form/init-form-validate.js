@@ -28,28 +28,37 @@ const baseValidationErrorCallback = (evt) => {
   evt.preventDefault();
 };
 
-// const customExampleValidationSuccessCallback = (evt) => {
-//   evt.preventDefault();
-//   window.clearForm(evt.target);
-//   // eslint-disable-next-line no-console
-//   console.log('Ваша форма успешна отправлена');
-// };
+const customExampleValidationSuccessCallback = (evt) => {
+  evt.preventDefault();
+  window.clearForm(evt.target);
+  // eslint-disable-next-line no-console
+  console.log('Ваша форма успешна отправлена');
 
-// const customExampleValidationErrorCallback = (e) => {
-//   e.preventDefault();
-//   // eslint-disable-next-line no-console
-//   console.error('Отправка формы невозможна, заполните все обязательные поля');
-// };
+  const successMsg = document.querySelector('.form__success');
+  if (successMsg) {
+    successMsg.classList.add('is-open');
+  }
+};
+
+const customExampleValidationErrorCallback = (e) => {
+  e.preventDefault();
+  // eslint-disable-next-line no-console
+  console.error('Отправка формы невозможна, заполните все обязательные поля');
+  const errorMsg = document.querySelector('.form__error');
+  if (errorMsg) {
+    errorMsg.classList.add('is-open');
+  }
+};
 
 const callbacks = {
   base: {
     validationSuccessCallback: baseValidationSuccessCallback,
     validationErrorCallback: baseValidationErrorCallback,
   },
-  // customExample: {
-  //   validationSuccessCallback: customExampleValidationSuccessCallback,
-  //   validationErrorCallback: customExampleValidationErrorCallback,
-  // },
+  customExample: {
+    validationSuccessCallback: customExampleValidationSuccessCallback,
+    validationErrorCallback: customExampleValidationErrorCallback,
+  },
 };
 
 const setCustomPhoneInputsEvent = () => {
