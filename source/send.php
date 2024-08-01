@@ -41,6 +41,6 @@
     $mail->send();
     echo '<p style="font-size:20px; font-weight:700; width:600px; height: 200px; margin: 100px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; background-color: rgba(#EBE6DE, 0.4);box-shadow:rgba(99, 99, 99, 0.2) 0 2px 8px 0; border-radius: 20px;  "><span>Запрос отправлен.</span><a href="https://new.asiapetroservice.kz" style=" border-radius: 5px; text-decoration: none; padding: 10px 20px; background: #EF9840; color: #ffffff; :hover{background: #3A3838;}">ВЕРНУТЬСЯ</a> </p>';
   } catch (Exception $e) {
-    echo "Запрос не отправлен!. Ошибка отправки: {$mail->ErrorInfo}";
-  }
+    echo '<p style="font-size:20px; font-weight:700; width:600px; height: 200px; margin: 100px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; background-color: rgba(#EBE6DE, 0.4);box-shadow:rgba(99, 99, 99, 0.2) 0 2px 8px 0; border-radius: 20px;  "><span>Запрос не отправлен. Попробуйте снова.</span><a href="https://new.asiapetroservice.kz" style=" border-radius: 5px; text-decoration: none; padding: 10px 20px; background: #EF9840; color: #ffffff; :hover{background: #3A3838;}">ВЕРНУТЬСЯ</a> </p>';
+    }
 ?>
