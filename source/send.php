@@ -18,7 +18,7 @@
 
   try {
     //Server settings
-    $mail->SMTPDebug  = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug  = SMTP::DEBUG_OFF;
     $mail->CharSet    = "utf-8";
     $mail->isSMTP();
     $mail->Host       = 'pkz5.hoster.kz';                       //SMTP сервер, зависит от почты отправки
