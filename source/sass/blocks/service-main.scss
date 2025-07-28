@@ -129,3 +129,29 @@
     color: $color-accent-hover;
   }
 }
+
+.service-main__cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 40px;
+
+  margin: 0;
+  justify-content: center;
+
+  @include vp-1023 {
+    gap: 20px;
+  }
+
+    @include vp-767 {
+      flex-direction: column;
+      gap: 10px;
+      justify-content: stretch;
+  }
+}
+
+.service-main__card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
