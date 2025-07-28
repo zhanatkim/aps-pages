@@ -10,7 +10,7 @@ html(lang=lang)
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    meta(name="description", content="Asia Petro Service")
+    meta(name="description", content=description)
     if (lang === "kz")
       link(rel="alternate", hreflang="en", href=`https://asiapetroservice.kz/en/${page}.html`)
       link(rel="canonical", hreflang="ru", href=`https://asiapetroservice.kz/${page}.html`)
@@ -39,34 +39,31 @@ html(lang=lang)
       link(rel="shortcut icon" href="favicon/favicon.ico")
     meta(name="msapplication-TileColor" content="#3a3838")
     meta(name="theme-color" content="#ffffff")
-    //- fonts preload
-    //- if (lang === "kz" || lang === "en")
-    //-   link(rel="preload", href="/fonts/montserrat-regular.woff2", as="font", crossorigin="anonymous")
-    //- else
-    //-   link(rel="preload", href="fonts/montserrat-regular.woff2", as="font", crossorigin="anonymous")
-    //- rubik
+
     if (lang === "kz" || lang === "en")
       link(rel="preload", href="/fonts/rubik-regular.woff2", as="font", crossorigin="anonymous")
     else
       link(rel="preload", href="fonts/rubik-regular.woff2", as="font", crossorigin="anonymous")
-    //- link(rel="preload", href="img/slides/hero1@2x.webp", as="image", type="image/webp", crossorigin="anonymous")
-    //- link(rel="preload", href="img/slides/hero1@2x.jpg", as="image", type="image/jpg", crossorigin="anonymous")
-    //- link(rel="preload", href="img/slides/hero1.webp", as="image", type="image/webp", crossorigin="anonymous")
-    //- link(rel="preload", href="img/slides/hero1.jpg", as="image", type="image/jpg", crossorigin="anonymous")
-    //- При необходимости вы можете добавить разметку Open graf. - const Open graf = true
-    if (openGraf)
-      //- Обязательно измените содержание контента на тот что необходим!
-      //- Введите заголовок
-      meta(property="og:title", content="Asia Petro Service")
-      //- Введите заголовок путь к картинке
-      meta(property="og:image", content="https://asiapetroservice.kz/img/content/about-hero.jpg")
-      //- Введите необходимый тип
-      meta(property="og:type", content="article")
-      //- Введите адрес сайта
-      meta(property="og:url", content="https://asiapetroservice.kz/")
-      //- Введите описание
-      meta(property="og:description", content="Asia Petro Service - oбработка скважин и трубопроводов, буровые растворы.")
 
+    if (openGraf)
+      if (lang === "ru")
+        meta(property="og:title", content="ТОО Asia Petro Service.")
+        meta(property="og:image", content="https://asiapetroservice.kz/img/content/about-hero.jpg")
+        meta(property="og:type", content="website")
+        meta(property="og:url", content="https://asiapetroservice.kz/")
+        meta(property="og:description", content="Услуги по изготовлению и контролю за качеством буровых растворов, ремонтно-изоляционных работ и обработки скважин...")
+      else if (lang === "en")
+        meta(property="og:title", content="Asia Petro Service - well and pipeline treatment, drilling fluids.")
+        meta(property="og:image", content="https://asiapetroservice.kz/en/img/content/about-hero.jpg")
+        meta(property="og:type", content="website")
+        meta(property="og:url", content="https://asiapetroservice.kz/")
+        meta(property="og:description", content="We provide a full range of services for the production and quality control of drilling fluids, well completion solutions, major and underground well repairs...")
+      else
+        meta(property="og:title", content="Asia Petro Service – ұңғымаларды және құбырларды өңдеу, бұрғылау ерітінділері.")
+        meta(property="og:image", content="https://asiapetroservice.kz/kz/img/content/about-hero.jpg")
+        meta(property="og:type", content="website")
+        meta(property="og:url", content="https://asiapetroservice.kz/")
+        meta(property="og:description", content="Біз бұрғылау ерітінділерін, ұңғымаларды аяқтау ерітінділерін өндіру және сапасын бақылау, ұңғымаларды күрделі және жерасты жөндеу бойынша қызметтердің толық кешенін ұсынамыз...")
     if (lang === "kz" || lang === "en")
       link(rel="stylesheet", href="../css/style.min.css")
 
@@ -74,10 +71,24 @@ html(lang=lang)
       link(rel="stylesheet", href="css/style.min.css")
 
   body
+    //- script(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    //-   m[i].l=1*new Date();
+    //-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    //-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    //-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    //-   ym(97968469, "init", {
+    //-     clickmap:true,
+    //-     trackLinks:true,
+    //-     accurateTrackBounce:true
+    //-   })
+    //- noscript (const previuose = );
+    //-   div
+    //-     img(src="https://mc.yandex.ru/watch/97968469" style="position:absolute; left:-9999px;" alt="")
+
     .wrapper(class=wrapperMods)
 
       if (hasHeader)
-        +header(headerMods, currentUrl)
+        +header(headerMods, currentUrl, lang)
 
       block main
 
